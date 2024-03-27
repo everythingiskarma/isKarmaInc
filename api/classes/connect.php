@@ -1,5 +1,6 @@
 <?php
-require_once "database.php";
+// moved the database.php file outside the root directory for security
+require_once "../../database.php";
 
 class Connect extends Database {
 
