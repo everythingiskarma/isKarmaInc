@@ -1,4 +1,0 @@
-instructions
-<?php
- phpinfo();
-?>

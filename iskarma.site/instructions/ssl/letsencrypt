@@ -1,8 +1,0 @@
-# add ssl certificate to the site
-sudo apt install certbot python3-certbot-nginx
-sudo certbot --nginx -d iskarma.com -d www.iskarma.com
-#check the config file for the certificate details.
-
-#ssl for localhost
-sudo apt install openssl
-sudo openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /home/nashady/data/x10premium/public_html/iskarma.com/ssl/nginx.key -out /home/nashady/data/x10premium/public_html/iskarma.com/ssl/nginx.crt
