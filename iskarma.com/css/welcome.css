@@ -1,0 +1,190 @@
+
+/* welcome */
+logo {
+	display: block;
+	position: relative;
+	width: 256px;
+	height: 256px;
+	margin: 20px auto;
+	z-index: 0;
+}
+
+logo * {
+	display: block;
+	position: absolute;
+	border-radius: 24px
+}
+
+one {
+	left: 38px;
+	top: 38px;
+	right: 168px;
+	bottom: 168px
+}
+
+three {
+	right: 38px;
+	top: 38px;
+	left: 168px;
+	bottom: 168px
+}
+
+two {
+	top: 168px;
+	left: 37px;
+	bottom: 38px;
+	right: 168px
+}
+
+four {
+	right: 38px;
+	bottom: 38px;
+	left: 168px;
+	top: 168px
+}
+
+.dot {
+	animation: dots 1.5s ease-in-out forwards, tremors 0.1s linear 3s forwards 150, collapse 0.2s linear 7s forwards;
+	width: 50px;
+	height: 50px;
+	background-color: #00FF00;
+}
+
+@keyframes dots {
+	0% {
+		background-color: #fff;
+		top: 103px;
+		left: 103px;
+		bottom: 103px;
+		right: 168px;
+	}
+
+	100% {
+		background-color: #00ff00
+	}
+}
+
+@keyframes tremors {
+
+	0%,	5%,	10%,	15%,	20%,	50%,	55%,	60%,	65%,	70%,	75% {
+		transform: skewY(-15deg);
+	}
+
+	25%,	30%,	35%,	40%,	45%,	80%,	85%,	90%,	95%,	100% {
+		transform: skewX(15deg);
+	}
+
+	100% {
+		transform: skewX(0deg);
+	}
+}
+
+@keyframes collapse {
+	from {
+		background-color: red
+	}
+
+	to {
+		background-color: #fff;
+		top: 128px;
+		left: 128px;
+		width: 0;
+		height: 0
+	}
+}
+
+five {
+	animation: five 1.5s ease-in-out 1.5s forwards;
+	z-index: 1;
+	background-color: #FFFF00;
+}
+
+@keyframes five {
+	0% {
+		width: 0px;
+		height: 0px;
+		left: 128px;
+		top: 128px;
+		right: 128px;
+		bottom: 128px
+	}
+
+	100% {
+		width: 50px;
+		height: 230px;
+		left: 103px;
+		top: 13px;
+	}
+}
+
+six {
+	animation: six 1.5s ease-in-out 3s forwards;
+	z-index: 2;
+	background-color: #F9F9F9;
+}
+
+@keyframes six {
+	0% {
+		width: 0px;
+		height: 0px;
+		left: 128px;
+		top: 128px;
+		right: 128px;
+		bottom: 128px
+	}
+
+	100% {
+		width: 230px;
+		height: 50px;
+		left: 13px;
+		top: 103px;
+	}
+}
+
+seven {
+	animation: linetop 0.2s linear 8s forwards;
+	background-color: #00FF00;
+}
+
+@keyframes linetop {
+	0% {
+		top: 128px;
+		left: 128px;
+		width: 0px;
+		height: 0px
+	}
+
+	100% {
+		width: 180px;
+		height: 50px;
+		left: 50%;
+		top: 50%;
+		margin-left: -90px;
+		margin-top: -90px;
+	}
+}
+
+eight {
+	animation: linebottom 0.1s linear 8s forwards;
+	background-color: #00FF00;
+}
+
+@keyframes linebottom {
+	from {
+		top: 128px;
+		left: 128px;
+		width: 0;
+		height: 0;
+	}
+
+	to {
+		width: 180px;
+		height: 50px;
+		left: 50%;
+		top: 50%;
+		margin-left: -90px;
+		margin-top: 40px;
+	}
+}
+
+/* welcome end */

@@ -1,0 +1,86 @@
+# install and app
+sudo apt install terminator
+
+# uninstall application and purge files
+sudo apt remove --purge terminator
+
+# show the group of the current directory
+sudo id -gn
+
+# remove/delete files/folders
+sudo rm file.txt (this will remove the file named file.txt)
+sudo rm folderx (this will remove the folder called folderx if its empty)
+sudo rm -rf folderx (this will remove the folder called folderx and all its contents)
+
+# show directory permissions
+sudo ls -l
+
+# check nginx config for errors
+sudo nginx -t
+
+# restart a process
+sudo systemctl restart nginx
+
+# check status of a process
+sudo systemctl status nginx
+
+# stop a process
+sudo systemctl stop nginx
+
+# enable autostart for a process
+sudo systemctl enable nginx
+
+# disable autostart for a process
+sudo systemctl disable nginx
+
+# update and upgrade system
+sudo apt update && apt upgrade
+
+# check application version
+sudo php -v
+
+# move a file
+sudo mv test.txt /home/test-moved.txt (this will move the file test.txt from current location to /home/test-moved.txt)
+
+// change the directory root in /etc/nginx/conf.d/iskarma.local
+# /home/nashady/data/x10premium/public_html/
+
+#test if nginx can access the new directory path
+# you can check the error log at /var/log/nginx/error.log
+
+#if php8.2fpm uses group www-data then add nginx to the group
+sudo usermod -a -G www-data nginx (this adds nginx to the group www-data)
+
+# generally nginx uses user 'www-data' to access directory and content. if access is denied add www-data to the current users group
+
+sudo usermod -a -G nashady www-data
+
+# check groups for user www-data or nginx
+sudo groups www-data or sudo groups nginx
+
+# if you get error permission denied try using the 'stat' command starting from home directory to find where access gets denied
+sudo -u www-data stat /home/nashady/data/x10premium/public_html
+
+# to check permissions and group ownership of a file or directory
+sudo ls -l /run/php/php8.2-fpm.sock
+
+# to change group of a folder
+sudo chgrp -R nashady /home (this will change the group to nashady for all the files and directories recursively)
+
+# to check if user can access directory
+sudo -u nginx ls /home/nashady (this will check if the user can open the directory)
+
+# to change directory and file permission use chmod
+sudo chmod -R g+rx /home/nashady/data/x10premium/public_html/ (this will grant read and execute permission to the folder public_html)
+
+# to change ownership of a directory/file
+sudo chmod -R nginx:nginx /home/nashady/data/x10premium/public_html (this will change ownership of the directory to group:user)
+
+# check nginx config to see which user it is running as
+sudo nano /etc/nginx/nginx.conf
+
+# check aap armour status
+sudo aa-status
+
+# check selinux status
+sudo sestatus

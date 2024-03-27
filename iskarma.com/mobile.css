@@ -1,0 +1,138 @@
+/* mobile only css */
+@media only screen and (max-width: 439px) {
+
+  /* Place your mobile-specific styles here */
+  /* For example, you can adjust font sizes, margins, and paddings to fit smaller screens */
+  h1 {
+    font-size: 25px;
+    line-height: 50px;
+    text-align: center;
+  }
+
+  h2 {
+    font-size: 20px;
+    line-height: 40px
+  }
+
+  h3 {
+    font-size: 15px;
+    line-height: 30px
+  }
+
+  h4 {
+    font-size: 12px;
+    line-height: 24px
+  }
+
+  h5 {
+    font-size: 10px;
+    line-height: 20px
+  }
+
+  h6 {
+    font-size: 8px;
+    line-height: 16px
+  }
+
+  article h1 {
+    margin-bottom: 30px;
+    line-height: 50px
+  }
+
+  content h2 {
+    margin: 30px auto 0;
+    border-radius: 5px 5px 0 0;
+    width: 90%;
+  }
+
+  content section {
+    padding: 20px;
+    margin-bottom: 20px;
+  }
+
+  content section p {
+    font-size: 14px;
+    margin-bottom: 20px;
+  }
+
+  content section a {
+    width: 120px;
+    height: 120px;
+  }
+
+  nav {
+    top: 50px;
+    max-height: 100%;
+    min-height: auto;
+    position: relative;
+    scroll-behavior: smooth;
+  }
+
+  nav ul {
+    background-color: #093d07;
+  }
+
+  nav ul li {
+    display: inline-block;
+    width: 25%;
+    margin: 0px;
+    vertical-align: top;
+    font-size: 0px;
+  }
+
+  nav ul li a {
+    position: relative;
+    display: inline-block;
+    border-radius: 0 !important;
+    padding: 0px;
+    height: 100px;
+    width: 100%;
+    text-align: center;
+    margin: 0px;
+    background-color: transparent;
+  }
+
+  nav ul li a::before {
+    font-size: 30px;
+    position: absolute;
+    top: 50%;
+    transform: translate3d(-50%, -80%, 0);
+  }
+
+  nav ul li a title {
+    display: block;
+    position: absolute;
+    top: 67px;
+    font-family: raleway;
+    text-transform: uppercase;
+    left: 0;
+    right: 0;
+    font-size: 11px;
+    line-height: 10px;
+    text-align: center;
+    letter-spacing: 0.5px;
+  }
+
+  nav #slidePhone h3 {
+    font-size: 18px;
+    font-family: liberation;
+    font-weight: lighter;
+    line-height: 16px;
+  }
+
+  navbar ul li h2 {
+    font-size: 12px;
+    line-height: 40px;
+    padding: 5px
+  }
+
+  footer h2 {
+    font-size: 14px;
+  }
+
+  footer ul li h3 {
+    font-size: 10px;
+  }
+}
+
+/* mobile only css end */

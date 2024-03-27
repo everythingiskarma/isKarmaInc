@@ -1,0 +1,13 @@
+# website
+https://mariadb.com/downloads/
+
+# download link
+https://dlm.mariadb.com/3746226/MariaDB/mariadb-11.3.2/repo/debian/mariadb-11.3.2-debian-bookworm-amd64-debs.tar
+
+# if you have repository setup you can directly install
+sudo apt install mariadb-server mariadb-client
+
+# secure the installation
+sudo mysql_secure_installation
+
+# create new user
