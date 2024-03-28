@@ -1,6 +1,6 @@
 # isKarma Inc
 
-## isKarma
+## about us
  isKarma Inc is a tech based company that is invested in education, research and application for empowering companies to adopt sustainability as a guiding principle. 
 
 ## community
