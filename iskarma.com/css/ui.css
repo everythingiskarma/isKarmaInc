@@ -1,0 +1,83 @@
+/* INPUT BOX */
+.ibx::before {
+	position: absolute;
+	left: 0;
+	font-size: 22px;
+	color: #ddd;
+	margin: 14px 18px;
+	border-right: 1px dashed #fff;
+	padding: 0px 10px 0 0px;
+	line-height: 30px;
+	height: 33px;
+    width:33px;
+	top: 0;
+}
+
+.ibx:hover * {
+    border-color: rgb(255 255 255 / 50%);
+    transition: all 1s linear;
+}
+
+
+.ibx:focus-within::before, .ibx:focus-within * {
+    color:#ffff00;
+    border-color: #ff0;
+    transition: all 1s linear;
+}
+
+.ibx {
+    position: relative;
+    width: 325px;
+    margin: 15px auto;
+    text-align: center;
+}
+
+.ibx label {
+    border: 2px solid #ffffff1a;
+    padding:4px 10px;
+    border-top:0;
+    border-radius: 0 0 7px 7px;
+    float: left;
+    margin-left:30px;
+    background: #ffffff14;
+    text-transform:uppercase;
+    font-size: 12px;
+    color: #ff0;
+}
+
+.ibx input {
+    color:#fff;
+	font-size: 18px;
+    line-height: 18px;
+	display: block;
+	width: calc(100% - 80px);
+	border: 2px solid #ffffff1a;
+	padding: 15px;
+	border-radius: 50px;
+	background: #ffffff14;
+	margin: 0 auto;
+	padding-left: 65px;
+    height: 26px;
+    text-indent: 15px;
+}
+
+.ibx input::placeholder {
+    letter-spacing: 0px;
+    font-size: 16px;
+}
+
+.ibx input.valid {
+
+}
+
+.ibx input:invalid {
+    border-color: red
+}
+
+.ibx input:hover {
+}
+
+.ibx input:focus {
+    border-color: #ffff00;
+    box-shadow: 0 0 20px rgba(255, 216, 7, 0.4);
+}

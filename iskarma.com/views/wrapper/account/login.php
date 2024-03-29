@@ -10,7 +10,7 @@
 <br/>
 <div id="authLogin">
     <div class="center">Sign in or Register</div>
-    <div id="auth" class="icon-mail">
+    <div id="auth" class="ibx icon-mail">
         <input type="email" id="email" placeholder="Please enter your email address" autofocus autocomplete="off" value="">
         <div id="message">Welcome to isKarma Inc</div>
         <div id="login" class="button" tabindex="0">Send OTP</div>

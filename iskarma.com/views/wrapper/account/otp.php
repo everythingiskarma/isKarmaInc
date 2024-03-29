@@ -10,7 +10,7 @@
 <br/>
 <div id="authOTP">
 	<div class="center">One Time Password</div>
-	<div id="auth" class="icon-key">
+	<div id="auth" class="ibx icon-key">
 	    <input id="otp" type="password" maxlength="6" placeholder="Enter 6 digit OTP" autofocus autocomplete="off" >
 	    <div id="message"><i>&check; OTP has been successfully sent.</i></div>
 	    <div id="validOTP">
@@ -23,4 +23,3 @@
 	    <br/>
 	</div>
 </div>
-

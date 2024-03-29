@@ -10,6 +10,7 @@
     <title>Welcome to isKarma</title>
     <link rel="stylesheet" type="text/css" href="assets/icomoon/style.css">
     <link rel="stylesheet" type="text/css" href="iskarma.com/css/html5.css">
+    <link rel="stylesheet" type="text/css" href="iskarma.com/css/ui.css">
     <link rel="stylesheet" type="text/css" href="iskarma.com/web.css">
     <!-- initialize the css for api - account -->
     <link rel="stylesheet" type="text/css" href="iskarma.com/css/account.css">
