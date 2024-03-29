@@ -51,26 +51,20 @@
   <body>
     <div id="toTop" class="icon-up"></div>
     <header>
-      <wrapper>
-		<esc class="icon-close"></esc>
-        <div id="processing"><span class="icon-spinner"></span></div>
-        <load></load>
-      </wrapper>
-      <search class="full-modal-wrapper"><?php //require_once vh . 'search.php';?></search>
-      <?php
-        require_once 'iskarma.com/views/header/header.php';
-      ?>
+        <?php require_once 'iskarma.com/views/header/header.php'; ?>
+        <wrapper>
+            <esc class="icon-close"></esc>
+            <div id="processing"><span class="icon-spinner"></span></div>
+            <load></load>
+        </wrapper>
     </header>
     <sidebar>
-      <?php
-        require_once vh . 'sidebar.php';
-      ?>
+      <?php require_once 'iskarma.com/views/header/sidebar.php'; ?>
     </sidebar>
     <main>
       <?php
       // require activities slider carousel
       require_once vh . 'slides.php';
-
       // load dynamic content in this section using jquery/ajax
       require_once 'iskarma.com/content/internal/home.php';
       ?>
