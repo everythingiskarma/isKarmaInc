@@ -64,7 +64,7 @@
     <main>
       <?php
       // require activities slider carousel
-      require_once vh . 'slides.php';
+      require_once 'iskarma.com/views/header/slides.php';
       // load dynamic content in this section using jquery/ajax
       require_once 'iskarma.com/content/internal/home.php';
       ?>
