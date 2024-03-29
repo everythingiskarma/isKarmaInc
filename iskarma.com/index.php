@@ -13,13 +13,15 @@ define ('vh', 'iskarma.com/views/header/');
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Welcome to isKarma</title>
     <link rel="stylesheet" type="text/css" href="assets/icomoon/style.css">
+    <link rel="stylesheet" type="text/css" href="iskarma.com/css/html5.css">
     <link rel="stylesheet" type="text/css" href="iskarma.com/web.css">
     <link rel="stylesheet" type="text/css" href="iskarma.com/css/accounts.css">
+    <!-- initialize the css for api - authenticator -->
+    <link rel="stylesheet" type="text/css" href="iskarma.com/css/authenticator.css">
     <link rel="stylesheet" type="text/css" href="iskarma.com/css/animations.css">
     <link rel="stylesheet" type="text/css" href="iskarma.com/css/article.css">
     <link rel="stylesheet" type="text/css" href="iskarma.com/css/carousel.css">
-    <link rel="stylesheet" type="text/css" href="iskarma.com/css/html5.css">
-    <link rel="stylesheet" type="text/css" href="iskarma.com/css/navigation.css">
+    <link rel="stylesheet" type="text/css" href="iskarma.com/css/header.css">
     <link rel="stylesheet" type="text/css" href="iskarma.com/css/pages.css">
     <link rel="stylesheet" type="text/css" href="iskarma.com/css/search.css">
     <link rel="stylesheet" type="text/css" href="iskarma.com/css/sidebar.css">
@@ -30,10 +32,11 @@ define ('vh', 'iskarma.com/views/header/');
     <script>
       $(document).ready(function() {
         $.getScript('assets/js/ajax.js');
-        $.getScript('assets/js/ajax-authentication.js');
-        $.getScript('assets/js/ajax-account.js');
-        $.getScript('assets/js/ajax-request-content.js');
-        $.getScript('assets/js/ajax-search-content.js');
+        // initialize the ajax controller for api - authenticator
+        $.getScript('assets/js/api-controller-authenticator.js');
+        $.getScript('assets/js/api-controller-account.js');
+        $.getScript('assets/js/api-controller-static-content.js');
+        $.getScript('assets/js/api-controller-static-search.js');
         $.getScript('assets/js/copy-element-content.js');
         $.getScript('assets/js/delay-timer.js');
         $.getScript('assets/js/telemetry.js');
@@ -51,23 +54,27 @@ define ('vh', 'iskarma.com/views/header/');
   <body>
     <div id="toTop" class="icon-up"></div>
     <header>
-      <article class="full-modal-wrapper"></article>
-      <compose class="full-modal-wrapper"><?php require_once vc . 'compose.php';?></compose>
-      <account class="full-modal-wrapper"><?php require_once va . 'dashboard.php';?></account>
-      <search class="full-modal-wrapper"><?php require_once vh . 'search.php';?></search>
+      <wrapper>
+		<esc class="icon-close"></esc>
+        <div id="processing"><span class="icon-spinner"></span></div>
+		<load>
+        </load>
+      </wrapper>
+      <search class="full-modal-wrapper"><?php //require_once vh . 'search.php';?></search>
       <?php
-        // require all toggles
-        require_once vh . 'toggles.php';
-        // requie main navigation topbar
-        require_once vh . 'nav.php';
-        // require sidebar
-        require_once vh . 'sidebar.php';
-        // require activities slider carousel
-        require_once vh . 'slides.php'
+        require_once 'iskarma.com/views/header/header.php';
       ?>
     </header>
+    <sidebar>
+      <?php
+        require_once vh . 'sidebar.php';
+      ?>
+    </sidebar>
     <main>
       <?php
+      // require activities slider carousel
+      require_once vh . 'slides.php';
+
       // load dynamic content in this section using jquery/ajax
       require_once 'iskarma.com/content/internal/home.php';
       ?>
@@ -96,7 +103,6 @@ define ('vh', 'iskarma.com/views/header/');
                 <icon class="icon-close"></icon>
             </h2>
         </div>
-        <div id="processing"><span class="icon-spinner"></span></div>
     </common>
   </body>
 </html>

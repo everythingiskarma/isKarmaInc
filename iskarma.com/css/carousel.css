@@ -1,13 +1,15 @@
 
 /* carousel */
 carousel {
+	display: block;
+	background: linear-gradient(0deg, rgb(0 111 0) 35%, rgb(4 70 0) 100%);
 	z-index: 0
 }
 
 carousel ul {
 	display: block;
 	height: auto;
-	padding-top: 50px;
+	padding-top: 0;
 	overflow: hidden
 }
 

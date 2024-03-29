@@ -13,7 +13,6 @@
 
 #searchInput {
     position: relative;
-    z-index: 1
 }
 
 #searchInput::before {
@@ -51,17 +50,11 @@
 }
 
 
-search {
-    display: block;
-    right: 0 !important;
-    left: auto !important;
-}
-
-search input::placeholder, #auth input::placeholder {
+#searchInput input::placeholder, #auth input::placeholder {
     color: #fff;
 }
 
-search input {
+#searchInput input {
     padding: 0px;
     display: block;
     margin: 0px auto;
@@ -73,7 +66,7 @@ search input {
     color: #fff;
 }
 
-search.sticky input {
+#searchInput.sticky input {
     position: fixed;
     top: 0;
     left: 0;
@@ -81,11 +74,11 @@ search.sticky input {
     box-shadow: 0 0 20px #222;
 }
 
-search.sticky input:focus {
+#searchInput.sticky input:focus {
     background: linear-gradient(60deg, rgb(0 42 0 / 0.95) 10%, rgb(0 0 0 / 1%) 100%);
 }
 
-search input:focus {background: #ffffff30}
+#searchInput input:focus {background: #ffffff30}
 
 #searchFiltersToggle::before {
     width: 40px;

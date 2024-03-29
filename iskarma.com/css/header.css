@@ -1,0 +1,136 @@
+header {
+	display:block;
+	background: rgb(0, 111, 0);
+	z-index: 1;
+	position:sticky;
+	top: 0px;
+}
+header.sticky {}
+
+/* navigation */
+navbar {
+	display: block;
+	height: 50px;
+	z-index: 1;
+	box-shadow: 0 0 100px #222;
+	background: rgb(0, 111, 0);
+	background: linear-gradient(315deg, rgba(0, 111, 0, 1) 35%, rgba(4, 70, 0, 1) 100%);
+}
+
+navbar ul {
+	display: block;
+	margin: 0 auto;
+	text-align: center;
+}
+
+navbar ul li {
+	display: inline-block;
+}
+
+navbar ul li.active {
+	background-color: #093d07;
+}
+
+navbar ul li h2 {
+	padding: 5px 20px;
+	line-height: 40px;
+	height: 40px;
+	font-size: 16px;
+  letter-spacing: 1px;
+	color: #fff;
+}
+
+navbar ul li h2:hover {
+	cursor: pointer;
+}
+
+nav {
+	display: block;
+	text-align: center;
+	position: relative;
+}
+nav ul {
+	display: none;
+	text-align: center;
+	width: 100%;
+	font-size: 0;
+	position: absolute;
+	top: 0px;
+	padding:5px 0 15px;
+	box-shadow: 0 50px 50px #050;
+	background: linear-gradient(0deg, #007700 0%, #093d07 99%);
+
+}
+nav ul.isActive {
+	display: block;
+	margin: 0 auto
+}
+
+nav ul li {
+	display: inline;
+	overflow: hidden;
+	position: relative;
+}
+
+
+nav ul li a.icon-iskarma {
+	padding: 45px 42px 80px;
+}
+
+nav ul li a {
+	display: inline-block;
+	transition: all 0.8s ease-in-out;
+	vertical-align: top;
+	padding: 0 10px;
+}
+
+nav ul li a:hover::before, nav a:hover title {
+	color: #ffff00 !important;
+}
+
+nav ul li a::before {
+	font-size: 40px;
+	line-height: 40px;
+	color: #fff !important;
+	padding: 35px 40px 50px;
+	display: block;
+}
+
+nav ul li a title {
+	display: inline-block;
+	font-size: 12px;
+	text-align: center;
+	letter-spacing: 0.5px;
+	white-space: pre-line;
+	width: 100%;
+	top: 75px;
+	position: absolute;
+	left: 0;
+}
+
+nav ul h2 {
+	font-size: 30px;
+	line-height: 40px
+}
+
+nav ul h3 {}
+
+/* navigation end */
+.icon-iskarma .path1:before {
+  margin-left: -1em;
+}
+
+.icon-iskarma span {
+    width: 40px;
+    display: block;
+    top: -5px;
+    left: 25px;
+    position: relative;
+    font-family: icomoon;
+}
+
+.icon-iskarma span::before {
+    position: absolute;
+    font-size: 50px;
+    line-height: 50px;
+}

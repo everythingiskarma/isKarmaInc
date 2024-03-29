@@ -14,7 +14,7 @@ html {
 }
 
 html * {
-  font-family:z;
+    font-family:z;
 	outline: none;
 	scrollbar-width: none
 }
@@ -70,15 +70,10 @@ body {
 
 main {
 	display: block;
-  position: relative;
-  z-index: 0;
+	position: relative;
+	z-index: 0;
 }
 
-header {
-	display: block;
-	background: rgb(0, 111, 0);
-	background: linear-gradient(0deg, rgba(0, 111, 0, 150px) 35%, rgba(4, 70, 0, 1) 100%);
-}
 hr {
   border: none;
   border-top: 1px solid rgb(255 255 255 / 10%);
@@ -164,6 +159,7 @@ footer ul li h3 {
   line-height: 30px;
   font-size: 15px
 }
+
 .grid37 {
   display: grid;
   grid-template-columns: 30% 70%;
@@ -180,6 +176,7 @@ footer ul li h3 {
 .grid37 a {
   overflow: hidden;
 }
+
 .grid37 about  * {
   padding: 0 0px;
   display: block;
@@ -197,6 +194,7 @@ a:hover {color:#ffff00}
   overflow: hidden;
   transition: all 0.5s ease;
 }
+
 .icon-btn:hover {
   box-shadow: 0 0 50px #08765A;
   border-color: #ffff00
@@ -205,10 +203,6 @@ a:hover {color:#ffff00}
 .icon-btn span {display: inline-block; vertical-align: top; background: rgb(255 255 255 / 10%)}
 .icon-btn span::before {display: block; height: 40px; width: 40px; text-align: center; line-height: 40px; border-right:1px solid rgb(255 255 255 / 20%)}
 .icon-btn a {display: inline-block; padding: 0 20px !important; line-height: 40px}
-
-blink {
-    animation: typing 2s ease-in-out infinite
-}
 
 
 /* input messages */
@@ -223,9 +217,7 @@ blink {
     line-height: 15px;
 }
 
-
 /* reports notifications */
-
 fixed.reports {
 	position: fixed;
 	bottom: 40px;
@@ -241,10 +233,12 @@ fixed.reports {
 	scroll-behavior: smooth;
 	display: none;
 }
+
 fixed.reports:hover {
     background: linear-gradient(15deg, rgba(0, 127, 0, 0.95) 50%, rgba(0, 170, 153, 0.95) 100%);
     transition: all 1s linear;
 }
+
 #reports {
 	overflow: hidden;
 	height: 100%;
@@ -266,9 +260,11 @@ fixed.reports:hover {
 	text-align: center;
     text-shadow:0 1px 2px #003e04;
 }
+
 #reports > *.pre {
     opacity:0.5
 }
+
 #reports > * {
 	display: grid;
 	padding: 10px;
@@ -279,23 +275,29 @@ fixed.reports:hover {
 	border-bottom: 1px solid #00000010;
 	border-top: 1px solid #00000010;
 }
+
 #reports > *:last-child {
     border-bottom:none;
     background: #00000030;
 }
+
 #reports > *:hover {
     background-color: #00000030;
     opacity: 1;
 }
+
 #reports in b::before {
     color: #00ddff;
 }
+
 #reports s b::before {
     color: #00ff00;
 }
+
 #reports e b::before {
     color: #ff0000;
 }
+
 #reports o b::before {
     color: #ee9911;
 }
@@ -325,6 +327,7 @@ fixed.reports:hover {
 	text-align: left;
 	padding: 0 10px;
 }
+
 #filterReports icon::before {
     line-height: 40px;
     height: 40px;
@@ -335,6 +338,7 @@ fixed.reports:hover {
     cursor: pointer;
     border-radius: 0 8px 8px 0;
 }
+
 #filterReports icon:hover::before {
     background: rgb(0 0 0 / 30%);
 }
@@ -379,3 +383,23 @@ fixed.reports:hover {
     font-size: 12px;
     color: #ffff00;
 }
+
+/* modal wrapper */
+wrapper {
+	display: none;
+	position: fixed;
+	left: 0;
+    right:0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background: linear-gradient(15deg, rgba(0, 127, 0, 0.99) 30%, rgba(0, 170, 153, 0.99) 70%);
+	overflow: auto;
+	scroll-behavior: smooth;
+	z-index: 3;
+}
+
+load {
+    display: none
+}
+/* modal wrapper end */

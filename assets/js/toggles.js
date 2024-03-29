@@ -1,48 +1,53 @@
-// show/hide toggles localStorage
+// show/hide toggles startup
 var toggleState = localStorage.getItem('toggleState');
 if(toggleState === 'on') {
-    $('.toggles').addClass("icon-toggle-on");
-    $("#togglebox toggle").removeClass("inv");
+    $('toggles').addClass("icon-toggle-on");
+    $("#togglebar").slideDown();
 } else {
-    $(".toggles").addClass("icon-toggle-off");
+    $("toggles").addClass("icon-toggle-off");
 }
-
-$(document).on("click", ".toggles", function() {
-    $("#togglebox toggle").toggleClass("inv");
+// show/hide toggles click event handler
+$(document).on("click", "toggles", function() {
+    $("#togglebar").animate({height:"toggle"});
     $(this).toggleClass("icon-toggle-on icon-toggle-off");
     newState = $(this).hasClass("icon-toggle-on") ? 'on' : 'off';
     localStorage.setItem('toggleState', newState);
 });
 
-$(document).on("click", "#togglebox toggle", function() {
-    $(this).toggleClass("on");
-});
-// ALL TOGGLES - FULL MODAL WRAPPER
-// ESCAPE TOGGLES: exit modal wrapper and return toggle icons to closed state
-$(document).keyup(function(e) {
-    // check if pressed key is esc
-    if(e.keyCode === 27) {
-        $(".article.icon-left, .account.icon-close, .search.icon-close").trigger("click");
-        $("#efs").removeClass("icon-efs").addClass("icon-fs");
-    }
+// exit modal and update localStorage
+$(document).on("click", "esc", function() {
+    $("wrapper, load").animate({opacity: "toggle"}, 300);
+    var view = $(".loaded").attr('view');
+    localStorage.setItem(view, 'off');
+    $(".loaded").removeClass("loaded");
 });
 
-// TOGGLE: User Account
-$(document).on("click", ".account", function() {
-    // close all open toggles
-    $("#sidebarToggle.icon-close").trigger("click");
-    $(this).toggleClass("icon-close icon-user");
-    $("account").animate({height: "toggle",width: "toggle",opacity: "toggle"}, 300);
-
-    newState = $(this).hasClass("on") ? 'on' : 'off';
-    localStorage.setItem('accountToggleState', newState);
-
+// togglebar modals click event handler
+$(document).on("click", "#togglebar li.modal", function() {
+    $("wrapper, #processing").fadeIn();
+    var view = $(this).attr('view');
+    $(this).addClass("loaded");
+    $("load").load("/iskarma.com/views/wrapper/" + view + ".php", function() {
+        $(this).animate({height:"toggle"}, 300);
+        localStorage.setItem(view, 'on');
+        $("#processing").fadeOut();
+    });
 });
 
-var accountToggleState = localStorage.getItem('accountToggleState');
-if(accountToggleState === 'on') {
-    $('.account').trigger("click");
+// show open modals on reload
+function reloadModal() {
+    $("#togglebar li.modal").each(function() {
+        var view = $(this).attr("view");
+        var viewState = localStorage.getItem(view);
+        if(viewState === 'on') {
+            $(this).trigger("click");
+        }
+    });
 }
+reloadModal();
+
+
+
 
 
 // close article and reopen sidebar
@@ -65,44 +70,26 @@ $(document).on("click", "#sidebarToggle", function() {
 });
 
 // toggle search
-$(document).on("click", ".search", function() {
-    // close all open toggles
-    $("#sidebarToggle.icon-close").trigger("click");
-    // toggle searchToggle button icon class
-    $(this).toggleClass("icon-close icon-search");
-    // toggle search modal box
-    $("search, .account").animate({
-        height: "toggle",
-        width: "toggle",
-        opacity: "toggle",
-    }, 300);
+$(document).on("click", ".icon-search.modal", function() {
     $("#searchInput input").focus();
-
-    newState = $(this).hasClass("on") ? 'on' : 'off';
-    localStorage.setItem('searchToggleState', newState);
-
 });
-
-var searchToggleState = localStorage.getItem('searchToggleState');
-if(searchToggleState === 'on') {
-    $('.search').trigger("click");
-}
-
 
 // notifications toggle
 
-var notificationsToggleState = localStorage.getItem('notificationsToggleState');
-if(notificationsToggleState === 'on') {
-    $('.notifications').addClass("on");
+var notView = localStorage.getItem('notifications');
+if(notView === 'on') {
+    $('#notifications').toggleClass("on icon-bell icon-bell-o");
     $(".reports, #filterReports").animate({height:"toggle",width:"toggle",opacity:"toggle"}, 300);
 }
 
-$(document).on("click", ".notifications", function() {
+$(document).on("click", "#notifications", function() {
+
+    $(this).toggleClass("on icon-bell icon-bell-o");
+
+    newState = $("#notifications").hasClass("on") ? 'on' : 'off';
+    localStorage.setItem('notifications', newState);
 
     $(".reports, #filterReports").animate({height:"toggle",width:"toggle",opacity:"toggle"}, 300);
-
-    newState = $(".notifications").hasClass("on") ? 'on' : 'off';
-    localStorage.setItem('notificationsToggleState', newState);
 
     var fixed = $("fixed.reports");
     delay(function() {
@@ -112,5 +99,13 @@ $(document).on("click", ".notifications", function() {
 });
 
 $(document).on("click", "#filterReports icon", function() {
-    $(".notifications").trigger("click");
+    $("#notifications").trigger("click");
+});
+// ESCAPE TOGGLES: exit modal wrapper and return toggle icons to closed state
+$(document).keyup(function(e) {
+    // check if pressed key is esc
+    if(e.keyCode === 27) {
+        $(".article.icon-left, .account.icon-close, .search.icon-close").trigger("click");
+        $("#efsToggle").removeClass("icon-efs").addClass("icon-fs");
+    }
 });

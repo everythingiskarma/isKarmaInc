@@ -7,3 +7,7 @@
 	0% {transform: rotate(0deg);}
 	100% {transform: rotate(360deg);}
 }
+
+blink {
+    animation: typing 2s ease-in-out infinite
+}
