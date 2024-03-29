@@ -1,7 +1,10 @@
 // SEARCH FUNCTIONALITY
 // declare the last search term
 var lastKeyword = "";
-
+// clear search input
+$(document).on("click", "#clearSearch", function() {
+    $("#searchInput input").val("");
+});
 // start ajax search keyword request
 $(document).on("keyup", "#searchInput input", function() {
     // process keyword before making post request
@@ -189,11 +192,6 @@ $(document).on("click", "#searchFiltersToggle", function(){
 });
 
 // search icon animation
-$("search input").on("focus blur", function() {
+$("#searchInput input").on("focus blur", function() {
     $("#searchInput").toggleClass("icon-radio-button icon-search");
-});
-
-// clear search input
-$("#clearSearch").on("click", function() {
-    $("search input").val("");
 });

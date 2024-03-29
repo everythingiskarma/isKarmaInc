@@ -4,11 +4,15 @@
     height: 50px;
     position: fixed;
     top: 0;
-    right: 49px;
-    z-index: 2;
+    right: 50px;
+    z-index: 3;
+    cursor:pointer;
     font-size: 25px;
     line-height: 50px;
     text-align: center;
+}
+#clearSearch:hover {
+    color:#ff0000;
 }
 
 #searchInput {

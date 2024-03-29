@@ -1,6 +1,7 @@
 <?php
     // Set custom name for the session cookie
     session_name('everythingIsKarma');
+
     // start session before processing the post request (via ajax or php form)
     session_start();
     // report all errors in case the script fails to execute at some point
