@@ -2,10 +2,6 @@
 <?php
 // get current light mode
 //if (isset($_SESSION['mode'])) {$mode = $_SESSION['mode'];} else {$mode = "light";}
-// define site header path
-define ('va', 'iskarma.com/views/account/');
-define ('vc', 'iskarma.com/views/content/');
-define ('vh', 'iskarma.com/views/header/');
 ?>
 <html lang="en">
   <head>
@@ -15,7 +11,8 @@ define ('vh', 'iskarma.com/views/header/');
     <link rel="stylesheet" type="text/css" href="assets/icomoon/style.css">
     <link rel="stylesheet" type="text/css" href="iskarma.com/css/html5.css">
     <link rel="stylesheet" type="text/css" href="iskarma.com/web.css">
-    <link rel="stylesheet" type="text/css" href="iskarma.com/css/accounts.css">
+    <!-- initialize the css for api - account -->
+    <link rel="stylesheet" type="text/css" href="iskarma.com/css/account.css">
     <!-- initialize the css for api - authenticator -->
     <link rel="stylesheet" type="text/css" href="iskarma.com/css/authenticator.css">
     <link rel="stylesheet" type="text/css" href="iskarma.com/css/animations.css">
@@ -57,8 +54,7 @@ define ('vh', 'iskarma.com/views/header/');
       <wrapper>
 		<esc class="icon-close"></esc>
         <div id="processing"><span class="icon-spinner"></span></div>
-		<load>
-        </load>
+        <load></load>
       </wrapper>
       <search class="full-modal-wrapper"><?php //require_once vh . 'search.php';?></search>
       <?php
