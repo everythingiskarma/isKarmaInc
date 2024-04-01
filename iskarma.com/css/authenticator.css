@@ -17,53 +17,22 @@ account {
     text-align: center;
 }
 
-.ibx #otp {
+#otp {
     text-indent: 18px;
     letter-spacing: 24px
 }
 
-.ibx .button:active {background: #ffff00ab}
-.ibx .button:hover {
-    border-color: rgb(255 255 255 / 50%);
-    transition: all 1s ease;
-    cursor: pointer;
-    color: #ffff00;
-}
 
-.ibx .button:focus {
-    background: #ffff007a;
-    color: #1E6011
-}
-
-.ibx #login, .ib #confirm {
+#login.button,
+#confirm.button {
     display: none;
     max-width:120px;
     margin: 15px auto;
 }
 
-.ibx #cancel, .ib #resend {
+#cancel.button,
+#resend.button {
     display: inline-block;
-}
-
-
-.ibx .button, .ib #message {
-    background: transparent;
-    padding: 10px 20px;
-    border-radius: 30px;
-    text-align: center;
-    color: #fff;
-    font-size: 18px;
-    line-height: 22px;
-}
-
-.ibx .button {
-    margin:15px 5px;
-    border: 2px solid rgb(255 255 255 / 10%);
-    position: relative;
-}
-
-.ibx #message {
-
 }
 
 .ibx #resendTimer {

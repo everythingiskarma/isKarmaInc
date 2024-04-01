@@ -1,83 +1,270 @@
 /* INPUT BOX */
 .ibx::before {
-	position: absolute;
-	left: 0;
-	font-size: 22px;
-	color: #ddd;
-	margin: 14px 18px;
-	border-right: 1px dashed #fff;
-	padding: 0px 10px 0 0px;
-	line-height: 30px;
-	height: 33px;
-    width:33px;
-	top: 0;
+    position: absolute;
+    left: 20px;
+    font-size: 20px;
+    color: #ddd;
+    line-height: 40px;
+    top: 0px;
+    color:#ff0;
+    text-shadow: 1px 1px 1px #555;
 }
 
 .ibx:hover * {
     border-color: rgb(255 255 255 / 50%);
-    transition: all 1s linear;
+    transition: all 0.4s linear;
 }
 
 
-.ibx:focus-within::before, .ibx:focus-within * {
-    color:#ffff00;
+.ibx:focus-within::before,
+.ibx:focus-within * {
+    color: #ffff00;
     border-color: #ff0;
-    transition: all 1s linear;
+    transition: all 0.4s linear;
+}
+
+.ibxg {
+    position: relative;
+    width: 325px;
+    margin: 30px auto;
+    text-align: center;
 }
 
 .ibx {
     position: relative;
     width: 325px;
-    margin: 15px auto;
+    margin: 30px auto;
     text-align: center;
 }
 
 .ibx label {
-    border: 2px solid #ffffff1a;
-    padding:4px 10px;
-    border-top:0;
-    border-radius: 0 0 7px 7px;
-    float: left;
-    margin-left:30px;
-    background: #ffffff14;
-    text-transform:uppercase;
+    position: absolute;
+    left: 0px;
+    top: -20px;
+    padding: 5px 0px;
+    text-transform: uppercase;
     font-size: 12px;
     color: #ff0;
+    z-index: 0;
+    line-height: 14px;
 }
 
 .ibx input {
-    color:#fff;
-	font-size: 18px;
-    line-height: 18px;
-	display: block;
-	width: calc(100% - 80px);
-	border: 2px solid #ffffff1a;
-	padding: 15px;
-	border-radius: 50px;
-	background: #ffffff14;
-	margin: 0 auto;
-	padding-left: 65px;
-    height: 26px;
-    text-indent: 15px;
+    color: #ddd;
+    display: block;
+    width: calc(100% - 80px);
+    border: 2px solid #ffffff1a;
+    border-radius: 0px 10px 10px;
+    background: #ffffff14;
+    margin: 0 auto;
+    padding: 0 40px;
+    height: 40px;
+    line-height: 40px;
+    text-indent: 12px;
+    font-size: 20px;
 }
 
-.ibx input::placeholder {
+.ibx.date {
+    display: inline-block;
+    width: auto;
+    margin-bottom: 0;
+}
+
+.ibx.date input {
+    padding: 0 10px 0 10px
+}
+
+.ibx.date input.month {
+    width: 70px;
+}
+
+.ibx.date input.day {
+    width: 70px;
+}
+
+.ibx.date input.year {
+    width: 100px;
+}
+
+
+.ibx.twin-select, .ibx.twin-select {
+    color: #ddd;
+    display: block;
+    border: 2px solid #ffffff1a;
+    border-radius: 0px 10px 10px;
+    background: #ffffff14;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    overflow: hidden;
+}
+
+.ibx.twin-select:hover, .ibx.twin-select:focus {
+    border-color: #ffff00;
+    box-shadow: ;
+}
+
+.ibx.twin-select .twin-btn {
+    text-align: center;
+    height: 40px;
+    line-height: 40px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.ibx.twin-select .twin-btn.selected {
+    background-color: gold;
+    color: green;
+}
+
+.ibx input::placeholder,
+.ibx textarea::placeholder {
     letter-spacing: 0px;
-    font-size: 16px;
+    font-size: 15px;
+    color: #fff;
 }
 
-.ibx input.valid {
-
-}
+.ibx input.valid {}
 
 .ibx input:invalid {
     border-color: red
 }
 
-.ibx input:hover {
-}
+.ibx input:hover {}
 
 .ibx input:focus {
     border-color: #ffff00;
     box-shadow: 0 0 20px rgba(255, 216, 7, 0.4);
+}
+
+.ibx select {
+    border: 2px solid #ffffff2a;
+    color: #fff !important;
+    background: #ffffff10;
+    border-radius: 0px 10px 10px;
+    display: block;
+    width: calc(100% + 4px);
+    padding-left: 50px;
+    height: 44px;
+}
+
+.ibx.dob select {
+    display: inline-block;
+    width: 30%;
+}
+
+.ibx select:hover,
+.ibx select:focus {
+    color: #ff0 !important;
+    border-color: #ff0 !important;
+}
+
+.ibx select option {}
+
+/* buttons */
+
+/* button wrapper */
+.bbx {
+    display: block;
+    text-align: center;
+}
+
+/* rounded button */
+.button {
+    margin: 15px 5px;
+    border: 2px solid rgb(255 255 255 / 10%);
+    position: relative;
+    background: transparent;
+    padding: 10px 20px;
+    border-radius: 30px;
+    text-align: center;
+    color: #fff;
+    font-size: 18px;
+    line-height: 22px;
+    cursor: pointer;
+    display: inline-block;
+}
+
+.button:active {
+    background: #ffff00ab
+}
+
+.button:hover {
+    border-color: rgb(255 255 255 / 50%);
+    transition: all 1s ease;
+    cursor: pointer;
+    color: #ffff00;
+}
+
+.button:focus {
+    background: #ffff007a;
+    color: #1E6011
+}
+
+
+/* styled icon button */
+
+.icon-btn {
+    display: inline-block !important;
+    border-radius: 0px 10px 10px;
+    height: 40px;
+    background: rgb(255 255 255 / 10%);
+    border: 1px solid rgb(255 255 255 / 20%);
+    overflow: hidden;
+    transition: all 0.5s ease;
+}
+
+.icon-btn:hover,
+.icon-btn:focus {
+    box-shadow: 0 0 50px #08765A;
+    border-color: #ffff00;
+    color: #ff0;
+}
+
+.icon-btn:hover span {
+    color: #ffff00;
+}
+
+.icon-btn span {
+    display: inline-block;
+    vertical-align: top;
+    background: rgb(255 255 255 / 10%)
+}
+
+.icon-btn span::before {
+    display: block;
+    height: 40px;
+    width: 40px;
+    text-align: center;
+    line-height: 40px;
+    border-right: 1px solid rgb(255 255 255 / 20%)
+}
+
+.icon-btn a {
+    display: inline-block;
+    padding: 0 20px !important;
+    line-height: 40px
+}
+
+
+/* messages */
+
+messages {
+    width: 325px;
+    margin: 10px auto;
+    display: grid;
+    text-align: center;
+    background: linear-gradient(1rad, transparent 25%, #ffffff11 50%, transparent 75%);
+    font-size: 16px;
+    line-height: 18px;
+    padding: 10px;
+}
+
+messages * {
+    display: block;
+    margin: 10px 20px;
+}
+
+/* animated elements */
+blink {
+    animation: typing 2s ease-in-out infinite;
 }

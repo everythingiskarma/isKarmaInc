@@ -21,7 +21,6 @@ require_once "methods/authenticator/trait-confirm-otp.php"; // provides trait Co
 /////////////////////////////////////////////////////////////////////////////////////////
 require_once "methods/authenticator/trait-logout.php"; // provides trait Logout
 
-
 class Authenticator extends Connect {
 
     //use Sessions; // provides method session()
@@ -166,8 +165,6 @@ class Authenticator extends Connect {
 
                 case 'logout':
                     // execute method logout() and create error response if result is false
-                    $this->uid = $_POST['uid'];
-
                     unset($_SESSION['loggedIn']);
                     session_destroy();
 
@@ -203,7 +200,7 @@ class Authenticator extends Connect {
             // no action directive recieved
         }
 
-    } // end method processData
+    } // end method authenticate
 
     // method to access success array
     public function getReport() {

@@ -1,6 +1,16 @@
 @keyframes typing {
-	0%,	50%, 100% {opacity: 0.2; transform: scale(0.6);}
-	25%, 75% {opacity: 1; transform: scale(1);}
+0%,
+	50%,
+	100% {
+		opacity: 0.2;
+		transform: scale(0.99);
+	}
+
+	25%,
+	75% {
+		opacity: 1;
+		transform: scale(1);
+	}
 }
 
 @keyframes searching {
@@ -8,6 +18,3 @@
 	100% {transform: rotate(360deg);}
 }
 
-blink {
-    animation: typing 2s ease-in-out infinite
-}

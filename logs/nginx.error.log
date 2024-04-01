@@ -1,0 +1,6 @@
+2024/04/01 07:36:51 [error] 1565#1565: *2293 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Uncaught Error: Call to undefined method Account::getDashboard() in /home/nashady/data/x10premium/public_html/api/account.php:44
+Stack trace:
+#0 /home/nashady/data/x10premium/public_html/api/account.php(25): Account->dashboard()
+#1 /home/nashady/data/x10premium/public_html/api/account.php(89): Account->__construct()
+#2 {main}
+  thrown in /home/nashady/data/x10premium/public_html/api/account.php on line 44" while reading response header from upstream, client: 127.0.0.1, server: iskarma.com, request: "POST /api/account.php HTTP/1.1", upstream: "fastcgi://unix:/run/php/php8.3-fpm.sock:", host: "iskarma.com", referrer: "https://iskarma.com/"

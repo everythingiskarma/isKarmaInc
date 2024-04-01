@@ -1,6 +1,6 @@
 @font-face {
-  font-family: 'z';
-  src: url('../../assets/fonts/nunito.ttf') format('truetype');
+	font-family: 'z';
+	src: url('../../assets/fonts/nunito.ttf') format('truetype');
 }
 
 html {
@@ -14,15 +14,18 @@ html {
 }
 
 html * {
-    font-family:z;
+	font-family: z;
 	outline: none;
-	scrollbar-width: none
+	scrollbar-width: none;
+	-webkit-appearance: none !important;
+	-moz-appearance: none !important;
+	appearance: none !important;
 }
 
 a {
 	color: #fff;
 	text-decoration: none;
-    cursor: pointer;
+	cursor: pointer;
 }
 
 ul {
@@ -34,26 +37,30 @@ ul {
 
 input {
 	border: none;
-	background-color: transparent
+	background-color: transparent;
 }
 
 /* Target autofilled input fields */
 input:-internal-autofill-selected,
 textarea:-internal-autofill-selected {
-    background: transparent !important;
-    background-color: transparent !important;
-    background-image: transparent !important;
+	background: transparent !important;
+	background-color: transparent !important;
+	background-image: none !important;
+	appearance: none !important;
+	color: #fff !important;
 }
 
 textarea {
-  display: block;
-  width: 600px;
-  min-height: 100px;
-  background: #000;
-  border:1px solid #555;
-  border-radius: 5px;
-  outline: none;
-  color: #fff; padding: 10px 50px
+	display: block;
+	background-color: #ffffff10;
+	min-height: 100px;
+	width: calc(100% - 100px);
+	border: 2px solid #ffffff1a;
+	padding: 0 40px;
+	border-radius: 5px;
+	outline: none;
+	color: #fff;
+	padding: 10px 50px
 }
 
 input:focus {
@@ -65,7 +72,7 @@ body {
 	padding: 0;
 	background-color: #222;
 	color: #fff;
-  position: relative;
+	position: relative;
 }
 
 main {
@@ -75,11 +82,16 @@ main {
 }
 
 hr {
-  border: none;
-  border-top: 1px solid rgb(255 255 255 / 10%);
+	border: none;
+	border-top: 1px solid rgb(255 255 255 / 10%);
 }
 
-h1,h2,h3,h4,h5,h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
 	display: block;
 	margin: 0;
 	padding: 0;
@@ -149,72 +161,70 @@ footer ul li h3 {
 }
 
 .grid about p {
-  margin-bottom: 10px;
-  padding: 0;
-  font-size: 15px
+	margin-bottom: 10px;
+	padding: 0;
+	font-size: 15px
 }
 
 .grid about h3 {
-  color:#025906;
-  line-height: 30px;
-  font-size: 15px
+	color: #025906;
+	line-height: 30px;
+	font-size: 15px
 }
 
 .grid37 {
-  display: grid;
-  grid-template-columns: 30% 70%;
-  grid-gap: 0;
-  font-size: 20px;
-  line-height: 24px;
+	display: grid;
+	grid-template-columns: 30% 70%;
+	grid-gap: 0;
+	font-size: 20px;
+	line-height: 24px;
 }
 
 .grid37 img {
-  width: 100%;
-  height: auto;
+	width: 100%;
+	height: auto;
 }
 
 .grid37 a {
-  overflow: hidden;
+	overflow: hidden;
 }
 
-.grid37 about  * {
-  padding: 0 0px;
-  display: block;
+.grid37 about * {
+	padding: 0 0px;
+	display: block;
 }
 
-a.clear, a.clear:hover, a.clear::before, a.clear:hover::before {padding: 0; background: none; height: auto; width: auto; display: inline; box-shadow: none; border-radius: 0; margin: 0}
-a:hover {color:#ffff00}
-
-.icon-btn {
-  display: inline-block !important;
-  border-radius: 4px 10px 4px 10px;
-  height: 40px;
-  background: rgb(255 255 255 / 10%);
-  border:1px solid rgb(255 255 255 / 20%);
-  overflow: hidden;
-  transition: all 0.5s ease;
+a.clear,
+a.clear:hover,
+a.clear::before,
+a.clear:hover::before {
+	padding: 0;
+	background: none;
+	height: auto;
+	width: auto;
+	display: inline;
+	box-shadow: none;
+	border-radius: 0;
+	margin: 0
 }
 
-.icon-btn:hover {
-  box-shadow: 0 0 50px #08765A;
-  border-color: #ffff00
+a:hover {
+	color: #ffff00
 }
-.icon-btn:hover span {color: #ffff00;}
-.icon-btn span {display: inline-block; vertical-align: top; background: rgb(255 255 255 / 10%)}
-.icon-btn span::before {display: block; height: 40px; width: 40px; text-align: center; line-height: 40px; border-right:1px solid rgb(255 255 255 / 20%)}
-.icon-btn a {display: inline-block; padding: 0 20px !important; line-height: 40px}
-
 
 /* input messages */
 
 #message {
-    font-size: 14px;
-    line-height: 14px;
+	display: block;
+	margin-top: 30px;
+	font-size: 14px;
+	line-height: 14px;
 }
+
 #message i {
-    display: block;
-    font-size: 14px;
-    line-height: 15px;
+	display: block;
+	font-size: 14px;
+	line-height: 15px;
 }
 
 /* reports notifications */
@@ -235,8 +245,8 @@ fixed.reports {
 }
 
 fixed.reports:hover {
-    background: linear-gradient(15deg, rgba(0, 127, 0, 0.95) 50%, rgba(0, 170, 153, 0.95) 100%);
-    transition: all 1s linear;
+	background: linear-gradient(15deg, rgba(0, 127, 0, 0.95) 50%, rgba(0, 170, 153, 0.95) 100%);
+	transition: all 1s linear;
 }
 
 #reports {
@@ -258,14 +268,14 @@ fixed.reports:hover {
 	left: -40px;
 	margin-top: -12px;
 	text-align: center;
-    text-shadow:0 1px 2px #003e04;
+	text-shadow: 0 1px 2px #003e04;
 }
 
-#reports > *.pre {
-    opacity:0.5
+#reports>*.pre {
+	opacity: 0.5
 }
 
-#reports > * {
+#reports>* {
 	display: grid;
 	padding: 10px;
 	border-left: 45px solid #ffffff07;
@@ -276,38 +286,38 @@ fixed.reports:hover {
 	border-top: 1px solid #00000010;
 }
 
-#reports > *:last-child {
-    border-bottom:none;
-    background: #00000030;
+#reports>*:last-child {
+	border-bottom: none;
+	background: #00000030;
 }
 
-#reports > *:hover {
-    background-color: #00000030;
-    opacity: 1;
+#reports>*:hover {
+	background-color: #00000030;
+	opacity: 1;
 }
 
 #reports in b::before {
-    color: #00ddff;
+	color: #00ddff;
 }
 
 #reports s b::before {
-    color: #00ff00;
+	color: #00ff00;
 }
 
 #reports e b::before {
-    color: #ff0000;
+	color: #ff0000;
 }
 
 #reports o b::before {
-    color: #ee9911;
+	color: #ee9911;
 }
 
 #filterReports {
-    position: fixed;
-    bottom: 60px;
-    left: 10px;
-    z-index: 99;
-    display: none;
+	position: fixed;
+	bottom: 60px;
+	left: 10px;
+	z-index: 99;
+	display: none;
 }
 
 #filterReports h2 {
@@ -329,59 +339,59 @@ fixed.reports:hover {
 }
 
 #filterReports icon::before {
-    line-height: 40px;
-    height: 40px;
-    text-align: center;
-    background: rgb(0 0 0 / 15%);
-    width: 40px;
-    display: block;
-    cursor: pointer;
-    border-radius: 0 8px 8px 0;
+	line-height: 40px;
+	height: 40px;
+	text-align: center;
+	background: rgb(0 0 0 / 15%);
+	width: 40px;
+	display: block;
+	cursor: pointer;
+	border-radius: 0 8px 8px 0;
 }
 
 #filterReports icon:hover::before {
-    background: rgb(0 0 0 / 30%);
+	background: rgb(0 0 0 / 30%);
 }
 
 #filterReports icon {
-    display: block;
-    position: absolute;
-    top:0;
-    right:0;
+	display: block;
+	position: absolute;
+	top: 0;
+	right: 0;
 }
 
 /* processing overlay spinner */
 
 #processing {
-    position: fixed;
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    height: 100%;
-    left: 0;
-    top: 0;
-    background: rgb(0 0 0 / 50%);
-    display: none;
-    z-index: 9
+	position: fixed;
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	height: 100%;
+	left: 0;
+	top: 0;
+	background: rgb(0 0 0 / 50%);
+	display: none;
+	z-index: 9
 }
 
 #processing span {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    animation: searching 1s linear infinite;
-    font-size: 50px;
-    line-height: 50px;
-    margin-top:-25px;
-    margin-left: -25px;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	animation: searching 1s linear infinite;
+	font-size: 50px;
+	line-height: 50px;
+	margin-top: -25px;
+	margin-left: -25px;
 }
 
 
 /* date and clock */
 
 .date-clock {
-    font-size: 12px;
-    color: #ffff00;
+	font-size: 12px;
+	color: #ffff00;
 }
 
 /* modal wrapper */
@@ -389,7 +399,7 @@ wrapper {
 	display: none;
 	position: fixed;
 	left: 0;
-    right:0;
+	right: 0;
 	top: 0;
 	width: 100%;
 	height: 100%;
@@ -400,6 +410,7 @@ wrapper {
 }
 
 load {
-    display: none
+	display: none
 }
+
 /* modal wrapper end */
