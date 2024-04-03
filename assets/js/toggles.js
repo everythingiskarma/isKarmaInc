@@ -79,7 +79,7 @@ $(document).on("click", ".icon-search.modal", function() {
 var notView = localStorage.getItem('notifications');
 if(notView === 'on') {
     $('#notifications').toggleClass("on icon-bell icon-bell-o");
-    $(".reports, #filterReports").animate({height:"toggle",width:"toggle",opacity:"toggle"}, 300);
+    $(".reporting").animate({opacity:"toggle"}, 300);
 }
 
 $(document).on("click", "#notifications", function() {
@@ -89,16 +89,20 @@ $(document).on("click", "#notifications", function() {
     newState = $("#notifications").hasClass("on") ? 'on' : 'off';
     localStorage.setItem('notifications', newState);
 
-    $(".reports, #filterReports").animate({height:"toggle",width:"toggle",opacity:"toggle"}, 300);
+    if (newState === 'on') {
+        $(".reporting").fadeIn();
+    } else {
+        $(".reporting").fadeOut();
+    }
 
-    var fixed = $("fixed.reports");
+    var scroll = $(".reports");
     delay(function() {
-        fixed.scrollTop(fixed.prop("scrollHeight"));
+        scroll.scrollTop(scroll.prop("scrollHeight"));
     }, 500);
 
 });
 
-$(document).on("click", "#filterReports icon", function() {
+$(document).on("click", "#x-reporting", function() {
     $("#notifications").trigger("click");
 });
 // ESCAPE TOGGLES: exit modal wrapper and return toggle icons to closed state

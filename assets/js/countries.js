@@ -1,5 +1,4 @@
 var countries = [
-	{ 'cn': 'Select Country', 'cc': 'AF', 'dc': 'Dial Code' },
 	{ 'cn': 'Afghanistan', 'cc': 'AF', 'dc': '+93' },
 	{ 'cn': 'Albania', 'cc': 'AL', 'dc': '+355' },
 	{ 'cn': 'Algeria', 'cc': 'DZ', 'dc': '+213' },

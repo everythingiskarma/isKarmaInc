@@ -6,7 +6,7 @@ trait GenerateOTP {
 
         $att = 0;
         // create new otp entry
-        $stmt = $this->connection->prepare("INSERT INTO otp (uid, otp, type, attempts) VALUES (?, ?, ?, ?) ON DUPLICATE KEY UPDATE otp = VALUES(otp), type = VALUES(type), attempts = VALUES(attempts)");
+        $stmt = $this->connection->prepare("INSERT INTO otp (uid, otp, attempts) VALUES (?, ?, ?) ON DUPLICATE KEY UPDATE otp = VALUES(otp), attempts = VALUES(attempts)");
 
         if(!$stmt) { // failed to prepare statement
             // create error report
@@ -22,7 +22,7 @@ trait GenerateOTP {
             return false;
         }
         // continue to prepare statement
-        $stmt->bind_param('siii', $this->uid, $this->otp, $this->otpType, $att);
+        $stmt->bind_param('sii', $this->uid, $this->otp, $att);
         if(!$stmt) { // failediskarmac_udbhav to bind parameters
             // create error report
             $this->report[] = array(

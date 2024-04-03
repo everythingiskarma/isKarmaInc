@@ -1,7 +1,6 @@
 <?php
 trait CheckGatekeeperRegistration {
 
-
     public function checkGatekeeperRegistration() {
 
         $this->hasGatepass = false;

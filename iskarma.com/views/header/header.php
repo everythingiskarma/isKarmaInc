@@ -1,22 +1,20 @@
 <toggles title="show / hide  bar"></toggles>
-
 <ul id="togglebar">
-	<li view="account" class="icon-user modal right" title="manage your account">
-	<li view="sidebar" class="icon-th-list" title="display the sidebar">
-	<li view="search" class="icon-search modal" title="Search anything on this site...!">
-	<li id="notifications" view="notifications" class="icon-bell-o right" title="view system notifications and messages">
-	<li view="write" class="icon-pencil" title="write a new post/article">
-	<li id="efs" class="icon-fs" title="enter/exit full screen mode">
+  <?php require_once 'iskarma.com/views/header/togglebar.php'; ?>
 </ul>
-
 <navbar>
-	<ul>
-		<li id="activities"><h2>Activities</h2>
-		<li id="media"><h2>Media</h2>
-		<li id="helpDesk"><h2>HelpDesk</h2>
-		<li id="contact"><h2>Contact</h2>
-		<li id="about"><h2>About</h2>
-	</ul>
+  <ul>
+    <li id="activities">
+      <h2>Activities</h2>
+    <li id="media">
+      <h2>Media</h2>
+    <li id="helpDesk">
+      <h2>HelpDesk</h2>
+    <li id="contact">
+      <h2>Contact</h2>
+    <li id="about">
+      <h2>About</h2>
+  </ul>
 </navbar>
 
 <nav>
@@ -107,7 +105,7 @@
     </li>
   </ul>
   <ul class="contact">
-  	<li id="slideQrCode">
+    <li id="slideQrCode">
       <a class="icon-qr" title="Scan QR to get our Contact on your device">
         <title>Scan QR</title>
       </a>

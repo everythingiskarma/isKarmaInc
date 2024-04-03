@@ -37,7 +37,62 @@ $(document).on("input", ".ibx.date input", function (e) {
 
 /* twin select buttons */
 
-$(document).on("click", ".twin-select .twin-btn", function () {
+$(document).on("keydown", ".space", function (e) {
+	if (e.which === 32 || e.which === 13) {
+		e.preventDefault();
+		$(this).click();
+	}
+});
+
+$(document).on("click", ".twin-btn", function () {
 	$(this).siblings().removeClass("selected");
 	$(this).addClass("selected");
+});
+
+/* selection filter */
+$(document).on("keyup", ".selection-filter", function () {
+	var input = $(this).val().toLowerCase();
+	var selection = $(this).parent().next().children("li");
+	if (input.length > 0) {
+		selection.each(function () {
+			var xt = $(this).text().toLowerCase();
+			if (xt.includes(input)) {
+				$(this).slideDown();
+			} else {
+				$(this).slideUp();
+			}
+		});
+	} else if (input.length < 1) {
+		selection.each(function () {
+			$(this).slideDown();	
+		});
+	}
+});
+
+/* close selection modal */
+$(document).on("click", ".close-selection", function () {
+	$(".ibx-selection").slideUp();
+});
+
+
+/* country select menu */
+$(document).on("click", "#country", function () {
+	$("#countries").fadeIn();
+	$(".selection-filter").focus();
+});
+
+$(document).on("click", "#countries li", function () {
+	$(this).addClass("selected").siblings().removeClass("selected");
+	var dialCode = $(this).attr("dc");
+	var countryCode = $(this).attr("cc");
+	var countryName = $(this).attr("cn");
+	$("#countries").slideUp();
+	$("#country").attr({
+		"dialCode": dialCode,
+		"countryCode": countryCode,
+		"countryName": countryName
+	});
+	$("#country").text(countryName);
+	$("#phone").focus();
+	$(".dialCode").text(dialCode);
 });

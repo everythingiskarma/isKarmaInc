@@ -14,3 +14,47 @@ function processRequest(
     error: errorCallback // to be defined in the click event handler
   });
 }
+
+function successCallback(report) {
+  $("#reports > *").addClass('pre');
+  if (Array.isArray(report) && report.length > 0) {
+    report.forEach((obj, index) => {
+      switch (true) {
+        case obj.hasOwnProperty('loggedOut'):
+        case obj.hasOwnProperty('loggedIn'):
+          loadAccount();
+          break;
+        case obj.hasOwnProperty('onBoard'):
+          loadOnboarding(obj);
+          break;
+        case obj.hasOwnProperty('getDashboard'):
+          loadDashboard();
+          break;
+        case obj.hasOwnProperty('authOTP'):
+          loadOTP(obj);
+          break;
+      }
+
+      setTimeout(() => {
+        if (obj.hasOwnProperty('message')) {
+          if (!$("#notifications").hasClass("on")) {
+            $("#notifications").trigger("click");
+          }
+          var reports = $(".reports");
+          var msg = obj.message;
+          reports.append(msg);
+          var scroll = $(".reports");
+          scroll.scrollTop(scroll.prop("scrollHeight"));
+        }
+      }, 500 * index);
+    });
+  } else {
+    console.error("invalid response format: Missing report data!");
+  }
+  $("#processing").fadeOut();
+}
+
+function errorCallback(xhr, status, error) {
+  var errorMessage = 'Error occurred while processing the request. Please try again later.';
+  console.error('AJAX error:', error);
+}

@@ -87,19 +87,17 @@
       </small>
     </center>
   </footer>
-  <common>
-    <fixed class="reports">
-      <center>Welcome to isKarma</center>
-      <div id="reports"></div>
-    </fixed>
-    <div id="filterReports">
-      <h2>
-        <span class="icon-not-on"></span>
-        Notifications
-        <icon class="icon-close"></icon>
+  <div class="reporting">
+    <div class="reports">
+      <in><b class="icon-home"></b><i>Welcome to isKarma</i></in>
+    </div>
+    <div class="reports-grid">
+      <div class="ib icon-search"></div>
+      <input placeholder="Filter Notifications">
+      <div id="x-reporting" class="ib icon-close"></div>
       </h2>
     </div>
-  </common>
+  </div>
 </body>
 
 </html>

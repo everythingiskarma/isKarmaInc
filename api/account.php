@@ -52,6 +52,7 @@ class Account extends Connect
 							'result' => false,
 							'message' => '<e><b class="icon-error"></b>Onboarding pending!</e>',
 							'resolution' => 'complete-onboarding',
+							'step' => $this->onBoardingStep,
 							'onBoard' => ''
 						);
 						return false;

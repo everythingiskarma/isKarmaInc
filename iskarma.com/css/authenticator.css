@@ -17,17 +17,9 @@ account {
     text-align: center;
 }
 
-#otp {
-    text-indent: 18px;
-    letter-spacing: 24px
-}
-
-
-#login.button,
-#confirm.button {
+#login,
+#confirm {
     display: none;
-    max-width:120px;
-    margin: 15px auto;
 }
 
 #cancel.button,

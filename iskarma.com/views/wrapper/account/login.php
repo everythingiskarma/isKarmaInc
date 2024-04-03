@@ -12,5 +12,9 @@
     <input type="email" id="email" placeholder="Please enter your email address" autofocus autocomplete="off" value="">
     <label>email</label>
 </div>
-<div id="login" class="button" tabindex="0">Send OTP</div>
+<div class="bbx space" id="login" tabindex="0">
+    <div class="icon-btn">
+        <span class="icon-right"></span><a class="clear">Send OTP</a>
+    </div>
+</div>
 <messages></messages>
