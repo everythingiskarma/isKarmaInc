@@ -155,7 +155,7 @@ class Authenticator extends Connect {
                             'api' => 'Authenticator',
                             'action' => 'confirm-otp',
                             'result' => true,
-                            'message' => '<s><b class="icon-done-all"></b>OTP has been successfully confirmed. You are now logged in</s>',
+                            //'message' => '<s><b class="icon-done-all"></b>OTP has been successfully confirmed. You are now logged in</s>',
                             'advice' => 'show-account-dashboard'
                         );
                         return true;
@@ -184,7 +184,7 @@ class Authenticator extends Connect {
                             'api' => 'Authenticator',
                             'action' => 'logout',
                             'loggedOut' => true,
-                            'message' => '<s><b class="icon-exit"></b>You have been successfully logged out!</s>',
+                            'message' => '<e><b class="icon-exit"></b>You have been successfully logged out!</e>',
                             'advice' => 'reload account section'
                         );
                         return true;

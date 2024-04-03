@@ -42,36 +42,21 @@ class Account extends Connect
 			switch ($this->action) {
 				case 'dashboard':
 					// execute method getDashboard and create success/error report based on the result
-					$this->getDashboard();
-					if ($this->onBoard === false) {
-						// onboarding is not complete
-						// create error report
-						$this->report[] = array(
-							'api' => 'Account',
-							'action' => 'dashboard',
-							'result' => false,
-							'message' => '<e><b class="icon-error"></b>Onboarding pending!</e>',
-							'resolution' => 'complete-onboarding',
-							'step' => $this->onBoardingStep,
-							'onBoard' => ''
-						);
-						return false;
-					} else {
-						// onboarding completed show dashboard
-						// create success report
-						$this->report[] = array(
-							'api' => 'Account',
-							'action' => 'dashboard',
-							'result' => true,
-							//'message' => '<s><b class="icon-done-all"></b>Onboarding completed!</s>',
-							'advice' => 'onboarding completed',
-							'getDashboard' => ''
-						);
-						return false;
-					}
-					// code...
+					$this->getFullDashboard();
 					break;
-
+				case 'step1':
+					// save step1 post data and go to step 2
+					$this->onBoardStep1();
+					break;
+				case 'step1':
+					// save step2 post data and go to step 3
+					$this->onBoardStep2();
+					break;
+				case 'step3':
+					// save step3 post data and go to dashboard
+					$this->onBoardStep3();
+					break;
+									
 				default:
 					// code
 					break;

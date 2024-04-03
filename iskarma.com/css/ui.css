@@ -55,8 +55,8 @@
 .ibx label {
     position: absolute;
     left: 0px;
-    top: -20px;
-    padding: 5px 0px;
+    top: -15px;
+    padding: 0px;
     text-transform: uppercase;
     font-size: 11px;
     color: #ddd;
@@ -67,12 +67,14 @@
 
 .ibx::before {
     position: absolute;
-    left: 10px;
+    left: 2px;
     font-size: 20px;
     color: #ddd;
     line-height: 40px;
-    top: 1px;
-    width: 30px;
+    top: 2px;
+    width: 40px;
+    background: #07a555;
+    border-radius: 0 0 0 10px;
 }
 
 .ibx input {
@@ -88,16 +90,23 @@
     line-height: 40px;
     font-size: 20px;
 }
-
 .ibx .dialCode {
     position: absolute;
-    left: 50px;
-    line-height: 44px;
+    left: 42px;
+    line-height: 40px;
+    background: #07a555;
+    border-radius: 0;
+    top: 2px;
+    width: 45px;
+    text-align: right;
+    font-size: 18px;
+    padding-right: 15px;
 }
 
-.ibx input.phone {
+.ibx input.mobile {
     padding-left: 100px;
     width: calc(100% - 114px);
+    text-indent: 10px;
 }
 
 .ibx.date,
@@ -475,7 +484,7 @@ messages * {
 }
 
 .reports e b::before {
-    color: #ff0000;
+    color: #ff0123;
 }
 
 .reports o b::before {

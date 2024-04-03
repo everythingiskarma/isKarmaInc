@@ -5,8 +5,10 @@ toggles {
 	top: 0px;
 }
 
-#togglebar {
+togglebar {
 	display: none;
+}
+#togglebar {
 	padding-right:50px;
 }
 

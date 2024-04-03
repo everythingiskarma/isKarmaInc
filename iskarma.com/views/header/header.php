@@ -1,7 +1,7 @@
 <toggles title="show / hide  bar"></toggles>
-<ul id="togglebar">
+<togglebar>
   <?php require_once 'iskarma.com/views/header/togglebar.php'; ?>
-</ul>
+</togglebar>
 <navbar>
   <ul>
     <li id="activities">

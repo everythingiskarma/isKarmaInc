@@ -1,4 +1,4 @@
-<img class="sidebar-logo" src="iskarma.com/logo-iskarma-com.png" />
+<img class="sidebar-logo" src="iskarma.com/logo-iskarma-com.png" alt="isKarma Inc sidebar logo" />
 <ul>
 	<li id="home">
 	  <span class="icon-home"></span>

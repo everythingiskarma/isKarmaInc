@@ -2,13 +2,13 @@
 var toggleState = localStorage.getItem('toggleState');
 if(toggleState === 'on') {
     $('toggles').addClass("icon-toggle-on");
-    $("#togglebar").slideDown();
+    $("togglebar").slideDown();
 } else {
     $("toggles").addClass("icon-toggle-off");
 }
 // show/hide toggles click event handler
 $(document).on("click", "toggles", function() {
-    $("#togglebar").animate({height:"toggle"});
+    $("togglebar").animate({height:"toggle"});
     $(this).toggleClass("icon-toggle-on icon-toggle-off");
     newState = $(this).hasClass("icon-toggle-on") ? 'on' : 'off';
     localStorage.setItem('toggleState', newState);
@@ -23,7 +23,7 @@ $(document).on("click", "esc", function() {
 });
 
 // togglebar modals click event handler
-$(document).on("click", "#togglebar li.modal", function() {
+$(document).on("click", "togglebar li.modal", function() {
     $("wrapper, #processing").fadeIn();
     var view = $(this).attr('view');
     $(this).addClass("loaded");
@@ -36,7 +36,7 @@ $(document).on("click", "#togglebar li.modal", function() {
 
 // show open modals on reload
 function reloadModal() {
-    $("#togglebar li.modal").each(function() {
+    $("togglebar li.modal").each(function() {
         var view = $(this).attr("view");
         var viewState = localStorage.getItem(view);
         if(viewState === 'on') {

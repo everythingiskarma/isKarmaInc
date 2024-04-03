@@ -15,7 +15,7 @@
 		<div class="ibxg grid-b">
 			<div class="ibx name">
 				<label for="firstName">first name *</label>
-				<input class="firstname" name="firstName" id="firstname" type="text" placeholder="Enter first name" tabindex="0" autofocus>
+				<input class="firstname" name="firstName" id="firstname" type="text" placeholder="Enter first name" tabindex="0" autofocus autocomplete="off">
 			</div>
 
 			<div class="ibx name">
@@ -25,7 +25,7 @@
 		</div>
 		<div class="ibx icon-sphere">
 			<label>location *</label>
-			<div class="space selector" id="country" tabindex="0">Select Country ( Dial Code )</div>
+			<div class="space selector" id="country" countrycode="" countryname="" dialcode="" tabindex="0">Select Country ( Dial Code )</div>
 		</div>
 
 		<div id="countries" class="ibx-selection">
@@ -39,11 +39,11 @@
 		<div class="ibx icon-phone">
 			<label>mobile *</label>
 			<div class="dialCode">+</div>
-			<input class="phone" id="phone" type="text" placeholder="Enter phone number here" tabindex="0">
+			<input class="mobile" id="mobile" type="text" placeholder="Enter phone number here" tabindex="0">
 		</div>
-		<hr />
+		<hr/>
 		<div class="bbx">
-			<div class="icon-btn" tabindex="0">
+			<div class="space icon-btn" id="step1" tabindex="0">
 				<span class="icon-right"></span><a class="clear">Continue</a>
 			</div>
 		</div>
@@ -128,16 +128,6 @@
 		</div>
 	</li>
 </ul>
-
-<ul id="" class="toolbar" style="display: none;">
-	<div class="bbx" id="logout" tabindex="0">
-		<div class="icon-btn">
-			<span class="icon-exit"></span>
-			<a class="clear">Logout</a>
-		</div>
-	</div>
-</ul>
-
 
 <script>
 	$(document).ready(function() {

@@ -24,11 +24,12 @@ function successCallback(report) {
         case obj.hasOwnProperty('loggedIn'):
           loadAccount();
           break;
-        case obj.hasOwnProperty('onBoard'):
-          loadOnboarding(obj);
+        case obj.hasOwnProperty('onBoarding'):
+          onBoarding(obj);
           break;
-        case obj.hasOwnProperty('getDashboard'):
-          loadDashboard();
+        case obj.hasOwnProperty('dashboard'):
+          // if onboarding is complete loads full dashboard else redirects to onBoarding
+          dashboard(obj);
           break;
         case obj.hasOwnProperty('authOTP'):
           loadOTP(obj);

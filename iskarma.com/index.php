@@ -9,24 +9,24 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Welcome to isKarma</title>
-  <link rel="stylesheet" type="text/css" href="assets/icomoon/style.css">
-  <link rel="stylesheet" type="text/css" href="iskarma.com/css/html5.css">
-  <link rel="stylesheet" type="text/css" href="iskarma.com/css/ui.css">
-  <link rel="stylesheet" type="text/css" href="iskarma.com/web.css">
+  <link rel="stylesheet" type="text/css" href="assets/icomoon/style.css" charset="utf-8">
+  <link rel="stylesheet" type="text/css" href="iskarma.com/css/html5.css" charset="utf-8">
+  <link rel="stylesheet" type="text/css" href="iskarma.com/css/ui.css" charset="utf-8">
+  <link rel="stylesheet" type="text/css" href="iskarma.com/web.css" charset="utf-8">
   <!-- initialize the css for api - account -->
-  <link rel="stylesheet" type="text/css" href="iskarma.com/css/account.css">
+  <link rel="stylesheet" type="text/css" href="iskarma.com/css/account.css" charset="utf-8">
   <!-- initialize the css for api - authenticator -->
-  <link rel="stylesheet" type="text/css" href="iskarma.com/css/authenticator.css">
-  <link rel="stylesheet" type="text/css" href="iskarma.com/css/animations.css">
-  <link rel="stylesheet" type="text/css" href="iskarma.com/css/article.css">
-  <link rel="stylesheet" type="text/css" href="iskarma.com/css/carousel.css">
-  <link rel="stylesheet" type="text/css" href="iskarma.com/css/header.css">
-  <link rel="stylesheet" type="text/css" href="iskarma.com/css/pages.css">
-  <link rel="stylesheet" type="text/css" href="iskarma.com/css/search.css">
-  <link rel="stylesheet" type="text/css" href="iskarma.com/css/sidebar.css">
-  <link rel="stylesheet" type="text/css" href="iskarma.com/css/toggles.css">
-  <link rel="stylesheet" type="text/css" href="iskarma.com/css/welcome.css">
-  <link rel="icon" type="image/ico" href="iskarma.com/favicon.ico">
+  <link rel="stylesheet" type="text/css" href="iskarma.com/css/authenticator.css" charset="utf-8">
+  <link rel="stylesheet" type="text/css" href="iskarma.com/css/animations.css" charset="utf-8">
+  <link rel="stylesheet" type="text/css" href="iskarma.com/css/article.css" charset="utf-8">
+  <link rel="stylesheet" type="text/css" href="iskarma.com/css/carousel.css" charset="utf-8">
+  <link rel="stylesheet" type="text/css" href="iskarma.com/css/header.css" charset="utf-8">
+  <link rel="stylesheet" type="text/css" href="iskarma.com/css/pages.css" charset="utf-8">
+  <link rel="stylesheet" type="text/css" href="iskarma.com/css/search.css" charset="utf-8">
+  <link rel="stylesheet" type="text/css" href="iskarma.com/css/sidebar.css" charset="utf-8">
+  <link rel="stylesheet" type="text/css" href="iskarma.com/css/toggles.css" charset="utf-8">
+  <link rel="stylesheet" type="text/css" href="iskarma.com/css/welcome.css" charset="utf-8">
+  <link rel="icon" type="image/ico" href="iskarma.com/favicon.ico" charset="utf-8">
   <script src="assets/js/jquery.js"></script>
   <script>
     $(document).ready(function() {
