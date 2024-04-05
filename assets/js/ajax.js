@@ -62,5 +62,5 @@ function errorCallback(xhr, status, error) {
 
 function loadAccount() {
   $("load").load('/iskarma.com/views/wrapper/account.php');
-  reloadTogglebar();
+  $("togglebar").load('/iskarma.com/views/header/togglebar.php');
 }

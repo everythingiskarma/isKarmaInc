@@ -1,8 +1,8 @@
 widgets
-- alarm / reminders
+- alarms / reminders
 - tasks
 - calendar
-- friend requests 
+- friend requests
 - messages
 - meetings
 - widget suggestions
@@ -11,14 +11,14 @@ widgets
 tools (free + premium)
 - user management
 - group management
-- newsletter management 
+- newsletter management
 - email campaigns
 - social networking
 - product management
-- order management 
+- order management
 - shipping management
 - returns management
-- payment gateway management 
+- payment gateway management
 - content management
 - employee management
 - ticket management
@@ -36,10 +36,7 @@ tools (free + premium)
 - wallet management
 - 
 
-
-
-
-shortcuts 
+shortcuts
 - create article
 - create product
 - create task
@@ -50,8 +47,7 @@ shortcuts
 - create email campaigns
 - 
 
-
-statistics 
+statistics
 - visitors
 - orders
 - users

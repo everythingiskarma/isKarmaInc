@@ -1,14 +1,25 @@
 /* load togglebar */
-function reloadTogglebar() {
-    $("togglebar").load("iskarma.com/views/header/togglebar.php", function () {
-        var notView = localStorage.getItem('notifications'); // checks if notifications were turned on before reload
-        if (notView === 'on') { // if it was on it toggles class to set it to on
-            $('#notifications').removeClass("icon-bell-o").addClass("on icon-bell");
-            $(".reporting").fadeIn();
+$("togglebar").load("iskarma.com/views/header/togglebar.php", function () {
+    var notView = localStorage.getItem('notifications'); // checks if notifications were turned on before reload
+    if (notView === 'on') { // if it was on it toggles class to set it to on
+        $('#notifications').removeClass("icon-bell-o").addClass("on icon-bell");
+        $(".reporting").fadeIn();
+    }
+   // reloads any modals that were open before reload
+   reloadModal();
+});
+
+// show open modals on reload
+function reloadModal() {
+    $("togglebar li.modal").each(function () {
+        var view = $(this).attr("view");
+        var viewState = localStorage.getItem(view); // checks if the toggle was on before reload
+        if (viewState === 'on') { // if it was on it triggers a click after reload to turn it on again
+            $(this).trigger("click");
         }
     });
 }
-reloadTogglebar();
+
 
 // show/hide toggles startup
 var toggleState = localStorage.getItem('toggleState');
@@ -28,7 +39,7 @@ $(document).on("click", "toggles", function() {
 
 // exit modal and update localStorage
 $(document).on("click", "esc", function() {
-    $("wrapper, load").animate({opacity: "toggle"}, 300);
+    $("wrapper, load").fadeOut();
     var view = $(".loaded").attr('view');
     localStorage.setItem(view, 'off');
     $(".loaded").removeClass("loaded");
@@ -36,27 +47,32 @@ $(document).on("click", "esc", function() {
 
 // togglebar modals click event handler
 $(document).on("click", "togglebar li.modal", function() {
-    $("wrapper, #processing").slideDown();
+    $("wrapper, #processing").fadeIn();
     var view = $(this).attr('view');
     $(this).addClass("loaded");
     $("load").load("/iskarma.com/views/wrapper/" + view + ".php", function() {
-        $(this).animate({height:"toggle"}, 300);
+        $(this).show();
         localStorage.setItem(view, 'on');
         $("#processing").fadeOut();
+        if (view === 'account') {
+            $("#email").focus();
+        }
     });
 });
 
-// show open modals on reload
-function reloadModal() { 
-    $("togglebar li.modal").each(function() {
-        var view = $(this).attr("view");
-        var viewState = localStorage.getItem(view); // checks if the toggle was on before reload
-        if(viewState === 'on') { // if it was on it triggers a click after reload to turn it on again
-            $(this).trigger("click");
-        }
-    });
-}
-reloadModal();
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 // close article and reopen sidebar
 $(document).on("click", "#articleToggle", function() {

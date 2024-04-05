@@ -15,7 +15,6 @@ function dashboard() {
 
 
 function getDashboard() {
-    $("#processing").fadeIn();
     var requestData = {
         api: 'account', // indicates which api / database to use
         action: 'dashboard', // indicates which api action to perform

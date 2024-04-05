@@ -1,8 +1,10 @@
+<?php
+	session_name("everythingIsKarma");
+	session_start();
+?>
 <input id="uid" type="hidden" value="<?php if (isset($_SESSION['uid'])) {echo base64_encode($_SESSION['uid']);} ?>">
 <ul id="togglebar">
 	<?php
-	session_name("everythingIsKarma");
-	session_start();
 	if (isset($_SESSION['loggedIn'])) { ?>
 		<li id="logout" class="icon-power right" title="logout from your account"></li>
 		<li view="write" class="icon-pencil" title="write a new post/article"></li>

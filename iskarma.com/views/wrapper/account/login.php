@@ -9,8 +9,8 @@
 </div>
 <h1>Sign in / Register</h1>
 <div class="ibx icon-mail">
-    <input type="email" id="email" placeholder="Please enter your email address" autofocus autocomplete="off" value="">
     <label>email</label>
+    <input type="email" id="email" placeholder="Please enter your email address" autofocus autocomplete="off" value="">
 </div>
 <div class="bbx space" id="login" tabindex="0">
     <div class="icon-btn">
