@@ -1,3 +1,5 @@
 
-/logs
-/ssl
+logs/
+phpmyadmin/
+
+logs/nginx.access.log
