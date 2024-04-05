@@ -22,7 +22,7 @@ function successCallback(report) {
       switch (true) {
         case obj.hasOwnProperty('loggedOut'):
         case obj.hasOwnProperty('loggedIn'):
-          loadAccount();
+          loadAccount(obj);
           break;
         case obj.hasOwnProperty('onBoarding'):
           onBoarding(obj);
@@ -62,5 +62,5 @@ function errorCallback(xhr, status, error) {
 
 function loadAccount() {
   $("load").load('/iskarma.com/views/wrapper/account.php');
-  $("togglebar").load('/iskarma.com/views/header/togglebar.php');
+  reloadTogglebar();
 }

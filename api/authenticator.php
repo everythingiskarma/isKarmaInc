@@ -83,7 +83,8 @@ class Authenticator extends Connect {
                             'authOTP' => true,
                             'otpId' => $this->otpId,
                             'otpType' => $this->otpType,
-                            'uid' => $this->uid
+                            'uid' => $this->uid,
+                            'email' => $this->email
                         );
                         return true;
                     }
@@ -115,12 +116,13 @@ class Authenticator extends Connect {
                             'api' => 'Authenticator',
                             'action' => 'resend-otp',
                             'result' => true,
-                            'message' => '<s><b class="icon-done-all"></b>OTP (One Time Password) has been  successfully resent. Please check your email inbox. In case it ended up in your spam/junk folder, you should mark it as not spam to recieve it in your inbox the next time!
+                            'message' => '<s><b class="icon-done-all"></b>OTP successfully RESENT. Please check your email inbox. In case it ended up in your spam/junk folder, you should mark it as not spam to recieve it in your inbox the next time!
                             </s>',
                             'authOTP' => true,
                             'otpId' => $this->otpId,
                             'otpType' => $this->otpType,
-                            'uid' => $this->uid
+                            'uid' => $this->uid,
+                            'email' => $this->email
                         );
                         return true;
                     }

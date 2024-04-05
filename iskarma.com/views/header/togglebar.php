@@ -1,6 +1,4 @@
-<input id="uid" type="hidden" value="<?php if (isset($_SESSION['uid'])) {
-											echo base64_encode($_SESSION['uid']);
-										} ?>">
+<input id="uid" type="hidden" value="<?php if (isset($_SESSION['uid'])) {echo base64_encode($_SESSION['uid']);} ?>">
 <ul id="togglebar">
 	<?php
 	session_name("everythingIsKarma");

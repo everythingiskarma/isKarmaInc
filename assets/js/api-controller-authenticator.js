@@ -15,7 +15,7 @@ $(document).on("click", "#login", function (event) {
 // # RESEND OTP
 $(document).on("click", "#resend", function (event) {
     $("#processing").fadeIn();
-    var email = $("#otp").attr("email");
+    var email = $("#confirm").attr("email");
     var requestData = {
         api: 'authenticator', // indicates which database to use
         action: 'resendOTP', // indicates which api action to perform
@@ -189,15 +189,17 @@ function loadOTP(obj) {
     var otpId = obj.otpId;
     var otpType = obj.otpType;
     var uid = obj.uid;
+    var email = obj.email;
     $("load").load('/iskarma.com/views/wrapper/account/otp.php', function () {
         $("#confirm").attr({
             "otptype": otpType,
             "otpid": otpId,
-            "uid": uid
+            "uid": uid,
+            "email": email
         });
         $("#otp").focus();
     });
-    resendOTPTimer(90);
+    resendOTPTimer(120);
 }
 
 

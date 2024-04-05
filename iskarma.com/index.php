@@ -32,12 +32,12 @@
     $(document).ready(function() {
       $.getScript('assets/js/ajax.js');
       // initialize the ajax controller for api - authenticator
-      $.getScript('assets/js/api-controller-authenticator.js'); 
+      $.getScript('assets/js/api-controller-authenticator.js');
       $.getScript('assets/js/api-controller-account.js');
       $.getScript('assets/js/api-controller-static-content.js');
       $.getScript('assets/js/api-controller-static-search.js');
-      $.getScript('assets/js/countries.js'); 
-      $.getScript('assets/js/onboarding.js'); 
+      $.getScript('assets/js/countries.js');
+      $.getScript('assets/js/onboarding.js');
       $.getScript('assets/js/html5.js');
       $.getScript('assets/js/ui.js');
       $.getScript('assets/js/copy-element-content.js');
@@ -61,7 +61,21 @@
     <?php require_once 'iskarma.com/views/header/header.php'; ?>
     <wrapper>
       <esc class="icon-close"></esc>
-      <div id="processing"><span class="icon-spinner"></span></div>
+      <div id="processing">
+        <!--
+          <logo class="loading">
+            <one class="dot no-dots"></one>
+            <two class="dot no-dots"></two>
+            <three class="dot no-dots"></three>
+            <four class="dot no-dots"></four>
+            <five></five>
+            <six></six>
+            <seven></seven>
+            <eight></eight>
+          </logo>
+        -->
+        <span class="icon-spinner"></span>
+      </div>
       <load></load>
     </wrapper>
   </header>

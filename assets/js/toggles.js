@@ -1,3 +1,15 @@
+/* load togglebar */
+function reloadTogglebar() {
+    $("togglebar").load("iskarma.com/views/header/togglebar.php", function () {
+        var notView = localStorage.getItem('notifications'); // checks if notifications were turned on before reload
+        if (notView === 'on') { // if it was on it toggles class to set it to on
+            $('#notifications').removeClass("icon-bell-o").addClass("on icon-bell");
+            $(".reporting").fadeIn();
+        }
+    });
+}
+reloadTogglebar();
+
 // show/hide toggles startup
 var toggleState = localStorage.getItem('toggleState');
 if(toggleState === 'on') {
@@ -24,7 +36,7 @@ $(document).on("click", "esc", function() {
 
 // togglebar modals click event handler
 $(document).on("click", "togglebar li.modal", function() {
-    $("wrapper, #processing").fadeIn();
+    $("wrapper, #processing").slideDown();
     var view = $(this).attr('view');
     $(this).addClass("loaded");
     $("load").load("/iskarma.com/views/wrapper/" + view + ".php", function() {
@@ -35,11 +47,11 @@ $(document).on("click", "togglebar li.modal", function() {
 });
 
 // show open modals on reload
-function reloadModal() {
+function reloadModal() { 
     $("togglebar li.modal").each(function() {
         var view = $(this).attr("view");
-        var viewState = localStorage.getItem(view);
-        if(viewState === 'on') {
+        var viewState = localStorage.getItem(view); // checks if the toggle was on before reload
+        if(viewState === 'on') { // if it was on it triggers a click after reload to turn it on again
             $(this).trigger("click");
         }
     });
@@ -72,11 +84,6 @@ $(document).on("click", ".icon-search.modal", function() {
 
 // notifications toggle
 
-var notView = localStorage.getItem('notifications');
-if(notView === 'on') {
-    $('#notifications').toggleClass("on icon-bell icon-bell-o");
-    $(".reporting").animate({opacity:"toggle"}, 300);
-}
 
 $(document).on("click", "#notifications", function() {
 

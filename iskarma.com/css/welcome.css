@@ -8,6 +8,11 @@ logo {
 	margin: 20px auto;
 	z-index: 0;
 }
+logo.loading {
+	top:50%;
+	margin-top:-128px;
+	transform: scale(0.5);
+}
 
 logo * {
 	display: block;
