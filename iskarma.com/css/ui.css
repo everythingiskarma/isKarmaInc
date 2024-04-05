@@ -35,7 +35,7 @@
 }
 
 .ibxg.grid-b .icon-btn {
-    width: 90%;
+    width: 96%;
     display: grid;
     grid-template-columns: 40px calc(100% - 40px);
     margin: 0 auto;
@@ -74,28 +74,50 @@
     top: 2px;
     width: 40px;
     background: #07a555;
-    border-radius: 0 0 0 10px;
+    border-radius: 0 10px;
 }
 
 .ibx input {
     color: #ddd;
     display: block;
-    width: calc(100% - 60px);
+    width: calc(100% - 70px);
     border: 2px solid #ffffff1a;
     border-radius: 0px 10px 10px;
     background: #ffffff14;
     margin: 0 auto;
-    padding: 0 10px 0 45px;
+    padding: 0 10px 0 55px;
     height: 40px;
     line-height: 40px;
     font-size: 20px;
 }
+
+input::placeholder,
+textarea::placeholder {
+    letter-spacing: 0px;
+    font-size: 14px;
+    color: #fff;
+    padding-left: 0px;
+}
+
+.ibx input.valid {}
+
+.ibx input:invalid {
+    border-color: red
+}
+
+.ibx input:hover {}
+
+.ibx input:focus {
+    border-color: #ffff00;
+    box-shadow: 0 0 20px rgba(255, 216, 7, 0.4);
+}
+
 .ibx .dialCode {
     position: absolute;
     left: 42px;
     line-height: 40px;
     background: #07a555;
-    border-radius: 0;
+    border-radius: 10px 0;
     top: 2px;
     width: 45px;
     text-align: right;
@@ -138,24 +160,29 @@ input.lastname {
     width: calc(100% - 25px);
 }
 
-.ibx.twin-select,
-.ibx.twin-select {
+.grid-select {
     color: #ddd;
     display: block;
     border: 2px solid #ffffff1a;
     border-radius: 0px 10px 10px;
     background: #ffffff14;
     display: grid;
-    grid-template-columns: 50% 50%;
     overflow: hidden;
 }
 
-.ibx.twin-select:hover,
-.ibx.twin-select:focus {
+.grid-select.twin {
+    grid-template-columns: 50% 50%;
+}
+.grid-select.tri {
+    grid-template-columns: 33% 34% 33%;
+}
+
+.grid-select:hover input,
+.grid-select:focus input {
     border-color: #ffff00;
 }
 
-.ibx.twin-select .twin-btn {
+.grid-select .btn {
     text-align: center;
     height: 40px;
     line-height: 40px;
@@ -164,17 +191,31 @@ input.lastname {
     position: relative;
 }
 
-.twin-btn.selected,
-.twin-btn.selected span::before {
+.grid-select .btn:focus,
+.grid-select .btn:hover,
+.grid-select .btn:focus a,
+.grid-select .btn:hover a {
+    background-color: rgba(200, 200, 0, 0.5);
+    color: green;
+}
+
+.grid-select .btn.selected,
+.grid-select .btn.selected a,
+.grid-select .btn.selected span::before {
     background-color: rgba(200, 200, 0, 0.8) !important;
     color: green;
 }
 
-.twin-btn span::before {
+.grid-select .btn span::before {
     position: absolute;
     left: 0px;
     line-height: 40px;
     width: 40px;
+}
+
+.grid-select .btn a {
+display: block;
+padding-left: 20px;
 }
 
 .ibx .selector {
@@ -260,31 +301,6 @@ ul.selection li.selected {
     border-color: #ffff00;
 }
 
-.twin-btn:focus,
-.twin-btn:hover {
-    background-color: rgba(200, 200, 0, 0.5);
-    color: green;
-}
-
-input::placeholder,
-textarea::placeholder {
-    letter-spacing: 0px;
-    font-size: 14px;
-    color: #fff;
-}
-
-.ibx input.valid {}
-
-.ibx input:invalid {
-    border-color: red
-}
-
-.ibx input:hover {}
-
-.ibx input:focus {
-    border-color: #ffff00;
-    box-shadow: 0 0 20px rgba(255, 216, 7, 0.4);
-}
 
 /* BUTTONS */
 /* button wrapper */
@@ -370,7 +386,7 @@ textarea::placeholder {
 
 .icon-btn a {
     display: inline-block;
-    padding: 0 20px !important;
+    padding: 0 10px !important;
     line-height: 40px;
     font-size: 20px;
 }

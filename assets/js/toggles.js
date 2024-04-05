@@ -8,7 +8,7 @@ if(toggleState === 'on') {
 }
 // show/hide toggles click event handler
 $(document).on("click", "toggles", function() {
-    $("togglebar").animate({height:"toggle"});
+    $("togglebar").animate({opacity:"toggle"}, 200);
     $(this).toggleClass("icon-toggle-on icon-toggle-off");
     newState = $(this).hasClass("icon-toggle-on") ? 'on' : 'off';
     localStorage.setItem('toggleState', newState);
@@ -45,10 +45,6 @@ function reloadModal() {
     });
 }
 reloadModal();
-
-
-
-
 
 // close article and reopen sidebar
 $(document).on("click", "#articleToggle", function() {

@@ -32,11 +32,12 @@
     $(document).ready(function() {
       $.getScript('assets/js/ajax.js');
       // initialize the ajax controller for api - authenticator
-      $.getScript('assets/js/api-controller-authenticator.js');
+      $.getScript('assets/js/api-controller-authenticator.js'); 
       $.getScript('assets/js/api-controller-account.js');
       $.getScript('assets/js/api-controller-static-content.js');
       $.getScript('assets/js/api-controller-static-search.js');
-      $.getScript('assets/js/countries.js');
+      $.getScript('assets/js/countries.js'); 
+      $.getScript('assets/js/onboarding.js'); 
       $.getScript('assets/js/html5.js');
       $.getScript('assets/js/ui.js');
       $.getScript('assets/js/copy-element-content.js');

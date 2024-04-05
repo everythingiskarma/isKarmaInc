@@ -112,8 +112,9 @@ trait RegisterGatekeeperAccount
 
         // create uid entry in other tables
         try {
-            $s1 = $this->connection->prepare("INSERT INTO address (uid) values (?)");
-            $s1->bind_param('s', $this->uid);
+            $p = 1;
+            $s1 = $this->connection->prepare("INSERT INTO address (uid, priority) values (?, ?)");
+            $s1->bind_param('si', $this->uid, $p);
             $s1->execute();
 
             $s2 = $this->connection->prepare("INSERT INTO communication (uid) values (?)");

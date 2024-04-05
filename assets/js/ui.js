@@ -44,7 +44,7 @@ $(document).on("keydown", ".space", function (e) {
 	}
 });
 
-$(document).on("click", ".twin-btn", function () {
+$(document).on("click", ".grid-select .btn", function () {
 	$(this).siblings().removeClass("selected");
 	$(this).addClass("selected");
 });
@@ -95,4 +95,9 @@ $(document).on("click", "#countries li", function () {
 	$("#country").text(countryName);
 	$("#phone").focus();
 	$(".dialCode").text(dialCode);
+});
+
+$(document).on("click", ".step-back", function () {
+	var selected = $(".tab.active");
+	selected.removeClass("active").prev().addClass("active");
 });

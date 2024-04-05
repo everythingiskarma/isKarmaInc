@@ -14,13 +14,13 @@
 	<li class="tab step1">
 		<div class="ibxg grid-b">
 			<div class="ibx name">
-				<label for="firstName">first name *</label>
-				<input class="firstname" name="firstName" id="firstname" type="text" placeholder="Enter first name" tabindex="0" autofocus autocomplete="off">
+				<label>first name *</label>
+				<input class="firstname" id="firstname" type="text" placeholder="Enter first name" tabindex="0" autofocus autocomplete="off">
 			</div>
 
 			<div class="ibx name">
-				<label for="lastName">last name *</label>
-				<input class="lastname" name="lastName" id="lastname" type="text" placeholder="Enter last name" tabindex="0">
+				<label>last name *</label>
+				<input class="lastname" id="lastname" type="text" placeholder="Enter last name" tabindex="0">
 			</div>
 		</div>
 		<div class="ibx icon-sphere">
@@ -41,7 +41,7 @@
 			<div class="dialCode">+</div>
 			<input class="mobile" id="mobile" type="text" placeholder="Enter phone number here" tabindex="0">
 		</div>
-		<hr/>
+		<hr />
 		<div class="bbx">
 			<div class="space icon-btn" id="step1" tabindex="0">
 				<span class="icon-right"></span><a class="clear">Continue</a>
@@ -68,22 +68,22 @@
 
 		<div class="ibxg ibx">
 			<label>gender</label>
-			<div class="ibx twin-select">
-				<div class="space twin-btn gender" gender="0" tabindex="0"><span class="icon-male"></span>Male</div>
-				<div class="space twin-btn gender selected" gender="1" tabindex="0"><span class="icon-female"></span>Female</div>
+			<div class="ibx grid-select twin">
+				<div class="space btn gender" gender="1" tabindex="0"><span class="icon-male"></span><a>Male</a></div>
+				<div class="space btn gender selected" gender="2" tabindex="0"><span class="icon-female"></span><a>Female</a></div>
 			</div>
 		</div>
 
 		<hr />
 		<div class="ibxg grid-b">
 			<div class="bbx">
-				<div class="icon-btn" tabindex="0">
+				<div class="icon-btn step-back" tabindex="0">
 					<span class="icon-left"></span><a class="clear">Back</a>
 				</div>
 			</div>
 
 			<div class="bbx">
-				<div class="icon-btn" tabindex="0">
+				<div class="space icon-btn" id="step2" tabindex="0">
 					<span class="icon-right"></span><a class="clear">Continue</a>
 				</div>
 			</div>
@@ -92,9 +92,18 @@
 
 	</li>
 	<li class="tab step3">
-		<div class="ibx icon-business-add">
-			<label>organization</label>
-			<input id="business" type="text" placeholder="Name of your business or organization" tabindex="0" autofocus>
+		<div class="ibxg ibx">
+			<label>type</label>
+			<div class="ibx grid-select tri">
+				<div class="space btn type selected" type="1" tabindex="0">Home</div>
+				<div class="space btn type" type="2" tabindex="0">Office</div>
+				<div class="space btn type" type="3" tabindex="0">Other</div>
+			</div>
+		</div>
+
+		<div class="ibx icon-offer">
+			<label>label</label>
+			<input id="label" type="text" placeholder="Nickname for your address" tabindex="0" autofocus>
 		</div>
 
 		<div class="ibx icon-location">
@@ -107,6 +116,16 @@
 			<input id="city" type="text" placeholder="Enter your city here" tabindex="0">
 		</div>
 
+		<div class="ibx icon-address-add">
+			<label>state</label>
+			<input id="state" type="text" placeholder="Enter your state here" tabindex="0">
+		</div>
+
+		<div class="ibx icon-address-add">
+			<label>country</label>
+			<input id="add-country" type="text" placeholder="Enter your country here" tabindex="0">
+		</div>
+
 		<div class="ibx icon-network">
 			<label>zip code</label>
 			<input id="zip" type="text" placeholder="Enter your area zip code here" tabindex="0">
@@ -115,13 +134,13 @@
 
 		<div class="ibxg grid-b">
 			<div class="bbx">
-				<div class="icon-btn" tabindex="0">
+				<div class="icon-btn step-back" tabindex="0">
 					<span class="icon-left"></span><a class="clear">Back</a>
 				</div>
 			</div>
 
 			<div class="bbx">
-				<div class="icon-btn" tabindex="0">
+				<div class="space icon-btn" id="step3" tabindex="0">
 					<span class="icon-done-all"></span><a class="clear">Finish</a>
 				</div>
 			</div>

@@ -16,7 +16,7 @@ function processRequest(
 }
 
 function successCallback(report) {
-  $("#reports > *").addClass('pre');
+  $(".reports > *").addClass('pre');
   if (Array.isArray(report) && report.length > 0) {
     report.forEach((obj, index) => {
       switch (true) {
@@ -58,4 +58,9 @@ function successCallback(report) {
 function errorCallback(xhr, status, error) {
   var errorMessage = 'Error occurred while processing the request. Please try again later.';
   console.error('AJAX error:', error);
+}
+
+function loadAccount() {
+  $("load").load('/iskarma.com/views/wrapper/account.php');
+  $("togglebar").load('/iskarma.com/views/header/togglebar.php');
 }

@@ -24,18 +24,26 @@ class Account extends Connect
 	{
 		parent::__construct(); // call the constructor of the parent class conDb;
 		$this->dashboard();
-
+		/*
 		if (isset($_SESSION['loggedIn'])) {
 			$this->report[] = array(
+				'api' => 'Account',
+				'action' => 'session-variables',
 				'login' => $_SESSION['loggedIn'],
-				'uid' => $_SESSION['uid'],
-				'domain' => $_SESSION['domain']
+				'uid' => base64_encode($_SESSION['uid']),
+				'domain' => base64_encode($_SESSION['domain'])
 			);
 		}
+		*/
 	} // end function __construct
 
 	private function dashboard()
 	{
+		$this->sessionUID = $_SESSION['uid']; // set uid based on current session
+		$this->sessionDomain = $_SESSION['domain']; // set uid based on current session
+		$this->onBoardingStep = 'step1'; // set default to step for onboarding wizard
+		$this->onBoard = false; // set default onboarding status
+
 		if (isset($_POST['action'])) {
 			$this->action = $_POST['action'];
 
@@ -46,14 +54,32 @@ class Account extends Connect
 					break;
 				case 'step1':
 					// save step1 post data and go to step 2
+					$this->incomingUID = base64_decode($_POST['uid']);
+					$this->firstname = $_POST['firstname'];
+					$this->lastname = $_POST['lastname'];
+					$this->cc = $_POST['cc'];
+					$this->cn = $_POST['cn'];
+					$this->dc = $_POST['dc'];
+					$this->mobile = $_POST['mobile'];
 					$this->onBoardStep1();
 					break;
-				case 'step1':
+				case 'step2':
 					// save step2 post data and go to step 3
+					$this->incomingUID = base64_decode($_POST['uid']);
+					$this->gender = $_POST['gender'];
+					$this->dob = $_POST['dob'];
 					$this->onBoardStep2();
 					break;
 				case 'step3':
 					// save step3 post data and go to dashboard
+					$this->incomingUID = base64_decode($_POST['uid']);
+					$this->type = $_POST['type'];
+					$this->label = $_POST['label'];
+					$this->address = $_POST['address'];
+					$this->country = $_POST['country'];
+					$this->state = $_POST['state'];
+					$this->city = $_POST['city'];
+					$this->zip = $_POST['zip'];
 					$this->onBoardStep3();
 					break;
 									

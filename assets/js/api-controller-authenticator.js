@@ -185,4 +185,19 @@ $(document).on("keyup", "#email", function (event) {
     }
 });
 
+function loadOTP(obj) {
+    var otpId = obj.otpId;
+    var otpType = obj.otpType;
+    var uid = obj.uid;
+    $("load").load('/iskarma.com/views/wrapper/account/otp.php', function () {
+        $("#confirm").attr({
+            "otptype": otpType,
+            "otpid": otpId,
+            "uid": uid
+        });
+        $("#otp").focus();
+    });
+    resendOTPTimer(90);
+}
+
 

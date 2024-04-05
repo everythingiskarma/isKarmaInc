@@ -66,7 +66,7 @@ CREATE TABLE IF NOT EXISTS `kyc` (
     `email_alt` varchar(255) NULL COMMENT '',
     `firstname` varchar(255) NULL COMMENT 'enter your firstname',
     `lastname` varchar(255) NULL COMMENT 'enter your lastname',
-    `gender` int(1) DEFAULT NULL COMMENT '',
+    `gender` int(1) NOT NULL DEFAULT 0 COMMENT '',
     `dob` varchar(20) DEFAULT NULL COMMENT '',
     `cc` varchar(20) DEFAULT NULL COMMENT '',
     `cn` varchar(20) DEFAULT NULL COMMENT '',
@@ -74,9 +74,9 @@ CREATE TABLE IF NOT EXISTS `kyc` (
     `mobile` varchar(20) DEFAULT NULL COMMENT '',
     `id_type` varchar(255) DEFAULT NULL COMMENT 'citizenship, driving license, voters id, passport, pancard, aadhar card',
     `id_image` varchar(255) DEFAULT NULL COMMENT '',
-    `id_kyc_status` int(1) DEFAULT 0 COMMENT 'to be set by our security',
     `id_address_proof` varchar(255) DEFAULT NULL COMMENT 'utility bill, bank statement, rent agreement, govt id',
     `id_address_proof_image` varchar(255) DEFAULT NULL COMMENT 'upload document max 2mb (pdf, jpeg, png)',
+    `id_kyc_status` int(1) DEFAULT 0 COMMENT 'to be set by our security',
     PRIMARY KEY (`id`),
     UNIQUE KEY `uid` (`uid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci COMMENT '';
@@ -84,8 +84,8 @@ CREATE TABLE IF NOT EXISTS `kyc` (
 CREATE TABLE IF NOT EXISTS `address` (
     `id` int(11) NOT NULL AUTO_INCREMENT COMMENT '',
     `uid` varchar(16) NOT NULL COMMENT '',
-    `type` varchar(50) NULL COMMENT 'home / office / other',
-    `primary` int(1) DEFAULT 0 COMMENT '0 = not primary, 1 = primary',
+    `type` int(1) NOT NULL DEFAULT 0 COMMENT '1 = home / 2 = office / 3 = other',
+    `priority` int(1) NOT NULL DEFAULT 0 COMMENT '1 = primary, 2 = secondary',
     `label` varchar(50) NULL COMMENT 'nickname to identify multiple addresses',
     `address` varchar(255) NULL COMMENT '',
     `country` varchar(120) NULL COMMENT '',
@@ -98,15 +98,17 @@ CREATE TABLE IF NOT EXISTS `address` (
 CREATE TABLE IF NOT EXISTS `kyc_business` (
     `id` int(11) NOT NULL AUTO_INCREMENT COMMENT '',
     `uid` varchar(16) NOT NULL COMMENT '',
-    `biz_name` varchar(255) DEFAULT NULL COMMENT '',
+    `biz_name` varchar(255) DEFAULT NULL COMMENT 'name of business or organization',
+    `biz_role` varchar(255) DEFAULT NULL COMMENT 'users role in business',
     `biz_type` varchar(255) DEFAULT NULL COMMENT 'select list of types of biz - manufacturing, services, retail etc.',
     `biz_industry` varchar(255) DEFAULT NULL COMMENT 'select list of types of industries - agri, solar, textile etc',
     `biz_category` varchar(255) DEFAULT NULL COMMENT 'select list of category based on industry',
     `biz_reg_type` varchar(255) DEFAULT NULL COMMENT 'proprietorship, partnership, limted liability company, corporation, non-profit, co-operative',
-    `biz_reg_cert` varchar(255) DEFAULT NULL COMMENT 'govt issued business registatration certificate',
+    `biz_reg_cert_image` varchar(255) DEFAULT NULL COMMENT 'govt issued business registatration certificate (image)',
     `biz_validity` varchar(255) DEFAULT NULL COMMENT 'validity of registatration as on certificate',
     `biz_annual_income` varchar(255) DEFAULT NULL COMMENT 'validity of certificate',
     `biz_total_employees` varchar(255) DEFAULT NULL COMMENT 'validity of certificate',
+    `biz_kyc_status` int(1) DEFAULT 0 COMMENT 'to be set by our security',
     PRIMARY KEY (`id`),
     UNIQUE KEY `uid` (`uid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci COMMENT '';
@@ -133,14 +135,14 @@ CREATE TABLE IF NOT EXISTS `communication` (
 CREATE TABLE IF NOT EXISTS `security` (
     `id` int(11) NOT NULL AUTO_INCREMENT COMMENT '',
     `uid` varchar(16) NOT NULL COMMENT '',
-    `2factor` int(1) DEFAULT 0 COMMENT '',
-    `2factor_key` varchar(255) DEFAULT NULL COMMENT '',
+    `two_factor` int(1) DEFAULT 0 COMMENT '',
+    `two_factor_key` varchar(255) DEFAULT NULL COMMENT '',
     `status_terms` int(11) DEFAULT 0 COMMENT '',
     `status_privacy` int(11) DEFAULT 0 COMMENT '',
     `status_multisite` int(11) DEFAULT 0 COMMENT '',
     PRIMARY KEY (`id`),
     UNIQUE KEY `uid` (`uid`),
-    UNIQUE KEY `2factor_key` (`2factor_key`)
+    UNIQUE KEY `two_factor_key` (`two_factor_key`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci COMMENT '';
 
 CREATE TABLE IF NOT EXISTS `select_list_options_json` (
