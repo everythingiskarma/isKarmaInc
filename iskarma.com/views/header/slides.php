@@ -1,5 +1,51 @@
 <carousel>
   <ul>
+
+    <li class="slideRecycle"></li>
+
+    <li class="slideBin"></li>
+
+    <li class="slideEarth"></li>
+
+    <li class="slideBicycle"></li>
+
+    <li class="slideTree"></li>
+
+    <li class="slideDroplet"></li>
+
+    <li class="slideActivityCalendar"></li>
+
+
+
+    <li class="slidePencil"></li>
+
+    <li class="slideYoutube"></li>
+
+    <li class="slideGithub"></li>
+
+    <li class="slideMediaCalendar"></li>
+
+
+
+    <li class="slidePhone"></li>
+
+    <li class="slideSupport"></li>
+
+    <li class="slideDocs"></li>
+
+    <li class="slideBug"></li>
+
+    <li class="slideShare"></li>
+
+
+
+    <li class="slideQrCode"></li>
+
+    <li class="slideQuickMsg"></li>
+
+    <li class="slideLocation"></li>
+
+
     <li class="slideWelcome">
       <logo>
         <one class="dot no-dots"></one>
@@ -13,128 +59,19 @@
       </logo>
     </li>
 
-    <li class="slideAboutUs">
-      slide about isKarma Inc
-    </li>
+    <li class="slideAboutUs" link="iskarma.com/internal/about-us.php"></li>
 
-    <li class="slideWhatWeDo">
-      slide about what we do
-    </li>
+    <li class="slideWhatWeDo"></li>
 
-    <li class="slidePrivacyPolicy">
-      slide about privacy policy
-    </li>
+    <li class="slidePrivacyPolicy" link="iskarma.com/internal/privacy-policy.php"></li>
 
-    <li class="slideTermsOfService">
-      slide about terms of service
-    </li>
+    <li class="slideTermsOfService"></li>
 
-    <li class="slideRecycle">
-      Recycling integrated into
-    </li>
+    <li class="slideCredits" link="iskarma.com/internal/credits.php"></li>
 
-    <li class="slideBin">
-      slide on waste Management
-    </li>
+    <li class="slideReviews"></li>
 
-    <li class="slideEarth">
-      slide on environment Protection
-    </li>
 
-    <li class="slideBicycle">
-      slide on bicycling
-    </li>
 
-    <li class="slideTree">
-      slide on tree plantation
-    </li>
-
-    <li class="slideDroplet">
-      slide on clean water
-    </li>
-
-    <li class="slideActivityCalendar">
-      slide on activity calendar
-    </li>
-
-    <li class="slideAndroid">
-      slide on android app
-    </li>
-
-    <li class="slideGithub">
-      slide on github
-    </li>
-
-    <li class="slideMediaCalendar">
-      slide on media calendar
-    </li>
-
-    <li class="slideYoutube">
-      slide on youtube
-    </li>
-
-    <li class="slidePencil">
-      slide on pencil
-    </li>
-
-    <li class="slideSupport">
-      slide on support helpdesk
-    </li>
-
-    <li class="slideDocs">
-      slide on Research Documentation and Knowledge Base
-    </li>
-
-    <li class="slideBug">
-      slide on bug reporting
-    </li>
-
-    <li class="slideShare">
-      slide on sharing the site
-    </li>
-
-    <li class="slideReview">
-      slide on writing a review
-    </li>
-
-    <li class="slideMediaCalender">
-      slide on media calendar
-    </li>
-
-    <li class="slideLocation">
-      slide on location
-    </li>
-
-    <li class="slideEnvelope">
-      slide on quick contact
-    </li>
-
-    <li class="slideProtonMail">
-      slide on proton mail
-    </li>
-
-    <li class="slideQrCode">
-      slide on qr code
-    </li>
-
-    <li class="slideLifebuoy">
-      slide on support HelpDesk
-    </li>
-
-    <li class="slideSkype">
-      slide on skype
-    </li>
-
-    <li class="slideViber">
-      slide on viber
-    </li>
-
-    <li class="slideSignal">
-      slide on signal
-    </li>
-
-    <li class="slidePhone">
-      slide on phone
-    </li>
   </ul>
 </carousel>

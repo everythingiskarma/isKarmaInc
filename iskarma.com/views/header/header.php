@@ -108,7 +108,7 @@
         <title>Scan QR</title>
       </a>
     </li>
-    <li id="slideEnvelope">
+    <li id="slideQuickMsg">
       <a class="icon-square-edit" title="Send Us a Quick Message">
         <title>Write Us a &#10; Quick Message</title>
       </a>
@@ -121,7 +121,7 @@
   </ul>
   <ul class="about">
     <li id="slideWelcome">
-      <a class="icon-iskarma" location="iskarma.com/content/articles" title="Welcome to isKarma Inc">
+      <a class="icon-iskarma" title="Welcome to isKarma Inc">
         <span class="path1"></span>
         <span class="path2"></span>
         <span class="path3"></span>
@@ -129,26 +129,26 @@
       </a>
     </li>
     <li id="slideAboutUs">
-      <a class="icon-info" location="iskarma.com/content/articles" title="Get to know a bit about us and our work">
+      <a class="icon-info" title="Get to know a bit about us and our work">
         <title>About</title>
       </a>
     </li>
     <li id="slideWhatWeDo">
-      <a class="icon-network" location="iskarma.com/content/articles" title="View our services and current projects">
+      <a class="icon-network" title="View our services and current projects">
         <title>What We Do!</title>
       </a>
     </li>
     <li id="slidePrivacyPolicy">
-      <a class="icon-eye-blocked" location="iskarma.com/content/articles" title="View our privacy policy">
+      <a class="icon-eye-blocked" title="View our privacy policy">
         <title>Privacy Policy</title>
       </a>
     </li>
     <li id="slideTermsOfService">
-      <a class="icon-sphere" location="iskarma.com/content/articles" title="View terms of services">
+      <a class="icon-sphere" title="View terms of services">
         <title>Terms of Service</title>
       </a>
     </li>
-    <li id="slideReview">
+    <li id="slideReviews">
       <a class="icon-star-half-o" title="Write a Review about our Services">
         <title>Reviews</title>
       </a>

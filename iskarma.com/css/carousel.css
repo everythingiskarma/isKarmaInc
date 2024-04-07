@@ -17,8 +17,8 @@ carousel ul li {
 	display: none;
 	min-height: 300px;
 	max-height: auto;
-	padding: 20px;
-	width: calc(100% - 40px);
+	padding:0px;
+	width:100%;
 	color: #fff
 }
 

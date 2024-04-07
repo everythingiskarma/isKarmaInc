@@ -38,7 +38,6 @@
 
       <h3>Company Website</h3>
       <div>
-        <a><span class="icon-android"></span><title>mobile app</title></a>
         <a><span class="icon-store"></span><title>eCommerce</title></a>
         <a><span class="icon-agent"></span><title>Helpdesk</title></a>
         <a><span class="icon-forum"></span><title>Forum</title></a>

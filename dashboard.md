@@ -1,42 +1,57 @@
-widgets
-- alarms / reminders
-- tasks
-- calendar
-- friend requests
+## widgets
+- alarms / reminders 
+- tasks 
+- calendar 
 - messages
 - meetings
 - widget suggestions
-- 
 
-tools (free + premium)
-- user management
-- group management
-- newsletter management
-- email campaigns
-- social networking
-- product management
-- order management
-- shipping management
-- returns management
-- payment gateway management
-- content management
-- employee management
-- ticket management
-- lead management
-- funnel management
-- template management
-- advertising management
-- marketplace / drop shipping
+
+## ESSENTIAL TOOLS
+
+# setup
 - domain management
+- hosting management 
 - email accounts management
-- faq/knowledge base management
-- discussion forum
-- bug reporting
-- user dashboard management
-- wallet management
-- 
 
-shortcuts
+# system
+- user management 
+- user dashboard management 
+- wallet management 
+- group management 
+- employee management 
+
+# ecommerce
+- products management 
+- services management 
+- marketplace / drop shipping 
+- order management 
+- shipping management 
+- returns management 
+- payment gateway management 
+
+# digital marketing
+- social networking 
+- advertising management 
+- lead management 
+- funnel management 
+- newsletter management (free)
+- email campaigns 
+
+# content
+- content management 
+
+# support
+- ticket management 
+- faq/knowledge base management 
+- bug reporting 
+- discussion forum 
+
+# design
+- template management 
+
+
+## shortcuts
 - create article
 - create product
 - create task
@@ -45,9 +60,9 @@ shortcuts
 - create employee
 - create newsletter
 - create email campaigns
-- 
+ 
 
-statistics
+## statistics
 - visitors
 - orders
 - users
@@ -56,4 +71,3 @@ statistics
 - pending orders
 - earnings
 - spendings
-- 

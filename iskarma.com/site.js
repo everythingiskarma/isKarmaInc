@@ -19,7 +19,20 @@ $("nav ul").on("mouseleave", function() {
 $("nav li").on("mouseover", function() {
   var currentSlide = $(this).attr("id");
   $("carousel ul li").stop().hide();
-  $('carousel ul li.'+currentSlide).stop().fadeIn();
+  $('carousel ul li.' + currentSlide).stop().fadeIn(function () {
+    if ($(this).is(':empty')) {
+      // get link from attr
+      var link = $(this).attr("link");
+      if (link) {
+        $("#processing").fadeIn();
+        $(this).load(link, function () {
+          $("#processing").fadeOut();
+        });     
+      } else {
+        $(this).html('<div style="text-align:center; font-size:150px; line-height:300px">coming soon!</div>');
+      }
+    }
+  });
   //alert("currentSlide");
 });
 

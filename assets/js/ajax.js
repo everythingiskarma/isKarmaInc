@@ -14,28 +14,32 @@ function processRequest(
     error: errorCallback // to be defined in the click event handler
   });
 }
-
+// performs respective functions after recieving response to the ajax request from php
 function successCallback(report) {
   $(".reports > *").addClass('pre');
+  // every api request sends a report that contains specific object property indicating futher actions that need to be performed after successful response. based on which object property is sent, specific jquery functions load respective views and perform other post load actions.
   if (Array.isArray(report) && report.length > 0) {
     report.forEach((obj, index) => {
       switch (true) {
-        case obj.hasOwnProperty('loggedOut'):
-        case obj.hasOwnProperty('loggedIn'):
+        case obj.hasOwnProperty('loggedOut'): // indicates logout was successful, shows login page
+        case obj.hasOwnProperty('loggedIn'): // indicates login was successful, loads dashboard
+          // reloads togglebar and loads login or dashboard view. Follows (ajax.js)
           loadAccount(obj);
           break;
-        case obj.hasOwnProperty('onBoarding'):
+        case obj.hasOwnProperty('onBoarding'): // indicates onboarding is pending
+          // loads onboarding view and respective step based on object property step. Follows (onboarding.js)
           onBoarding(obj);
           break;
-        case obj.hasOwnProperty('dashboard'):
-          // if onboarding is complete loads full dashboard else redirects to onBoarding
+        case obj.hasOwnProperty('dashboard'): // indicates onboarding is complete shows dashboard
+          // loads dashboard wrapper. Follows (api-controller-account.js)
           dashboard(obj);
           break;
-        case obj.hasOwnProperty('authOTP'):
+        case obj.hasOwnProperty('authOTP'): // indicates otp has been sent shows confirm otp interface
+        // loads confirm otp wrapper. Follows (api-controller-authenticator.js)
           loadOTP(obj);
           break;
       }
-
+      // displays system messages in the report box
       setTimeout(() => {
         if (obj.hasOwnProperty('message')) {
           if (!$("#notifications").hasClass("on")) {
@@ -61,6 +65,6 @@ function errorCallback(xhr, status, error) {
 }
 
 function loadAccount() {
-  $("load").load('/iskarma.com/views/wrapper/account.php');
-  $("togglebar").load('/iskarma.com/views/header/togglebar.php');
+  $("load").load('/iskarma.com/views/wrapper/account.php'); // reloads load html after login/logout
+  $("togglebar").load('/iskarma.com/views/header/togglebar.php'); // reloads togglebar after login/logout
 }

@@ -1,5 +1,6 @@
 CREATE DATABASE IF NOT EXISTS `iskarmac_users`; USE `iskarmac_users`;
 
+
 CREATE TABLE IF NOT EXISTS `gatekeeper` (
     `id` int(11) NOT NULL AUTO_INCREMENT COMMENT '',
     `uid` varchar(16) NOT NULL COMMENT '',
@@ -12,6 +13,7 @@ CREATE TABLE IF NOT EXISTS `gatekeeper` (
     UNIQUE KEY `email` (`email`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci COMMENT '';
 
+
 CREATE TABLE IF NOT EXISTS `otp` (
     `id` int(11) NOT NULL AUTO_INCREMENT COMMENT '',
     `uid` varchar(16) NOT NULL COMMENT '',
@@ -23,6 +25,7 @@ CREATE TABLE IF NOT EXISTS `otp` (
     UNIQUE KEY `uid` (`uid`),
     PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci  COMMENT '';
+
 
 CREATE TABLE IF NOT EXISTS `sessions` (
     `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -48,6 +51,7 @@ CREATE TABLE IF NOT EXISTS `sessions` (
     UNIQUE KEY `uid` (`uid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci  COMMENT '';
 
+
 CREATE TABLE IF NOT EXISTS `user` (
     `id` int(11) NOT NULL AUTO_INCREMENT COMMENT '',
     `uid` varchar(16) NOT NULL COMMENT '',
@@ -59,6 +63,7 @@ CREATE TABLE IF NOT EXISTS `user` (
     UNIQUE KEY `uid` (`uid`),
     UNIQUE KEY `email` (`email`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci COMMENT '';
+
 
 CREATE TABLE IF NOT EXISTS `kyc` (
     `id` int(11) NOT NULL AUTO_INCREMENT COMMENT '',
@@ -81,6 +86,7 @@ CREATE TABLE IF NOT EXISTS `kyc` (
     UNIQUE KEY `uid` (`uid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci COMMENT '';
 
+
 CREATE TABLE IF NOT EXISTS `address` (
     `id` int(11) NOT NULL AUTO_INCREMENT COMMENT '',
     `uid` varchar(16) NOT NULL COMMENT '',
@@ -94,6 +100,7 @@ CREATE TABLE IF NOT EXISTS `address` (
     `zip` varchar(20) NULL COMMENT '',
     PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci COMMENT '';
+
 
 CREATE TABLE IF NOT EXISTS `kyc_business` (
     `id` int(11) NOT NULL AUTO_INCREMENT COMMENT '',
@@ -113,6 +120,7 @@ CREATE TABLE IF NOT EXISTS `kyc_business` (
     UNIQUE KEY `uid` (`uid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci COMMENT '';
 
+
 CREATE TABLE IF NOT EXISTS `preferences` (
     `id` int(11) NOT NULL AUTO_INCREMENT COMMENT '',
     `uid` varchar(16) NOT NULL COMMENT '',
@@ -123,6 +131,7 @@ CREATE TABLE IF NOT EXISTS `preferences` (
     UNIQUE KEY `uid` (`uid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci COMMENT '';
 
+
 CREATE TABLE IF NOT EXISTS `communication` (
     `id` int(11) NOT NULL AUTO_INCREMENT COMMENT '',
     `uid` varchar(16) NOT NULL COMMENT '',
@@ -131,6 +140,7 @@ CREATE TABLE IF NOT EXISTS `communication` (
     PRIMARY KEY (`id`),
     UNIQUE KEY `uid` (`uid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci COMMENT '';
+
 
 CREATE TABLE IF NOT EXISTS `security` (
     `id` int(11) NOT NULL AUTO_INCREMENT COMMENT '',
@@ -144,6 +154,7 @@ CREATE TABLE IF NOT EXISTS `security` (
     UNIQUE KEY `uid` (`uid`),
     UNIQUE KEY `two_factor_key` (`two_factor_key`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci COMMENT '';
+
 
 CREATE TABLE IF NOT EXISTS `select_list_options_json` (
     `id` int(11) NOT NULL AUTO_INCREMENT COMMENT '',

@@ -229,23 +229,23 @@ trait GetDashboard
 		// check onboarding step 3 if all requried fields are filled
 		if (empty($this->type) || empty($this->label) || empty($this->address) || empty($this->country) || empty($this->state) || empty($this->city) || empty($this->zip)) {
 			// atleast one of the required fields is empty in onboarding step 3
-			$this->onBoardingStep = 'step3';
-			$this->onBoard = false;
-			$msg = 'Final step! Please fill in your address to launch your account dashboard.';
+			$this->onBoardingStep = 'step3'; // tells jquery to load step3 of onboarding
+			$this->onBoard = false; // indicates onboarding is pending
+			$msg = 'Final step! Please fill in your address to launch your account dashboard.'; // adds msg to api report
 		} // end if step 3
 		// check onboarding step 2 if all required fields are filled
 		if (empty($this->gender) || empty($this->dob)) {
 			// atleast one of the required fields is empty in onboarding step 2
-			$this->onBoardingStep = 'step2';
-			$this->onBoard = false;
-			$msg = 'Almost done! One more step to go after this! ';
+			$this->onBoardingStep = 'step2'; // tells jquery to load step 2 of onboarding
+			$this->onBoard = false; // indicates onboarding is pending
+			$msg = 'Almost done! One more step to go after this! '; // adds msg to api report
 		} // end if step 2
 		// Check onboarding step 1 if all required fields are filled
 		if (empty($this->firstname) || empty($this->lastname) || empty($this->cc) || empty($this->cn) || empty($this->dc) || empty($this->mobile)) {
 			// atleast one of the required fields is empty in onboarding step 1
-			$this->onBoardingStep = 'step1';
-			$this->onBoard = false;
-			$msg = 'Lets get you onboarded! Enter the required information while we prepare your account dashboard!';
+			$this->onBoardingStep = 'step1'; // tell jquery to load step 1 of onboarding
+			$this->onBoard = false; // indicates onboarding is pending
+			$msg = 'Lets get you onboarded! Enter the required information while we prepare your account dashboard!'; // adds msg to api report
 		} // end if step 1
 		if ($this->onBoard === false) {
 			// onboarding is not complete
@@ -256,9 +256,10 @@ trait GetDashboard
 				'result' => false,
 				'message' => '<in><b class="icon-info"></b>' . $msg . '</in>',
 				'resolution' => 'complete-onboarding',
-				'onBoarding' => true,
-				'step' => $this->onBoardingStep,
-				'fields' => $this->dashboardFields
+				'onBoarding' => true, // tells jquery to load onboarding
+				'step' => $this->onBoardingStep, // tells jquery which step of onboarding to show
+				'fields' => $this->dashboardFields // sends an array containing all dashboard fields as key:value pairs
+				// add additional data as arrays as required
 			);
 			return;
 		} else {
@@ -270,7 +271,7 @@ trait GetDashboard
 				'result' => true,
 				'message' => '<s><b class="icon-done-all"></b>Dashboard loaded successfully</s>',
 				'dashboard' => true, // tells jquery to load full dashboard
-				'fields' => $this->dashboardFields
+				'fields' => $this->dashboardFields // sends an array containing all dashboard fields as key:value pairs
 			);
 			return;
 		}
@@ -322,6 +323,7 @@ trait GetDashboard
 		// successfully inserted values into kyc table, run getFullDashboard(); to initiate step 3
 
 		$this->getFullDashboard();
+
 	}
 
 	public function onBoardStep3() {
