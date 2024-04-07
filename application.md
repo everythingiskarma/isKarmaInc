@@ -111,10 +111,10 @@
 ## PAYMENTS
 ### Wallet
  - view, add, update, remove [Funds converted to Karma Credits]
- - view, add, update, remove [Credit Transfers to other users]
- - view, add, update, remove [Pay for Services]
- - view, add, update, remove [Pay for Purchases]
- - view, add, update, remove [Pay for Subscriptions]
+ - view, add, update, remove [Send/Recieve karma credit transfers to/from other users]
+ - view, add, update, remove [Pay/Recieve karma credits for Services]
+ - view, add, update, remove [Pay/Recieve karma credits for Purchases]
+ - view, add, update, remove [Pay/Recieve karma credits for Subscriptions]
 ### Payment Gateway Integration 
  - view, add, update, remove [default or custom payment gateways]
 ### Linked Bank Account

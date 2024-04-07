@@ -8,7 +8,7 @@ CREATE TABLE IF NOT EXISTS `wallet_currencies` (
     `name` varchar(255) DEFAULT NULL COMMENT 'name of currency',
     `code` varchar(3) DEFAULT NULL COMMENT '3 letter currency code',
 	`value` int(11) NOT NULL DEFAULT 0 COMMENT 'karma value as per last update',
-	`status` int(1) NOT NULL DEFAULT 0 COMMENT '0 = disabled, 1 = enabled',
+	`status` int(1) NOT NULL DEFAULT 0 COMMENT '1 = enabled, 2 = disabled',
     `created` datetime NOT NULL DEFAULT current_timestamp() COMMENT 'timestamp of transaction',
     `updated` datetime NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp() COMMENT 'auto updates',
     PRIMARY KEY (`id`),
@@ -20,12 +20,12 @@ CREATE TABLE IF NOT EXISTS `wallet_currencies` (
 /**************************************************************************************/
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~// STORED PAYMENT METHOD //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 /**************************************************************************************/
-CREATE TABLE IF NOT EXISTS `wallet_payment_methods` (
+CREATE TABLE IF NOT EXISTS `wallet_deposit_method` (
     `id` int(11) NOT NULL AUTO_INCREMENT COMMENT '',
     `uid` varchar(16) NOT NULL COMMENT '',
     `currency` varchar(3) DEFAULT NULL COMMENT '3 letter currency code',
-    `type` varchar(255) DEFAULT NULL COMMENT '0 = cash, 1 = Debit Card, 2 = Credit Card, 3 = Bank Transfer, 4 = eWallets',
-	`status` int(1) NOT NULL DEFAULT 0 COMMENT '0 = disabled, 1 = enabled',
+    `method` varchar(255) DEFAULT NULL COMMENT '1=Debit Card, 2=CreditCard, 3=Bank Transfer, 4=eWallets, 5=cash',
+	`status` int(1) NOT NULL DEFAULT 0 COMMENT '1 = enabled, 2 = disabled',
     `created` datetime NOT NULL DEFAULT current_timestamp() COMMENT 'timestamp of transaction',
     `updated` datetime NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp() COMMENT 'auto updates',
     PRIMARY KEY (`id`)
@@ -36,13 +36,13 @@ CREATE TABLE IF NOT EXISTS `wallet_payment_methods` (
 /**************************************************************************************/
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~// LINKED BANK ACCOUNT //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 /**************************************************************************************/
-CREATE TABLE IF NOT EXISTS `wallet_linked_bank_accounts` (
+CREATE TABLE IF NOT EXISTS `wallet_withdrawal_account` (
     `id` int(11) NOT NULL AUTO_INCREMENT COMMENT '',
     `uid` varchar(16) NOT NULL COMMENT '',
     `currency` varchar(3) DEFAULT NULL COMMENT '3 letter currency code',
-    `type` int(1) NOT NULL DEFAULT 0 COMMENT '0 = none, 1 = Personal, 2 = Business, 3 = Special',
-    `special` int(1) NOT NULL DEFAULT 0 COMMENT '0 = none, 1 = Student, 2 = Senior Citizen, 3 = Trust, 4 = Non-Profit, 5 = Other',
-	`status` int(1) NOT NULL DEFAULT 0 COMMENT '0 = none, 1 = enabled, 2 = disabled',
+    `type` int(1) NOT NULL DEFAULT 0 COMMENT '1 = Personal, 2 = Business, 3 = Special',
+    `special` int(1) NOT NULL DEFAULT 0 COMMENT '1 = Student, 2 = Senior Citizen, 3 = Trust, 4 = Non-Profit, 5 = Other',
+	`status` int(1) NOT NULL DEFAULT 0 COMMENT '1 = enabled, 2 = disabled',
     `name` varchar(255) DEFAULT NULL COMMENT 'recipient/business name who owns the bank account',
     `account` varchar(255) DEFAULT NULL COMMENT 'bank account number',
     `iban` varchar(255) DEFAULT NULL COMMENT 'international bank account number',
@@ -68,7 +68,7 @@ CREATE TABLE IF NOT EXISTS `wallet_balance` (
     `balance` int(11) NOT NULL DEFAULT 0 COMMENT 'aggregated karma credits',
     `currency` varchar(3) DEFAULT NULL COMMENT 'default preferred local currency',
     `secret` varchar(255) DEFAULT NULL COMMENT 'secret access code for wallet',
-	`status` int(1) NOT NULL DEFAULT 0 COMMENT '0 = disabled, 1 = enabled, 2 = on hold, 3 = restricted',
+	`status` int(1) NOT NULL DEFAULT 0 COMMENT '1 = enabled, 2 = disabled, 3 = on hold, 4 = restricted',
     PRIMARY KEY (`id`),
     UNIQUE KEY `uid` (`uid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci COMMENT '';
@@ -80,7 +80,7 @@ CREATE TABLE IF NOT EXISTS `wallet_balance` (
 /**************************************************************************************/
 
 /*+++++++++++++++++++++++++++ DIRECT DEPOSITS INTO WALLET ++++++++++++++++++++++++++++*/
-CREATE TABLE IF NOT EXISTS `in_deposits` (
+CREATE TABLE IF NOT EXISTS `credit_deposits` (
     `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'transaction id',
     `uid` varchar(16) NOT NULL COMMENT 'uid of beneficiary',
     `wid` varchar(11) NOT NULL COMMENT 'wallet id of beneficiary',
