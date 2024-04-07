@@ -150,7 +150,7 @@
  - activities
  - open tickets
  - pending orders
- - earningsview, add, update, remove, 
+ - earnings
  - spendings
 
 ## SUPPORT
