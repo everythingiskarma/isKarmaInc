@@ -1,12 +1,12 @@
 
-### ESSENTIAL TOOLS
+# ESSENTIAL TOOLS
 
 ## setup
-# domain
+### domain
  - view, add, update, remove domains
-# hosting 
+### hosting 
  - view, add, update, remove hosting plans and resources 
-# email accounts
+### email accounts
  - view, add, update, remove emails 
 
 ## system
