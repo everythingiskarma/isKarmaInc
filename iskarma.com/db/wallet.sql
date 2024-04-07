@@ -101,12 +101,12 @@ CREATE TABLE IF NOT EXISTS `in_deposits` (
 /*++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
 
 /*+++++++++++++++++++ EARNINGS FROM DIRECT SALES IN THE ECOSYSTEM ++++++++++++++++++++*/
-CREATE TABLE IF NOT EXISTS `in_sales` (
+CREATE TABLE IF NOT EXISTS `credit_sales` (
     `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'transaction id',
     `uid` varchar(16) NOT NULL COMMENT '',
     `uid_buyer` varchar(16) NOT NULL COMMENT 'uid of the buyer who purchased the product or service',
-	`store` int(11) NOT NULL COMMENT 'store id where the product or service was sold',
- 	`order` int(11) NOT NULL COMMENT 'order id of the product or service sold',
+	`id_store` int(11) NOT NULL COMMENT 'store id where the product or service was sold',
+ 	`id_order` int(11) NOT NULL COMMENT 'order id of the product or service sold',
     `karma` int(11) NOT NULL DEFAULT 0 COMMENT 'total karma credit recieved from sale',
     `status` int(1) NOT NULL DEFAULT 0 COMMENT '1 = completed, 2 = on hold, 3 = cancelled, 4 = refunded',
     `created` datetime NOT NULL DEFAULT current_timestamp() COMMENT 'timestamp of transaction',
@@ -115,7 +115,7 @@ CREATE TABLE IF NOT EXISTS `in_sales` (
 /*++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
 
 /*+++++++++++++++++++++ COMMISSIONS EARNED THROUGH INDIRECT SALES ++++++++++++++++++++*/
-CREATE TABLE IF NOT EXISTS `in_commissions` (
+CREATE TABLE IF NOT EXISTS `credit_commissions` (
     `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'transaction id',
     `uid` varchar(16) NOT NULL COMMENT '',
     `status` int(1) NOT NULL DEFAULT 0 COMMENT '1 = completed, 2 = on hold, 3 = cancelled, 4 = refunded',
@@ -126,7 +126,7 @@ CREATE TABLE IF NOT EXISTS `in_commissions` (
 /*++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
 
 /*+++++++++++++++++++++++++ REWARDS EARNED THROUGH ACTIVITIES ++++++++++++++++++++++++*/
-CREATE TABLE IF NOT EXISTS `in_rewards` (
+CREATE TABLE IF NOT EXISTS `credit_rewards` (
     `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'transaction id',
     `uid` varchar(16) NOT NULL COMMENT '',
     `status` int(1) NOT NULL DEFAULT 0 COMMENT '1 = completed, 2 = on hold, 3 = cancelled, 4 = refunded',
@@ -136,8 +136,20 @@ CREATE TABLE IF NOT EXISTS `in_rewards` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci COMMENT '';
 /*++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
 
+/*------------------------- CREDIT FROM VOLUNTARY DONATIONS ---------------------------*/
+CREATE TABLE IF NOT EXISTS `credit_donations` (
+    `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'transaction id',
+    `uid` varchar(16) NOT NULL COMMENT '',
+    `status` int(1) NOT NULL DEFAULT 0 COMMENT '1 = completed, 2 = on hold, 3 = cancelled, 4 = refunded',
+    `karma` int(11) NOT NULL DEFAULT 0 COMMENT 'total karma credits recieived as donation',
+    `created` datetime NOT NULL DEFAULT current_timestamp() COMMENT 'timestamp of transaction',
+    PRIMARY KEY (`id`),
+    UNIQUE KEY `uid` (`uid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci COMMENT '';
+/*------------------------------------------------------------------------------------*/
+
 /*++++++++++++++++++++++ DIRECT CREDIT TRANSFER FROM ANOTHER USER ++++++++++++++++++++*/
-CREATE TABLE IF NOT EXISTS `in_transfers` (
+CREATE TABLE IF NOT EXISTS `credit_transfers` (
     `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'transaction id',
     `uid` varchar(16) NOT NULL COMMENT '',
     `status` int(1) NOT NULL DEFAULT 0 COMMENT '1 = completed, 2 = on hold, 3 = cancelled, 4 = refunded',
@@ -152,7 +164,7 @@ CREATE TABLE IF NOT EXISTS `in_transfers` (
 /**************************************************************************************/
 
 /*---------------------- DIRECT WITHDRAWAL TO USERS BANK ACCOUNT ---------------------*/
-CREATE TABLE IF NOT EXISTS `out_withdrawals` (
+CREATE TABLE IF NOT EXISTS `debit_withdrawals` (
     `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'transaction id',
     `uid` varchar(16) NOT NULL COMMENT 'uid of withdrawer',
     `wid` varchar(11) NOT NULL COMMENT 'wallet id of withdrawer',
@@ -172,10 +184,11 @@ CREATE TABLE IF NOT EXISTS `out_withdrawals` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci COMMENT '';
 /*------------------------------------------------------------------------------------*/
 
-/*---------------------- DIRECT CREDIT TRANSFER TO ANOTHER USER ----------------------*/
-CREATE TABLE IF NOT EXISTS `out_transfers` (
+/*---------------------- DIRECT DEBIT TRANSFER TO ANOTHER USER ----------------------*/
+CREATE TABLE IF NOT EXISTS `debit_transfers` (
     `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'transaction id',
     `uid` varchar(16) NOT NULL COMMENT '',
+    `karma` int(11) NOT NULL DEFAULT 0 COMMENT 'total karma credits transferred to another user',
     `status` int(1) NOT NULL DEFAULT 0 COMMENT '1 = completed, 2 = on hold, 3 = cancelled, 4 = refunded',
     `created` datetime NOT NULL DEFAULT current_timestamp() COMMENT 'timestamp of transaction',
     PRIMARY KEY (`id`),
@@ -184,9 +197,13 @@ CREATE TABLE IF NOT EXISTS `out_transfers` (
 /*------------------------------------------------------------------------------------*/
 
 /*------------------------- DEBIT FROM PURCHASES MADE BY USER ------------------------*/
-CREATE TABLE IF NOT EXISTS `out_purchases` (
+CREATE TABLE IF NOT EXISTS `debit_purchases` (
     `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'transaction id',
     `uid` varchar(16) NOT NULL COMMENT '',
+    `karma` int(11) NOT NULL DEFAULT 0 COMMENT 'total karma credits debited towards the purchase',
+    `uid_seller` varchar(16) NOT NULL COMMENT 'uid of the seller who sold the product or service',
+	`id_store` int(11) NOT NULL COMMENT 'store id where the product or service was sold',
+ 	`id_order` int(11) NOT NULL COMMENT 'order id of the product or service sold',
     `status` int(1) NOT NULL DEFAULT 0 COMMENT '1 = completed, 2 = on hold, 3 = cancelled, 4 = refunded',
     `created` datetime NOT NULL DEFAULT current_timestamp() COMMENT 'timestamp of transaction',
     PRIMARY KEY (`id`),
@@ -195,7 +212,7 @@ CREATE TABLE IF NOT EXISTS `out_purchases` (
 /*------------------------------------------------------------------------------------*/
 
 /*------------------- DEBIT FROM ONE-TIME/RECURRING SUBSCRIPTIONS --------------------*/
-CREATE TABLE IF NOT EXISTS `out_subscriptions` (
+CREATE TABLE IF NOT EXISTS `debit_subscriptions` (
     `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'transaction id',
     `uid` varchar(16) NOT NULL COMMENT '',
     `status` int(1) NOT NULL DEFAULT 0 COMMENT '1 = completed, 2 = on hold, 3 = cancelled, 4 = refunded',
@@ -206,7 +223,7 @@ CREATE TABLE IF NOT EXISTS `out_subscriptions` (
 /*------------------------------------------------------------------------------------*/
 
 /*------------------------- DEBIT FROM VOLUNTARY DONATIONS ---------------------------*/
-CREATE TABLE IF NOT EXISTS `out_donations` (
+CREATE TABLE IF NOT EXISTS `debit_donations` (
     `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'transaction id',
     `uid` varchar(16) NOT NULL COMMENT '',
     `status` int(1) NOT NULL DEFAULT 0 COMMENT '1 = completed, 2 = on hold, 3 = cancelled, 4 = refunded',
@@ -217,7 +234,7 @@ CREATE TABLE IF NOT EXISTS `out_donations` (
 /*------------------------------------------------------------------------------------*/
 
 /*------------ DEBIT FROM COMMISSIONS PAID TO RESELLER/DROP SHIPPER/ETC --------------*/
-CREATE TABLE IF NOT EXISTS `out_commissions` (
+CREATE TABLE IF NOT EXISTS `debit_commissions` (
     `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'transaction id',
     `uid` varchar(16) NOT NULL COMMENT '',
     `status` int(1) NOT NULL DEFAULT 0 COMMENT '1 = completed, 2 = on hold, 3 = cancelled, 4 = refunded',
@@ -228,7 +245,7 @@ CREATE TABLE IF NOT EXISTS `out_commissions` (
 /*------------------------------------------------------------------------------------*/
 
 /*------------ DEBIT FROM PAYMENTS MADE TOWARDS SERVICES/BILLS/UTILITIES --------------*/
-CREATE TABLE IF NOT EXISTS `out_payments` (
+CREATE TABLE IF NOT EXISTS `debit_payments` (
     `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'transaction id',
     `uid` varchar(16) NOT NULL COMMENT '',
     `status` int(1) NOT NULL DEFAULT 0 COMMENT '1 = completed, 2 = on hold, 3 = cancelled, 4 = refunded',
