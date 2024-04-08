@@ -14,7 +14,7 @@ if (!isset($_SESSION['loggedIn'])) {
 ?>
     <script>
         $(document).ready(function() {
-            getDashboard();
+            getProfile();
         });
     </script>
 <?php

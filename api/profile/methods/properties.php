@@ -13,7 +13,7 @@ trait Properties {
     protected $action; // to store action from incoming post request
 
     // dashboard related properties
-    protected $dashboardFields;
+    protected $profileFields;
     protected $onBoard;
     protected $onBoardingStep;
 

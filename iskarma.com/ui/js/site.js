@@ -29,7 +29,7 @@ $("nav li").on("mouseover", function() {
           $("#processing").fadeOut();
         });     
       } else {
-        $(this).html('<div style="text-align:center; font-size:150px; line-height:300px">coming soon!</div>');
+        $(this).html('<div style="display:block; min-height:336px;text-align:center; font-size:128px; line-height:336px">coming soon!</div>');
       }
     }
   });

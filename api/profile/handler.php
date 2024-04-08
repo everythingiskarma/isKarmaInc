@@ -12,18 +12,20 @@ ini_set('display_startup_errors', 1);
 require_once "../../api-helpers/connect.php";
 // declare class properties used across the api
 require_once "methods/properties.php"; // provides trait Properties
-require_once "methods/get-dashboard.php"; // provides trait GetDashboard
+require_once "methods/get-profile.php"; // provides trait GetProfile
+require_once "methods/update-profile.php"; // provides trait UpdateProfile
 
-class Account extends Connect
+class Profile extends Connect
 {
 
-	use Properties; // provides Account class properties
-	use GetDashboard; // provides method getDashboard();
+	use Properties; // provides Profile class properties
+	use GetProfile; // provides method getProfile();
+	use UpdateProfile; // provides method updateProfile();
 
 	public function __construct()
 	{
 		parent::__construct(); // call the constructor of the parent class conDb;
-		$this->dashboard();
+		$this->profile();
 		/*
 		if (isset($_SESSION['loggedIn'])) {
 			$this->report[] = array(
@@ -36,7 +38,7 @@ class Account extends Connect
 		*/
 	} // end function __construct
 
-	private function dashboard()
+	private function profile()
 	{
 		$this->sessionUID = $_SESSION['uid']; // set uid based on current session
 		$this->sessionDomain = $_SESSION['domain']; // set uid based on current session
@@ -47,9 +49,35 @@ class Account extends Connect
 			$this->action = $_POST['action'];
 
 			switch ($this->action) {
-				case 'dashboard':
-					// execute method getDashboard and create success/error report based on the result
-					$this->getFullDashboard();
+				case 'get-profile-overview':
+					// execute method getProfile and create success/error report based on the result
+					$this->getProfile();
+					break;
+				case 'update-profile':
+					$this->firstname = $_POST['firstname'];
+					$this->lastname = $_POST['lastname'];
+					$this->cc = $_POST['cc'];
+					$this->cn = $_POST['cn'];
+					$this->dc = $_POST['dc'];
+					$this->mobile = $_POST['mobile'];
+					$this->gender = $_POST['gender'];
+					$this->dob = $_POST['dob'];
+					$this->type = $_POST['type'];
+					$this->label = $_POST['label'];
+					$this->address = $_POST['address'];
+					$this->country = $_POST['country'];
+					$this->state = $_POST['state'];
+					$this->city = $_POST['city'];
+					$this->zip = $_POST['zip'];
+					// execute method updateProfile and create success/error report based on the result
+					$this->updateProfile();
+					break;
+				case 'list-address':
+				case 'add-address':
+				case 'remove-address':
+				case 'update-address':
+					// execute method getAddress
+					//$this->manageAddress();
 					break;
 				case 'step1':
 					// save step1 post data and go to step 2
@@ -80,8 +108,7 @@ class Account extends Connect
 					$this->city = $_POST['city'];
 					$this->zip = $_POST['zip'];
 					$this->onBoardStep3();
-					break;
-									
+					break;							
 				default:
 					// code
 					break;
@@ -95,10 +122,10 @@ class Account extends Connect
 		return json_encode($this->report);
 	}
 
-} // end class Account
+} // end class Profile
 
-// instantiate the class Account
-$account = new Account();
+// instantiate the class Profile
+$profile = new Profile();
 
 // output report arrays as json
-echo $account->getReport();
+echo $profile->getReport();

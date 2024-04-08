@@ -2,7 +2,7 @@
 /* carousel */
 carousel {
 	display: block;
-	z-index: 0
+	z-index: 0;
 }
 
 carousel ul {
@@ -14,11 +14,11 @@ carousel ul {
 
 carousel ul li {
 	display: none;
-	min-height: 280px;
+	min-height: 296px;
 	max-height: auto;
 	padding:0px;
 	width:100%;
-	color: #fff
+	color: #fff;
 }
 
 .slideWelcome {

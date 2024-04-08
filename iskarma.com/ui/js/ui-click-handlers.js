@@ -91,7 +91,7 @@ $(document).on("click", "togglebar li.modal", function () {
 
 
 $(document).on("click", "#notifications", function () {
-
+	$(".ncount").text("").fadeOut();
 	$(this).toggleClass("on icon-bell icon-bell-o");
 
 	newState = $("#notifications").hasClass("on") ? 'on' : 'off';

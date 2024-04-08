@@ -78,7 +78,7 @@ function resendOTPTimer(time) {
             $("#validOTP").append(resend);
             $("#resend").show();
         } else {
-            $("#resendTimer").html("Resend OTP in " + countdown + " seconds").slideDown();
+            $("#resendTimer").html("Didn't recieve the email? Resend OTP in " + countdown + " seconds").slideDown();
         }
     }, 1000);
 }

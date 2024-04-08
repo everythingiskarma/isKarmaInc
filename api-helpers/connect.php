@@ -47,14 +47,16 @@ class Connect extends Database {
             );
             return false;
         } else {
+            /*
             $this->report[] = array(
                 'api' => 'Connect',
                 'action' => 'connect-database > establish-connection',
                 'result' => true,
-                //'message' => '<s><b class="icon-done-all"></b>Database connection established!</s>',
+                'message' => '<s><b class="icon-done-all"></b>Database connection established!</s>',
                 'advice' => 'perform-required-database-action'
             );
             return true;
+            */
         }
     }
 

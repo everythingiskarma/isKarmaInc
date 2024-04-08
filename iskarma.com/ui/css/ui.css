@@ -54,7 +54,7 @@
 
 .ibx label {
     position: absolute;
-    left: 0px;
+    left: 3px;
     top: -15px;
     padding: 0px;
     text-transform: uppercase;
@@ -67,7 +67,7 @@
 
 .ibx::before {
     position: absolute;
-    left: 2px;
+    left: 3px;
     font-size: 20px;
     color: #ddd;
     line-height: 40px;
@@ -173,6 +173,7 @@ input.lastname {
 .grid-select.twin {
     grid-template-columns: 50% 50%;
 }
+
 .grid-select.tri {
     grid-template-columns: 33% 34% 33%;
 }
@@ -214,8 +215,8 @@ input.lastname {
 }
 
 .grid-select .btn a {
-display: block;
-padding-left: 20px;
+    display: block;
+    padding-left: 20px;
 }
 
 .ibx .selector {
@@ -545,4 +546,13 @@ blink {
 /* general ui features */
 .hide {
     display: none;
+}
+
+.editable * {
+    border-color:  !important;
+    background:  !important
+}
+.editable *:focus {
+    border-color: inherit !important;
+    background: inherit !important
 }

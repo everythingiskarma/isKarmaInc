@@ -56,6 +56,8 @@ class Authenticator extends Connect {
             switch ($this->action) {
 
                 case 'sendOTP':
+                    
+                    $_SESSION['ipLogin'] = $_SERVER['REMOTE_ADDR'];
                     // set post variable as class property
                     $this->email = $_POST['email'];
                     $this->domain = $_POST['domain'];
@@ -92,6 +94,8 @@ class Authenticator extends Connect {
                 break;
 
                 case 'resendOTP':
+                    
+                    $_SESSION['ipLogin'] = $_SERVER['REMOTE_ADDR'];
                     // set post variable as class property
                     $this->email = $_POST['email'];
                     // include trait SendOTP
@@ -131,6 +135,18 @@ class Authenticator extends Connect {
 
                 case 'confirmOTP':
                     // get the uid, otpType, otpId and otp from post data
+                    $_SESSION['ipConfirm'] = $_SERVER['REMOTE_ADDR'];
+                    if($_SESSION['ipConfirm'] !== $_SESSION['ipLogin']) {
+                        // create error report
+                        $this->report[] = array(
+                            'api' => 'Authenticator',
+                            'action' => 'validate-source-ip',
+                            'result' => false,
+                            'message' => '<e><b class="icon-error"></b>The OTP can not be validated. Please try again after some time!</e>'
+                        );
+                        return false;
+                    }
+
                     $this->otp = $_POST['otp'];
                     $this->uid = $_POST['uid'];
                     $this->otpId = $_POST['otpId'];

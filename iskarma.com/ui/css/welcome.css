@@ -5,7 +5,7 @@ logo {
 	position: relative;
 	width: 256px;
 	height: 256px;
-	margin: 20px auto;
+	margin: 40px auto;
 	z-index: 0;
 }
 logo.loading {

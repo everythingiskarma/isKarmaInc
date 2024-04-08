@@ -138,6 +138,13 @@ trait ConfirmOTP {
                         $this->otpConfirmed = true;
                         // close statement
                         $stmt->close();
+
+                        // purge otp from the otp table
+                        $purge = '';
+                        $stmt = $this->connection->prepare("UPDATE otp SET otp = ? WHERE uid = ?");
+                        $stmt->bind_param('is', $purge, $this->uid);
+                        $stmt->execute();
+                        $stmt->close();
                         // prevent further processing of the script
                         return true;
 

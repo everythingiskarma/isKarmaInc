@@ -18,21 +18,22 @@ function processRequest(
 function successCallback(report) {
   $(".reports > *").addClass('pre');
   // every api request sends a report that contains specific object property indicating futher actions that need to be performed after successful response. based on which object property is sent, specific jquery functions load respective views and perform other post load actions.
+  var ncount = 0;
   if (Array.isArray(report) && report.length > 0) {
     report.forEach((obj, index) => {
       switch (true) {
         case obj.hasOwnProperty('loggedOut'): // indicates logout was successful, shows login page
-        case obj.hasOwnProperty('loggedIn'): // indicates login was successful, loads dashboard
-          // reloads togglebar and loads login or dashboard view. Follows (ajax.js)
+        case obj.hasOwnProperty('loggedIn'): // indicates login was successful, loads profile overview
+          // reloads togglebar and loads login or profile overview. Follows (ajax.js)
           loadAccount(obj);
           break;
         case obj.hasOwnProperty('onBoarding'): // indicates onboarding is pending
           // loads onboarding view and respective step based on object property step. Follows (onboarding.js)
           onBoarding(obj);
           break;
-        case obj.hasOwnProperty('dashboard'): // indicates onboarding is complete shows dashboard
-          // loads dashboard wrapper. Follows (api-controller-account.js)
-          dashboard(obj);
+        case obj.hasOwnProperty('profile'): // indicates onboarding is complete shows profile overview
+          // loads profile wrapper. Follows (api-controller-profile.js)
+          profileOverview(obj);
           break;
         case obj.hasOwnProperty('authOTP'): // indicates otp has been sent shows confirm otp interface
         // loads confirm otp wrapper. Follows (api-controller-authenticator.js)
@@ -48,6 +49,8 @@ function successCallback(report) {
           var reports = $(".reports");
           var msg = obj.message;
           reports.append(msg);
+          ncount++;
+          $(".ncount").text(ncount).show();
           var scroll = $(".reports");
           scroll.scrollTop(scroll.prop("scrollHeight"));
         }

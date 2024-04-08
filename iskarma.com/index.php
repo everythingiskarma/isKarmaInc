@@ -13,8 +13,8 @@
   <link rel="stylesheet" type="text/css" href="iskarma.com/ui/css/html5.css" charset="utf-8">
   <link rel="stylesheet" type="text/css" href="iskarma.com/ui/css/ui.css" charset="utf-8">
   <link rel="stylesheet" type="text/css" href="iskarma.com/ui/css/web.css" charset="utf-8">
-  <!-- initialize the css for api - account -->
-  <link rel="stylesheet" type="text/css" href="iskarma.com/ui/css/account.css" charset="utf-8">
+  <!-- initialize the css for api - profile -->
+  <link rel="stylesheet" type="text/css" href="iskarma.com/ui/css/profile.css" charset="utf-8">
   <!-- initialize the css for api - authenticator -->
   <link rel="stylesheet" type="text/css" href="iskarma.com/ui/css/authenticator.css" charset="utf-8">
   <link rel="stylesheet" type="text/css" href="iskarma.com/ui/css/animations.css" charset="utf-8">

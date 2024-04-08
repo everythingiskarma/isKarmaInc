@@ -8,6 +8,8 @@ trait Properties {
     // Login/Logout related properties
     protected $email;
     protected $uid;
+    protected $ipLogin;
+    protected $ipConfirm;
     //protected $logout;
     //protected $loggedin;
 
