@@ -1,0 +1,31 @@
+
+/* carousel */
+carousel {
+	display: block;
+	z-index: 0
+}
+
+carousel ul {
+	display: block;
+	height: auto;
+	padding-top: 0;
+	overflow: hidden
+}
+
+carousel ul li {
+	display: none;
+	min-height: 280px;
+	max-height: auto;
+	padding:0px;
+	width:100%;
+	color: #fff
+}
+
+.slideWelcome {
+	display: block;
+	text-align: center;
+	position: relative;
+	z-index: 0
+}
+
+/* carousel end */

@@ -58,3 +58,356 @@ Stack trace:
 2024/04/06 21:20:59 [error] 30640#30640: *29 upstream timed out (110: Connection timed out) while reading response header from upstream, client: 127.0.0.1, server: iskarma.com, request: "POST /phpmyadmin/index.php?route=/import HTTP/1.1", upstream: "fastcgi://unix:/run/php/php8.3-fpm.sock", host: "iskarma.com"
 2024/04/06 21:22:17 [error] 30732#30732: *4 upstream timed out (110: Connection timed out) while reading response header from upstream, client: 127.0.0.1, server: iskarma.com, request: "POST /phpmyadmin/index.php?route=/import HTTP/1.1", upstream: "fastcgi://unix:/run/php/php8.3-fpm.sock", host: "iskarma.com"
 2024/04/06 21:23:41 [error] 30730#30730: *15 upstream timed out (110: Connection timed out) while reading response header from upstream, client: 127.0.0.1, server: iskarma.com, request: "POST /phpmyadmin/index.php?route=/import HTTP/1.1", upstream: "fastcgi://unix:/run/php/php8.3-fpm.sock", host: "iskarma.com"
+2024/04/08 03:48:41 [error] 1496#1496: *13 FastCGI sent in stderr: "PHP message: PHP Parse error:  syntax error, unexpected single-quoted string "EUR", expecting "]" in /home/nashady/data/localhost/iskarma.site/toolkit/currency/index.php on line 8" while reading response header from upstream, client: 127.0.0.1, server: iskarma.site, request: "GET /toolkit/currency/ HTTP/1.1", upstream: "fastcgi://unix:/run/php/php8.3-fpm.sock:", host: "iskarma.site"
+2024/04/08 04:05:43 [error] 1496#1496: *92 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Uncaught Error: Call to private method Connect::connect() from scope Authenticator in /home/nashady/data/x10premium/public_html/api/methods/authenticator/trait-register-gatekeeper-account.php:192
+Stack trace:
+#0 /home/nashady/data/x10premium/public_html/api/methods/authenticator/trait-confirm-otp.php(111): Authenticator->registerGatekeeperAccount()
+#1 /home/nashady/data/x10premium/public_html/api/authenticator.php(139): Authenticator->confirmOTP()
+#2 /home/nashady/data/x10premium/public_html/api/authenticator.php(35): Authenticator->authenticate()
+#3 /home/nashady/data/x10premium/public_html/api/authenticator.php(215): Authenticator->__construct()
+#4 {main}
+  thrown in /home/nashady/data/x10premium/public_html/api/methods/authenticator/trait-register-gatekeeper-account.php on line 192" while reading response header from upstream, client: 127.0.0.1, server: iskarma.com, request: "POST /api/authenticator.php HTTP/1.1", upstream: "fastcgi://unix:/run/php/php8.3-fpm.sock:", host: "iskarma.com", referrer: "https://iskarma.com/"
+2024/04/08 04:23:46 [error] 1499#1499: *190 FastCGI sent in stderr: "PHP message: PHP Warning:  Undefined array key "uid" in /home/nashady/data/x10premium/public_html/api/account.php on line 57; PHP message: PHP Deprecated:  base64_decode(): Passing null to parameter #1 ($string) of type string is deprecated in /home/nashady/data/x10premium/public_html/api/account.php on line 57" while reading response header from upstream, client: 127.0.0.1, server: iskarma.com, request: "POST /api/account.php HTTP/1.1", upstream: "fastcgi://unix:/run/php/php8.3-fpm.sock:", host: "iskarma.com", referrer: "https://iskarma.com/"
+2024/04/08 04:25:22 [error] 1499#1499: *190 FastCGI sent in stderr: "PHP message: PHP Warning:  Undefined array key "uid" in /home/nashady/data/x10premium/public_html/api/account.php on line 57; PHP message: PHP Deprecated:  base64_decode(): Passing null to parameter #1 ($string) of type string is deprecated in /home/nashady/data/x10premium/public_html/api/account.php on line 57" while reading response header from upstream, client: 127.0.0.1, server: iskarma.com, request: "POST /api/account.php HTTP/1.1", upstream: "fastcgi://unix:/run/php/php8.3-fpm.sock:", host: "iskarma.com", referrer: "https://iskarma.com/"
+2024/04/08 04:30:02 [error] 1500#1500: *237 FastCGI sent in stderr: "PHP message: PHP Warning:  Undefined array key "uid" in /home/nashady/data/x10premium/public_html/api/account.php on line 57; PHP message: PHP Deprecated:  base64_decode(): Passing null to parameter #1 ($string) of type string is deprecated in /home/nashady/data/x10premium/public_html/api/account.php on line 57" while reading response header from upstream, client: 127.0.0.1, server: iskarma.com, request: "POST /api/account.php HTTP/1.1", upstream: "fastcgi://unix:/run/php/php8.3-fpm.sock:", host: "iskarma.com", referrer: "https://iskarma.com/"
+2024/04/08 04:34:54 [error] 1496#1496: *249 FastCGI sent in stderr: "PHP message: PHP Warning:  Undefined array key "uid" in /home/nashady/data/x10premium/public_html/api/account.php on line 57; PHP message: PHP Deprecated:  base64_decode(): Passing null to parameter #1 ($string) of type string is deprecated in /home/nashady/data/x10premium/public_html/api/account.php on line 57" while reading response header from upstream, client: 127.0.0.1, server: iskarma.com, request: "POST /api/account.php HTTP/1.1", upstream: "fastcgi://unix:/run/php/php8.3-fpm.sock:", host: "iskarma.com", referrer: "https://iskarma.com/"
+2024/04/08 04:51:18 [error] 1496#1496: *280 FastCGI sent in stderr: "PHP message: PHP Warning:  Undefined array key "uid" in /home/nashady/data/x10premium/public_html/api/account.php on line 57; PHP message: PHP Deprecated:  base64_decode(): Passing null to parameter #1 ($string) of type string is deprecated in /home/nashady/data/x10premium/public_html/api/account.php on line 57" while reading response header from upstream, client: 127.0.0.1, server: iskarma.com, request: "POST /api/account.php HTTP/1.1", upstream: "fastcgi://unix:/run/php/php8.3-fpm.sock:", host: "iskarma.com", referrer: "https://iskarma.com/"
+2024/04/08 09:45:31 [error] 1504#1504: *15 FastCGI sent in stderr: "PHP message: PHP Warning:  require_once(iskarma.com/internal/home.php): Failed to open stream: No such file or directory in /home/nashady/data/x10premium/public_html/iskarma.com/index.php on line 87; PHP message: PHP Fatal error:  Uncaught Error: F" while reading upstream, client: 127.0.0.1, server: iskarma.com, request: "GET / HTTP/1.1", upstream: "fastcgi://unix:/run/php/php8.3-fpm.sock:", host: "iskarma.com"
+2024/04/08 09:45:31 [error] 1504#1504: *15 FastCGI sent in stderr: "ailed opening required 'iskarma.com/internal/home.php' (include_path='.:/usr/share/php') in /home/nashady/data/x10premium/public_html/iskarma.com/index.php:87
+Stack trace:
+#0 /home/nashady/data/x10premium/public_html/index.php(67): require_once()
+#1 {main}
+  thrown in /home/nashady/data/x10premium/public_html/iskarma.com/index.php on line 87" while reading upstream, client: 127.0.0.1, server: iskarma.com, request: "GET / HTTP/1.1", upstream: "fastcgi://unix:/run/php/php8.3-fpm.sock:", host: "iskarma.com"
+2024/04/08 09:50:16 [error] 1504#1504: *18 FastCGI sent in stderr: "PHP message: PHP Warning:  require_once(iskarma.com/internal/home.php): Failed to open stream: No such file or directory in /home/nashad" while reading upstream, client: 127.0.0.1, server: iskarma.com, request: "GET / HTTP/1.1", upstream: "fastcgi://unix:/run/php/php8.3-fpm.sock:", host: "iskarma.com"
+2024/04/08 09:50:16 [error] 1504#1504: *18 FastCGI sent in stderr: "y/data/x10premium/public_html/iskarma.com/index.php on line 87; PHP message: PHP Fatal error:  Uncaught Error: Failed opening required 'iskarma.com/internal/home.php' (include_path='.:/usr/share/php') in /home/nashady/data/x10premium/public_html/iskarma.com/index.php:87
+Stack trace:
+#0 /home/nashady/data/x10premium/public_html/index.php(67): require_once()
+#1 {main}
+  thrown in /home/nashady/data/x10premium/public_html/iskarma.com/index.php on line 87" while reading upstream, client: 127.0.0.1, server: iskarma.com, request: "GET / HTTP/1.1", upstream: "fastcgi://unix:/run/php/php8.3-fpm.sock:", host: "iskarma.com"
+2024/04/08 09:50:20 [error] 1504#1504: *18 FastCGI sent in stderr: "PHP message: PHP Warning:  require_once(iskarma.com/internal/home.php): Failed to open stream: No such file or directory in /home/nashad" while reading upstream, client: 127.0.0.1, server: iskarma.com, request: "GET / HTTP/1.1", upstream: "fastcgi://unix:/run/php/php8.3-fpm.sock:", host: "iskarma.com"
+2024/04/08 09:50:20 [error] 1504#1504: *18 FastCGI sent in stderr: "y/data/x10premium/public_html/iskarma.com/index.php on line 87; PHP message: PHP Fatal error:  Uncaught Error: Failed opening required 'iskarma.com/internal/home.php' (include_path='.:/usr/share/php') in /home/nashady/data/x10premium/public_html/iskarma.com/index.php:87
+Stack trace:
+#0 /home/nashady/data/x10premium/public_html/index.php(67): require_once()
+#1 {main}
+  thrown in /home/nashady/data/x10premium/public_html/iskarma.com/index.php on line 87" while reading upstream, client: 127.0.0.1, server: iskarma.com, request: "GET / HTTP/1.1", upstream: "fastcgi://unix:/run/php/php8.3-fpm.sock:", host: "iskarma.com"
+2024/04/08 09:50:21 [error] 1504#1504: *18 FastCGI sent in stderr: "PHP message: PHP Warning:  require_once(iskarma.com/internal/home.php): Failed to open stream: No such file or directory in /home/nashad" while reading upstream, client: 127.0.0.1, server: iskarma.com, request: "GET / HTTP/1.1", upstream: "fastcgi://unix:/run/php/php8.3-fpm.sock:", host: "iskarma.com"
+2024/04/08 09:50:21 [error] 1504#1504: *18 FastCGI sent in stderr: "y/data/x10premium/public_html/iskarma.com/index.php on line 87; PHP message: PHP Fatal error:  Uncaught Error: Failed opening required 'iskarma.com/internal/home.php' (include_path='.:/usr/share/php') in /home/nashady/data/x10premium/public_html/iskarma.com/index.php:87
+Stack trace:
+#0 /home/nashady/data/x10premium/public_html/index.php(67): require_once()
+#1 {main}
+  thrown in /home/nashady/data/x10premium/public_html/iskarma.com/index.php on line 87" while reading upstream, client: 127.0.0.1, server: iskarma.com, request: "GET / HTTP/1.1", upstream: "fastcgi://unix:/run/php/php8.3-fpm.sock:", host: "iskarma.com"
+2024/04/08 09:50:22 [error] 1504#1504: *18 FastCGI sent in stderr: "PHP message: PHP Warning:  require_once(iskarma.com/internal/home.php): Failed to open stream: No such file or directory in /home/nashad" while reading upstream, client: 127.0.0.1, server: iskarma.com, request: "GET / HTTP/1.1", upstream: "fastcgi://unix:/run/php/php8.3-fpm.sock:", host: "iskarma.com"
+2024/04/08 09:50:22 [error] 1504#1504: *18 FastCGI sent in stderr: "y/data/x10premium/public_html/iskarma.com/index.php on line 87; PHP message: PHP Fatal error:  Uncaught Error: Failed opening required 'iskarma.com/internal/home.php' (include_path='.:/usr/share/php') in /home/nashady/data/x10premium/public_html/iskarma.com/index.php:87
+Stack trace:
+#0 /home/nashady/data/x10premium/public_html/index.php(67): require_once()
+#1 {main}
+  thrown in /home/nashady/data/x10premium/public_html/iskarma.com/index.php on line 87" while reading upstream, client: 127.0.0.1, server: iskarma.com, request: "GET / HTTP/1.1", upstream: "fastcgi://unix:/run/php/php8.3-fpm.sock:", host: "iskarma.com"
+2024/04/08 09:50:22 [error] 1504#1504: *18 FastCGI sent in stderr: "PHP message: PHP Warning:  require_once(iskarma.com/internal/home.php): Failed to open stream: No such file or directory in /home/nashad" while reading upstream, client: 127.0.0.1, server: iskarma.com, request: "GET / HTTP/1.1", upstream: "fastcgi://unix:/run/php/php8.3-fpm.sock:", host: "iskarma.com"
+2024/04/08 09:50:22 [error] 1504#1504: *18 FastCGI sent in stderr: "y/data/x10premium/public_html/iskarma.com/index.php on line 87; PHP message: PHP Fatal error:  Uncaught Error: Failed opening required 'iskarma.com/internal/home.php' (include_path='.:/usr/share/php') in /home/nashady/data/x10premium/public_html/iskarma.com/index.php:87
+Stack trace:
+#0 /home/nashady/data/x10premium/public_html/index.php(67): require_once()
+#1 {main}
+  thrown in /home/nashady/data/x10premium/public_html/iskarma.com/index.php on line 87" while reading upstream, client: 127.0.0.1, server: iskarma.com, request: "GET / HTTP/1.1", upstream: "fastcgi://unix:/run/php/php8.3-fpm.sock:", host: "iskarma.com"
+2024/04/08 09:50:23 [error] 1504#1504: *18 FastCGI sent in stderr: "PHP message: PHP Warning:  require_once(iskarma.com/internal/home.php): Failed to open stream: No such file or directory in /home/nashad" while reading upstream, client: 127.0.0.1, server: iskarma.com, request: "GET / HTTP/1.1", upstream: "fastcgi://unix:/run/php/php8.3-fpm.sock:", host: "iskarma.com"
+2024/04/08 09:50:23 [error] 1504#1504: *18 FastCGI sent in stderr: "y/data/x10premium/public_html/iskarma.com/index.php on line 87; PHP message: PHP Fatal error:  Uncaught Error: Failed opening required 'iskarma.com/internal/home.php' (include_path='.:/usr/share/php') in /home/nashady/data/x10premium/public_html/iskarma.com/index.php:87
+Stack trace:
+#0 /home/nashady/data/x10premium/public_html/index.php(67): require_once()
+#1 {main}
+  thrown in /home/nashady/data/x10premium/public_html/iskarma.com/index.php on line 87" while reading upstream, client: 127.0.0.1, server: iskarma.com, request: "GET / HTTP/1.1", upstream: "fastcgi://unix:/run/php/php8.3-fpm.sock:", host: "iskarma.com"
+2024/04/08 09:50:30 [error] 1504#1504: *36 FastCGI sent in stderr: "PHP message: PHP Warning:  require_once(iskarma.com/internal/home.php): Failed to open stream: No such file or directory in /home/nashady/data/x10premium/public_html/iskarma.com/index.php on line 87; PHP message: PHP Fatal error:  Uncaught Error: Failed opening required 'iskarma.com/internal/home.php' (include_path='.:/usr/share/php') in /home/nashady/data/x10premium/public_html/iskarma.com/index.php:87
+Stack trace:
+#0 /home/nashady/data/x10premium/public_html/index.php(67): require_once()
+#1 {main}
+  thrown in /home/nashady/data/x10premium/public_html/iskarma.com/index.php on line 87" while reading upstream, client: 127.0.0.1, server: iskarma.com, request: "GET / HTTP/1.1", upstream: "fastcgi://unix:/run/php/php8.3-fpm.sock:", host: "iskarma.com"
+2024/04/08 09:51:04 [error] 1504#1504: *18 FastCGI sent in stderr: "PHP message: PHP Warning:  require_once(iskarma.com/internal/home.php): Failed to open stream: No such file or directory in /hom" while reading upstream, client: 127.0.0.1, server: iskarma.com, request: "GET / HTTP/1.1", upstream: "fastcgi://unix:/run/php/php8.3-fpm.sock:", host: "iskarma.com"
+2024/04/08 09:51:04 [error] 1504#1504: *18 FastCGI sent in stderr: "e/nashady/data/x10premium/public_html/iskarma.com/index.php on line 87; PHP message: PHP Fatal error:  Uncaught Error: Failed opening required 'iskarma.com/internal/home.php' (include_path='.:/usr/share/php') in /home/nashady/data/x10premium/public_html/iskarma.com/index.php:87
+Stack trace:
+#0 /home/nashady/data/x10premium/public_html/index.php(67): require_once()
+#1 {main}
+  thrown in /home/nashady/data/x10premium/public_html/iskarma.com/index.php on line 87" while reading upstream, client: 127.0.0.1, server: iskarma.com, request: "GET / HTTP/1.1", upstream: "fastcgi://unix:/run/php/php8.3-fpm.sock:", host: "iskarma.com"
+2024/04/08 09:51:13 [error] 1504#1504: *36 FastCGI sent in stderr: "PHP message: PHP Warning:  require_once(iskarma.com/internal/home.php): Failed to open stream: No such file or directory in /home/nashady/data/x10premium/public_html/iskarma.com/index.php on line 87; PHP message: PHP Fatal error:  Uncaught Error: Failed opening required 'iskarma.com/internal/home.php' (include_path='.:/usr/share/php') in /home/nashady/data/x10premium/public_html/iskarma.com/index.php:87
+Stack trace:
+#0 /home/nashady/data/x10premium/public_html/index.php(67): require_once()
+#1 {main}
+  thrown in /home/nashady/data/x10premium/public_html/iskarma.com/index.php on line 87" while reading upstream, client: 127.0.0.1, server: iskarma.com, request: "GET / HTTP/1.1", upstream: "fastcgi://unix:/run/php/php8.3-fpm.sock:", host: "iskarma.com"
+2024/04/08 09:51:30 [error] 1504#1504: *18 FastCGI sent in stderr: "PHP message: PHP Warning:  require_once(iskarma.com/internal/home.php): Failed to open stream: No such file or directory" while reading upstream, client: 127.0.0.1, server: iskarma.com, request: "GET / HTTP/1.1", upstream: "fastcgi://unix:/run/php/php8.3-fpm.sock:", host: "iskarma.com"
+2024/04/08 09:51:30 [error] 1504#1504: *18 FastCGI sent in stderr: " in /home/nashady/data/x10premium/public_html/iskarma.com/index.php on line 87; PHP message: PHP Fatal error:  Uncaught Error: Failed opening required 'iskarma.com/internal/home.php' (include_path='.:/usr/share/php') in /home/nashady/data/x10premium/public_html/iskarma.com/index.php:87
+Stack trace:
+#0 /home/nashady/data/x10premium/public_html/index.php(67): require_once()
+#1 {main}
+  thrown in /home/nashady/data/x10premium/public_html/iskarma.com/index.php on line 87" while reading upstream, client: 127.0.0.1, server: iskarma.com, request: "GET / HTTP/1.1", upstream: "fastcgi://unix:/run/php/php8.3-fpm.sock:", host: "iskarma.com"
+2024/04/08 09:51:53 [error] 1504#1504: *18 FastCGI sent in stderr: "PHP message: PHP Warning:  require_once(iskarma.com/internal/home.php): Failed to open stream: No such f" while reading upstream, client: 127.0.0.1, server: iskarma.com, request: "GET / HTTP/1.1", upstream: "fastcgi://unix:/run/php/php8.3-fpm.sock:", host: "iskarma.com"
+2024/04/08 09:51:53 [error] 1504#1504: *18 FastCGI sent in stderr: "ile or directory in /home/nashady/data/x10premium/public_html/iskarma.com/index.php on line 87; PHP message: PHP Fatal error:  Uncaught Error: Failed opening required 'iskarma.com/internal/home.php' (include_path='.:/usr/share/php') in /home/nashady/data/x10premium/public_html/iskarma.com/index.php:87
+Stack trace:
+#0 /home/nashady/data/x10premium/public_html/index.php(67): require_once()
+#1 {main}
+  thrown in /home/nashady/data/x10premium/public_html/iskarma.com/index.php on line 87" while reading upstream, client: 127.0.0.1, server: iskarma.com, request: "GET / HTTP/1.1", upstream: "fastcgi://unix:/run/php/php8.3-fpm.sock:", host: "iskarma.com"
+2024/04/08 09:52:12 [error] 1504#1504: *18 FastCGI sent in stderr: "PHP message: PHP Warning:  require_once(iskarma.com/internal/home.php): Failed to open stream: No such file or d" while reading upstream, client: 127.0.0.1, server: iskarma.com, request: "GET / HTTP/1.1", upstream: "fastcgi://unix:/run/php/php8.3-fpm.sock:", host: "iskarma.com"
+2024/04/08 09:52:12 [error] 1504#1504: *18 FastCGI sent in stderr: "irectory in /home/nashady/data/x10premium/public_html/iskarma.com/index.php on line 87; PHP message: PHP Fatal error:  Uncaught Error: Failed opening required 'iskarma.com/internal/home.php' (include_path='.:/usr/share/php') in /home/nashady/data/x10premium/public_html/iskarma.com/index.php:87
+Stack trace:
+#0 /home/nashady/data/x10premium/public_html/index.php(67): require_once()
+#1 {main}
+  thrown in /home/nashady/data/x10premium/public_html/iskarma.com/index.php on line 87" while reading upstream, client: 127.0.0.1, server: iskarma.com, request: "GET / HTTP/1.1", upstream: "fastcgi://unix:/run/php/php8.3-fpm.sock:", host: "iskarma.com"
+2024/04/08 09:52:43 [error] 1504#1504: *18 FastCGI sent in stderr: "PHP message: PHP Warning:  require_once(iskarma.com/internal/home.php): Failed to open stream: No such file or d" while reading upstream, client: 127.0.0.1, server: iskarma.com, request: "GET / HTTP/1.1", upstream: "fastcgi://unix:/run/php/php8.3-fpm.sock:", host: "iskarma.com"
+2024/04/08 09:52:43 [error] 1504#1504: *18 FastCGI sent in stderr: "irectory in /home/nashady/data/x10premium/public_html/iskarma.com/index.php on line 87; PHP message: PHP Fatal error:  Uncaught Error: Failed opening required 'iskarma.com/internal/home.php' (include_path='.:/usr/share/php') in /home/nashady/data/x10premium/public_html/iskarma.com/index.php:87
+Stack trace:
+#0 /home/nashady/data/x10premium/public_html/index.php(67): require_once()
+#1 {main}
+  thrown in /home/nashady/data/x10premium/public_html/iskarma.com/index.php on line 87" while reading upstream, client: 127.0.0.1, server: iskarma.com, request: "GET / HTTP/1.1", upstream: "fastcgi://unix:/run/php/php8.3-fpm.sock:", host: "iskarma.com"
+2024/04/08 09:52:47 [error] 1504#1504: *50 FastCGI sent in stderr: "PHP message: PHP Warning:  require_once(iskarma.com/internal/home.php): Failed to open stream: No such file or directory in /home/nashady/data/x10premium/public_html/iskarma.com/index.php on line 87; PHP message: PHP Fatal error:  Uncaught Error: Failed opening required 'iskarma.com/internal/home.php' (include_path='.:/usr/share/php') in /home/nashady/data/x10premium/public_html/iskarma.com/index.php:87
+Stack trace:
+#0 /home/nashady/data/x10premium/public_html/index.php(67): require_once()
+#1 {main}
+  thrown in /home/nashady/data/x10premium/public_html/iskarma.com/index.php on line 87" while reading upstream, client: 127.0.0.1, server: iskarma.com, request: "GET / HTTP/1.1", upstream: "fastcgi://unix:/run/php/php8.3-fpm.sock:", host: "iskarma.com"
+2024/04/08 09:52:48 [error] 1504#1504: *18 FastCGI sent in stderr: "PHP message: PHP Warning:  require_once(iskarma.com/internal/home.php): Failed to open stream: No such file or d" while reading upstream, client: 127.0.0.1, server: iskarma.com, request: "GET / HTTP/1.1", upstream: "fastcgi://unix:/run/php/php8.3-fpm.sock:", host: "iskarma.com"
+2024/04/08 09:52:48 [error] 1504#1504: *18 FastCGI sent in stderr: "irectory in /home/nashady/data/x10premium/public_html/iskarma.com/index.php on line 87; PHP message: PHP Fatal error:  Uncaught Error: Failed opening required 'iskarma.com/internal/home.php' (include_path='.:/usr/share/php') in /home/nashady/data/x10premium/public_html/iskarma.com/index.php:87
+Stack trace:
+#0 /home/nashady/data/x10premium/public_html/index.php(67): require_once()
+#1 {main}
+  thrown in /home/nashady/data/x10premium/public_html/iskarma.com/index.php on line 87" while reading upstream, client: 127.0.0.1, server: iskarma.com, request: "GET / HTTP/1.1", upstream: "fastcgi://unix:/run/php/php8.3-fpm.sock:", host: "iskarma.com"
+2024/04/08 10:15:22 [error] 1505#1505: *81 FastCGI sent in stderr: "PHP message: PHP Warning:  require_once(/home/nashady/data/x10premium/public_html/iskarma.com/assets/internal/ho" while reading upstream, client: 127.0.0.1, server: iskarma.com, request: "GET / HTTP/1.1", upstream: "fastcgi://unix:/run/php/php8.3-fpm.sock:", host: "iskarma.com"
+2024/04/08 10:15:22 [error] 1505#1505: *81 FastCGI sent in stderr: "me.php): Failed to open stream: No such file or directory in /home/nashady/data/x10premium/public_html/iskarma.com/index.php on line 87; PHP message: PHP Fatal error:  Uncaught Error: Failed opening required '/home/nashady/data/x10premium/public_html/iskarma.com/assets/internal/home.php' (include_path='.:/usr/share/php') in /home/nashady/data/x10premium/public_html/iskarma.com/index.php:87
+Stack trace:
+#0 /home/nashady/data/x10premium/public_html/index.php(67): require_once()
+#1 {main}
+  thrown in /home/nashady/data/x10premium/public_html/iskarma.com/index.php on line 87" while reading upstream, client: 127.0.0.1, server: iskarma.com, request: "GET / HTTP/1.1", upstream: "fastcgi://unix:/run/php/php8.3-fpm.sock:", host: "iskarma.com"
+2024/04/08 10:15:26 [error] 1505#1505: *87 FastCGI sent in stderr: "PHP message: PHP Warning:  require_once(iskarma.com/assets/internal/home.php): Failed to open stream: No such fi" while reading upstream, client: 127.0.0.1, server: iskarma.com, request: "GET / HTTP/1.1", upstream: "fastcgi://unix:/run/php/php8.3-fpm.sock:", host: "iskarma.com"
+2024/04/08 10:15:26 [error] 1505#1505: *87 FastCGI sent in stderr: "le or directory in /home/nashady/data/x10premium/public_html/iskarma.com/index.php on line 87; PHP message: PHP Fatal error:  Uncaught Error: Failed opening required 'iskarma.com/assets/internal/home.php' (include_path='.:/usr/share/php') in /home/nashady/data/x10premium/public_html/iskarma.com/index.php:87
+Stack trace:
+#0 /home/nashady/data/x10premium/public_html/index.php(67): require_once()
+#1 {main}
+  thrown in /home/nashady/data/x10premium/public_html/iskarma.com/index.php on line 87" while reading upstream, client: 127.0.0.1, server: iskarma.com, request: "GET / HTTP/1.1", upstream: "fastcgi://unix:/run/php/php8.3-fpm.sock:", host: "iskarma.com"
+2024/04/08 10:29:48 [error] 1505#1505: *92 FastCGI sent in stderr: "PHP message: PHP Warning:  require_once(iskarma.com/assets/internal/home.php): Failed to open stream: No such fi" while reading upstream, client: 127.0.0.1, server: iskarma.com, request: "GET / HTTP/1.1", upstream: "fastcgi://unix:/run/php/php8.3-fpm.sock:", host: "iskarma.com"
+2024/04/08 10:29:48 [error] 1505#1505: *92 FastCGI sent in stderr: "le or directory in /home/nashady/data/x10premium/public_html/iskarma.com/index.php on line 87; PHP message: PHP Fatal error:  Uncaught Error: Failed opening required 'iskarma.com/assets/internal/home.php' (include_path='.:/usr/share/php') in /home/nashady/data/x10premium/public_html/iskarma.com/index.php:87
+Stack trace:
+#0 /home/nashady/data/x10premium/public_html/index.php(67): require_once()
+#1 {main}
+  thrown in /home/nashady/data/x10premium/public_html/iskarma.com/index.php on line 87" while reading upstream, client: 127.0.0.1, server: iskarma.com, request: "GET / HTTP/1.1", upstream: "fastcgi://unix:/run/php/php8.3-fpm.sock:", host: "iskarma.com"
+2024/04/08 10:32:49 [error] 1507#1507: *100 FastCGI sent in stderr: "PHP message: PHP Warning:  require_once(iskarma.com/assets/internal/home.php): Failed to open stream: No such fi" while reading upstream, client: 127.0.0.1, server: iskarma.com, request: "GET / HTTP/1.1", upstream: "fastcgi://unix:/run/php/php8.3-fpm.sock:", host: "iskarma.com"
+2024/04/08 10:32:49 [error] 1507#1507: *100 FastCGI sent in stderr: "le or directory in /home/nashady/data/x10premium/public_html/iskarma.com/index.php on line 87; PHP message: PHP Fatal error:  Uncaught Error: Failed opening required 'iskarma.com/assets/internal/home.php' (include_path='.:/usr/share/php') in /home/nashady/data/x10premium/public_html/iskarma.com/index.php:87
+Stack trace:
+#0 /home/nashady/data/x10premium/public_html/index.php(67): require_once()
+#1 {main}
+  thrown in /home/nashady/data/x10premium/public_html/iskarma.com/index.php on line 87" while reading upstream, client: 127.0.0.1, server: iskarma.com, request: "GET / HTTP/1.1", upstream: "fastcgi://unix:/run/php/php8.3-fpm.sock:", host: "iskarma.com"
+2024/04/08 10:32:50 [error] 1507#1507: *100 FastCGI sent in stderr: "PHP message: PHP Warning:  require_once(iskarma.com/assets/internal/home.php): Failed to open stream: No such fi" while reading upstream, client: 127.0.0.1, server: iskarma.com, request: "GET / HTTP/1.1", upstream: "fastcgi://unix:/run/php/php8.3-fpm.sock:", host: "iskarma.com"
+2024/04/08 10:32:50 [error] 1507#1507: *100 FastCGI sent in stderr: "le or directory in /home/nashady/data/x10premium/public_html/iskarma.com/index.php on line 87; PHP message: PHP Fatal error:  Uncaught Error: Failed opening required 'iskarma.com/assets/internal/home.php' (include_path='.:/usr/share/php') in /home/nashady/data/x10premium/public_html/iskarma.com/index.php:87
+Stack trace:
+#0 /home/nashady/data/x10premium/public_html/index.php(67): require_once()
+#1 {main}
+  thrown in /home/nashady/data/x10premium/public_html/iskarma.com/index.php on line 87" while reading upstream, client: 127.0.0.1, server: iskarma.com, request: "GET / HTTP/1.1", upstream: "fastcgi://unix:/run/php/php8.3-fpm.sock:", host: "iskarma.com"
+2024/04/08 10:38:16 [error] 1507#1507: *112 FastCGI sent in stderr: "PHP message: PHP Warning:  require_once(iskarma.com/assets/internal/home.php): Failed to open stream: No such fi" while reading upstream, client: 127.0.0.1, server: iskarma.com, request: "GET / HTTP/1.1", upstream: "fastcgi://unix:/run/php/php8.3-fpm.sock:", host: "iskarma.com"
+2024/04/08 10:38:16 [error] 1507#1507: *112 FastCGI sent in stderr: "le or directory in /home/nashady/data/x10premium/public_html/iskarma.com/index.php on line 87; PHP message: PHP Fatal error:  Uncaught Error: Failed opening required 'iskarma.com/assets/internal/home.php' (include_path='.:/usr/share/php') in /home/nashady/data/x10premium/public_html/iskarma.com/index.php:87
+Stack trace:
+#0 /home/nashady/data/x10premium/public_html/index.php(67): require_once()
+#1 {main}
+  thrown in /home/nashady/data/x10premium/public_html/iskarma.com/index.php on line 87" while reading upstream, client: 127.0.0.1, server: iskarma.com, request: "GET / HTTP/1.1", upstream: "fastcgi://unix:/run/php/php8.3-fpm.sock:", host: "iskarma.com"
+2024/04/08 10:38:33 [error] 1507#1507: *112 FastCGI sent in stderr: "PHP message: PHP Warning:  require_once(iskarma.com/assets/internal/home.php): Failed to open stream: No such fi" while reading upstream, client: 127.0.0.1, server: iskarma.com, request: "GET / HTTP/1.1", upstream: "fastcgi://unix:/run/php/php8.3-fpm.sock:", host: "iskarma.com"
+2024/04/08 10:38:33 [error] 1507#1507: *112 FastCGI sent in stderr: "le or directory in /home/nashady/data/x10premium/public_html/iskarma.com/index.php on line 87; PHP message: PHP Fatal error:  Uncaught Error: Failed opening required 'iskarma.com/assets/internal/home.php' (include_path='.:/usr/share/php') in /home/nashady/data/x10premium/public_html/iskarma.com/index.php:87
+Stack trace:
+#0 /home/nashady/data/x10premium/public_html/index.php(67): require_once()
+#1 {main}
+  thrown in /home/nashady/data/x10premium/public_html/iskarma.com/index.php on line 87" while reading upstream, client: 127.0.0.1, server: iskarma.com, request: "GET / HTTP/1.1", upstream: "fastcgi://unix:/run/php/php8.3-fpm.sock:", host: "iskarma.com"
+2024/04/08 10:39:14 [error] 1507#1507: *112 FastCGI sent in stderr: "PHP message: PHP Warning:  require_once(iskarma.com/assets/internal/home.php): Failed to open stream: No such fi" while reading upstream, client: 127.0.0.1, server: iskarma.com, request: "GET / HTTP/1.1", upstream: "fastcgi://unix:/run/php/php8.3-fpm.sock:", host: "iskarma.com"
+2024/04/08 10:39:14 [error] 1507#1507: *112 FastCGI sent in stderr: "le or directory in /home/nashady/data/x10premium/public_html/iskarma.com/index.php on line 87; PHP message: PHP Fatal error:  Uncaught Error: Failed opening required 'iskarma.com/assets/internal/home.php' (include_path='.:/usr/share/php') in /home/nashady/data/x10premium/public_html/iskarma.com/index.php:87
+Stack trace:
+#0 /home/nashady/data/x10premium/public_html/index.php(67): require_once()
+#1 {main}
+  thrown in /home/nashady/data/x10premium/public_html/iskarma.com/index.php on line 87" while reading upstream, client: 127.0.0.1, server: iskarma.com, request: "GET / HTTP/1.1", upstream: "fastcgi://unix:/run/php/php8.3-fpm.sock:", host: "iskarma.com"
+2024/04/08 11:08:37 [error] 1506#1506: *125 FastCGI sent in stderr: "PHP message: PHP Warning:  require_once(iskarma.com/assets/internal/home.php): Failed to open stream: No such file or directory in /home/nashady/data/x10premium/public_html/iskarma.com/index.php on line 87; PHP message: PHP Fatal error:  Uncaught Error: Failed opening required 'iskarma.com/assets/internal/home.php' (include_path='.:/usr/share/php') in /home/nashady/data/x10premium/public_html/iskarma.com/index.php:87
+Stack trace:
+#0 /home/nashady/data/x10premium/public_html/index.php(67): require_once()
+#1 {main}
+  thrown in /home/nashady/data/x10premium/public_html/iskarma.com/index.php on line 87" while reading upstream, client: 127.0.0.1, server: iskarma.com, request: "GET / HTTP/1.1", upstream: "fastcgi://unix:/run/php/php8.3-fpm.sock:", host: "iskarma.com"
+2024/04/08 11:09:37 [error] 1506#1506: *125 FastCGI sent in stderr: "PHP message: PHP Warning:  require_once(iskarma.com/assets/about/home.php): Failed to open stream: No such file" while reading upstream, client: 127.0.0.1, server: iskarma.com, request: "GET / HTTP/1.1", upstream: "fastcgi://unix:/run/php/php8.3-fpm.sock:", host: "iskarma.com"
+2024/04/08 11:09:37 [error] 1506#1506: *125 FastCGI sent in stderr: "or directory in /home/nashady/data/x10premium/public_html/iskarma.com/index.php on line 87; PHP message: PHP Fatal error:  Uncaught Error: Failed opening required 'iskarma.com/assets/about/home.php' (include_path='.:/usr/share/php') in /home/nashady/data/x10premium/public_html/iskarma.com/index.php:87
+Stack trace:
+#0 /home/nashady/data/x10premium/public_html/index.php(67): require_once()
+#1 {main}
+  thrown in /home/nashady/data/x10premium/public_html/iskarma.com/index.php on line 87" while reading upstream, client: 127.0.0.1, server: iskarma.com, request: "GET / HTTP/1.1", upstream: "fastcgi://unix:/run/php/php8.3-fpm.sock:", host: "iskarma.com"
+2024/04/08 11:28:00 [error] 1504#1504: *215 FastCGI sent in stderr: "PHP message: PHP Warning:  opendir(../iskarma.com/content): Failed to open directory: No such file or directory in /home/nashady/data/x10premium/public_html/api/static/search.php on line 88; PHP message: PHP Warning:  foreach() argument must be of type array|object, false given in /home/nashady/data/x10premium/public_html/api/static/search.php on line 44" while reading response header from upstream, client: 127.0.0.1, server: iskarma.com, request: "POST /api/static/search.php HTTP/1.1", upstream: "fastcgi://unix:/run/php/php8.3-fpm.sock:", host: "iskarma.com", referrer: "https://iskarma.com/"
+2024/04/08 11:28:17 [error] 1504#1504: *215 FastCGI sent in stderr: "PHP message: PHP Warning:  opendir(../iskarma.com/content): Failed to open directory: No such file or directory in /home/nashady/data/x10premium/public_html/api/static/search.php on line 88; PHP message: PHP Warning:  foreach() argument must be of type array|object, false given in /home/nashady/data/x10premium/public_html/api/static/search.php on line 44" while reading response header from upstream, client: 127.0.0.1, server: iskarma.com, request: "POST /api/static/search.php HTTP/1.1", upstream: "fastcgi://unix:/run/php/php8.3-fpm.sock:", host: "iskarma.com", referrer: "https://iskarma.com/"
+2024/04/08 12:13:32 [error] 1504#1504: *400 FastCGI sent in stderr: "PHP message: PHP Warning:  require_once(../api-helpers/connect.php): Failed to open stream: No such file or directory in /home/nashady/data/x10premium/public_html/api/authenticator/handler.php on line 12; PHP message: PHP Fatal error:  Uncaught Error: Failed opening required '../api-helpers/connect.php' (include_path='.:/usr/share/php') in /home/nashady/data/x10premium/public_html/api/authenticator/handler.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/nashady/data/x10premium/public_html/api/authenticator/handler.php on line 12" while reading response header from upstream, client: 127.0.0.1, server: iskarma.com, request: "POST /api/authenticator/handler.php HTTP/1.1", upstream: "fastcgi://unix:/run/php/php8.3-fpm.sock:", host: "iskarma.com", referrer: "https://iskarma.com/"
+2024/04/08 12:14:28 [error] 1504#1504: *400 FastCGI sent in stderr: "PHP message: PHP Warning:  require_once(../../database.php): Failed to open stream: No such file or directory in /home/nashady/data/x10premium/public_html/api-helpers/connect.php on line 3; PHP message: PHP Fatal error:  Uncaught Error: Failed opening required '../../database.php' (include_path='.:/usr/share/php') in /home/nashady/data/x10premium/public_html/api-helpers/connect.php:3
+Stack trace:
+#0 /home/nashady/data/x10premium/public_html/api/authenticator/handler.php(12): require_once()
+#1 {main}
+  thrown in /home/nashady/data/x10premium/public_html/api-helpers/connect.php on line 3" while reading response header from upstream, client: 127.0.0.1, server: iskarma.com, request: "POST /api/authenticator/handler.php HTTP/1.1", upstream: "fastcgi://unix:/run/php/php8.3-fpm.sock:", host: "iskarma.com", referrer: "https://iskarma.com/"
+2024/04/08 12:15:07 [error] 1504#1504: *400 FastCGI sent in stderr: "PHP message: PHP Warning:  require_once(api-helpers/connect.php): Failed to open stream: No such file or directory in /home/nashady/data/x10premium/public_html/api/authenticator/handler.php on line 12; PHP message: PHP Fatal error:  Uncaught Error: Failed opening required 'api-helpers/connect.php' (include_path='.:/usr/share/php') in /home/nashady/data/x10premium/public_html/api/authenticator/handler.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/nashady/data/x10premium/public_html/api/authenticator/handler.php on line 12" while reading response header from upstream, client: 127.0.0.1, server: iskarma.com, request: "POST /api/authenticator/handler.php HTTP/1.1", upstream: "fastcgi://unix:/run/php/php8.3-fpm.sock:", host: "iskarma.com", referrer: "https://iskarma.com/"
+2024/04/08 12:15:20 [error] 1504#1504: *400 FastCGI sent in stderr: "PHP message: PHP Warning:  require_once(/api-helpers/connect.php): Failed to open stream: No such file or directory in /home/nashady/data/x10premium/public_html/api/authenticator/handler.php on line 12; PHP message: PHP Fatal error:  Uncaught Error: Failed opening required '/api-helpers/connect.php' (include_path='.:/usr/share/php') in /home/nashady/data/x10premium/public_html/api/authenticator/handler.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/nashady/data/x10premium/public_html/api/authenticator/handler.php on line 12" while reading response header from upstream, client: 127.0.0.1, server: iskarma.com, request: "POST /api/authenticator/handler.php HTTP/1.1", upstream: "fastcgi://unix:/run/php/php8.3-fpm.sock:", host: "iskarma.com", referrer: "https://iskarma.com/"
+2024/04/08 12:16:23 [error] 1504#1504: *400 FastCGI sent in stderr: "PHP message: PHP Warning:  require_once(../../database.php): Failed to open stream: No such file or directory in /home/nashady/data/x10premium/public_html/api/authenticator/connect.php on line 3; PHP message: PHP Fatal error:  Uncaught Error: Failed opening required '../../database.php' (include_path='.:/usr/share/php') in /home/nashady/data/x10premium/public_html/api/authenticator/connect.php:3
+Stack trace:
+#0 /home/nashady/data/x10premium/public_html/api/authenticator/handler.php(12): require_once()
+#1 {main}
+  thrown in /home/nashady/data/x10premium/public_html/api/authenticator/connect.php on line 3" while reading response header from upstream, client: 127.0.0.1, server: iskarma.com, request: "POST /api/authenticator/handler.php HTTP/1.1", upstream: "fastcgi://unix:/run/php/php8.3-fpm.sock:", host: "iskarma.com", referrer: "https://iskarma.com/"
+2024/04/08 12:16:59 [error] 1504#1504: *400 FastCGI sent in stderr: "PHP message: PHP Warning:  require_once(../../database.php): Failed to open stream: No such file or directory in /home/nashady/data/x10premium/public_html/api/connect.php on line 3; PHP message: PHP Fatal error:  Uncaught Error: Failed opening required '../../database.php' (include_path='.:/usr/share/php') in /home/nashady/data/x10premium/public_html/api/connect.php:3
+Stack trace:
+#0 /home/nashady/data/x10premium/public_html/api/authenticator/handler.php(12): require_once()
+#1 {main}
+  thrown in /home/nashady/data/x10premium/public_html/api/connect.php on line 3" while reading response header from upstream, client: 127.0.0.1, server: iskarma.com, request: "POST /api/authenticator/handler.php HTTP/1.1", upstream: "fastcgi://unix:/run/php/php8.3-fpm.sock:", host: "iskarma.com", referrer: "https://iskarma.com/"
+2024/04/08 12:17:31 [error] 1504#1504: *400 FastCGI sent in stderr: "PHP message: PHP Warning:  require_once(../../database.php): Failed to open stream: No such file or directory in /home/nashady/data/x10premium/public_html/connect.php on line 3; PHP message: PHP Fatal error:  Uncaught Error: Failed opening required '../../database.php' (include_path='.:/usr/share/php') in /home/nashady/data/x10premium/public_html/connect.php:3
+Stack trace:
+#0 /home/nashady/data/x10premium/public_html/api/authenticator/handler.php(12): require_once()
+#1 {main}
+  thrown in /home/nashady/data/x10premium/public_html/connect.php on line 3" while reading response header from upstream, client: 127.0.0.1, server: iskarma.com, request: "POST /api/authenticator/handler.php HTTP/1.1", upstream: "fastcgi://unix:/run/php/php8.3-fpm.sock:", host: "iskarma.com", referrer: "https://iskarma.com/"
+2024/04/08 12:18:10 [error] 1504#1504: *400 FastCGI sent in stderr: "PHP message: PHP Warning:  require_once(../../database.php): Failed to open stream: No such file or directory in /home/nashady/data/x10premium/public_html/api-helpers/connect.php on line 3; PHP message: PHP Fatal error:  Uncaught Error: Failed opening required '../../database.php' (include_path='.:/usr/share/php') in /home/nashady/data/x10premium/public_html/api-helpers/connect.php:3
+Stack trace:
+#0 /home/nashady/data/x10premium/public_html/api/authenticator/handler.php(12): require_once()
+#1 {main}
+  thrown in /home/nashady/data/x10premium/public_html/api-helpers/connect.php on line 3" while reading response header from upstream, client: 127.0.0.1, server: iskarma.com, request: "POST /api/authenticator/handler.php HTTP/1.1", upstream: "fastcgi://unix:/run/php/php8.3-fpm.sock:", host: "iskarma.com", referrer: "https://iskarma.com/"
+2024/04/08 12:19:03 [error] 1504#1504: *400 FastCGI sent in stderr: "PHP message: PHP Warning:  require_once(../database.php): Failed to open stream: No such file or directory in /home/nashady/data/x10premium/public_html/api-helpers/connect.php on line 3; PHP message: PHP Fatal error:  Uncaught Error: Failed opening required '../database.php' (include_path='.:/usr/share/php') in /home/nashady/data/x10premium/public_html/api-helpers/connect.php:3
+Stack trace:
+#0 /home/nashady/data/x10premium/public_html/api/authenticator/handler.php(12): require_once()
+#1 {main}
+  thrown in /home/nashady/data/x10premium/public_html/api-helpers/connect.php on line 3" while reading response header from upstream, client: 127.0.0.1, server: iskarma.com, request: "POST /api/authenticator/handler.php HTTP/1.1", upstream: "fastcgi://unix:/run/php/php8.3-fpm.sock:", host: "iskarma.com", referrer: "https://iskarma.com/"
+2024/04/08 12:19:22 [error] 1504#1504: *400 FastCGI sent in stderr: "PHP message: PHP Warning:  require_once(validate-email.php): Failed to open stream: No such file or directory in /home/nashady/data/x10premium/public_html/api/authenticator/methods/send-otp.php on line 2; PHP message: PHP Fatal error:  Uncaught Error: Failed opening required 'validate-email.php' (include_path='.:/usr/share/php') in /home/nashady/data/x10premium/public_html/api/authenticator/methods/send-otp.php:2
+Stack trace:
+#0 /home/nashady/data/x10premium/public_html/api/authenticator/handler.php(19): require_once()
+#1 {main}
+  thrown in /home/nashady/data/x10premium/public_html/api/authenticator/methods/send-otp.php on line 2" while reading response header from upstream, client: 127.0.0.1, server: iskarma.com, request: "POST /api/authenticator/handler.php HTTP/1.1", upstream: "fastcgi://unix:/run/php/php8.3-fpm.sock:", host: "iskarma.com", referrer: "https://iskarma.com/"
+2024/04/08 12:20:13 [error] 1504#1504: *400 FastCGI sent in stderr: "PHP message: PHP Warning:  require_once(update-otp-attempts.php): Failed to open stream: No such file or directory in /home/nashady/data/x10premium/public_html/api/authenticator/methods/confirm-otp.php on line 5; PHP message: PHP Fatal error:  Uncaught Error: Failed opening required 'update-otp-attempts.php' (include_path='.:/usr/share/php') in /home/nashady/data/x10premium/public_html/api/authenticator/methods/confirm-otp.php:5
+Stack trace:
+#0 /home/nashady/data/x10premium/public_html/api/authenticator/handler.php(20): require_once()
+#1 {main}
+  thrown in /home/nashady/data/x10premium/public_html/api/authenticator/methods/confirm-otp.php on line 5" while reading response header from upstream, client: 127.0.0.1, server: iskarma.com, request: "POST /api/authenticator/handler.php HTTP/1.1", upstream: "fastcgi://unix:/run/php/php8.3-fpm.sock:", host: "iskarma.com", referrer: "https://iskarma.com/"
+2024/04/08 12:23:14 [error] 1507#1507: *513 FastCGI sent in stderr: "PHP message: PHP Warning:  require_once(../api-helpers/connect.php): Failed to open stream: No such file or directory in /home/nashady/data/x10premium/public_html/api/profile/handler.php on line 12; PHP message: PHP Fatal error:  Uncaught Error: Failed opening required '../api-helpers/connect.php' (include_path='.:/usr/share/php') in /home/nashady/data/x10premium/public_html/api/profile/handler.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/nashady/data/x10premium/public_html/api/profile/handler.php on line 12" while reading response header from upstream, client: 127.0.0.1, server: iskarma.com, request: "POST /api/profile/handler.php HTTP/1.1", upstream: "fastcgi://unix:/run/php/php8.3-fpm.sock:", host: "iskarma.com", referrer: "https://iskarma.com/"
+2024/04/08 12:24:43 [error] 1507#1507: *513 FastCGI sent in stderr: "PHP message: PHP Warning:  require_once(../api-helpers/connect.php): Failed to open stream: No such file or directory in /home/nashady/data/x10premium/public_html/api/profile/handler.php on line 12; PHP message: PHP Fatal error:  Uncaught Error: Failed opening required '../api-helpers/connect.php' (include_path='.:/usr/share/php') in /home/nashady/data/x10premium/public_html/api/profile/handler.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/nashady/data/x10premium/public_html/api/profile/handler.php on line 12" while reading response header from upstream, client: 127.0.0.1, server: iskarma.com, request: "POST /api/profile/handler.php HTTP/1.1", upstream: "fastcgi://unix:/run/php/php8.3-fpm.sock:", host: "iskarma.com", referrer: "https://iskarma.com/"
+2024/04/08 12:25:11 [error] 1507#1507: *513 FastCGI sent in stderr: "PHP message: PHP Warning:  require_once(../api-helpers/connect.php): Failed to open stream: No such file or directory in /home/nashady/data/x10premium/public_html/api/profile/handler.php on line 12; PHP message: PHP Fatal error:  Uncaught Error: Failed opening required '../api-helpers/connect.php' (include_path='.:/usr/share/php') in /home/nashady/data/x10premium/public_html/api/profile/handler.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/nashady/data/x10premium/public_html/api/profile/handler.php on line 12" while reading response header from upstream, client: 127.0.0.1, server: iskarma.com, request: "POST /api/profile/handler.php HTTP/1.1", upstream: "fastcgi://unix:/run/php/php8.3-fpm.sock:", host: "iskarma.com", referrer: "https://iskarma.com/"
+2024/04/08 13:00:04 [error] 1504#1504: *670 FastCGI sent in stderr: "PHP message: PHP Warning:  require_once(/home/nashady/data/x10premium/public_html/iskarma.com/views/header/header.php): Failed to open stream: No such file or directory in /home/nashady/data/x10premium/public_html/iskarma.com/index.php on line 59; PHP message: PHP Fatal error:  Uncaught Error: Failed opening required '/home/nashady/data/x10premium/public_html/iskarma.com/views/header/header.php' (include_path='.:/usr/share/php') in /home/nashady/data/x10premium/public_html/iskarma.com/index.php:59
+Stack trace:
+#0 /home/nashady/data/x10premium/public_html/index.php(67): require_once()
+#1 {main}
+  thrown in /home/nashady/data/x10premium/public_html/iskarma.com/index.php on line 59" while reading response header from upstream, client: 127.0.0.1, server: iskarma.com, request: "GET / HTTP/1.1", upstream: "fastcgi://unix:/run/php/php8.3-fpm.sock:", host: "iskarma.com"
+2024/04/08 13:41:44 [error] 1504#1504: *675 FastCGI sent in stderr: "PHP message: PHP Warning:  require_once(iskarma.com/template/ui/header/handler.php): Failed to open stream: No such file or directory in /home/nashady/data/x10premium/public_html/iskarma.com/index.php on line 59; PHP message: PHP Fatal error:  Uncaught Error: Failed opening required 'iskarma.com/template/ui/header/handler.php' (include_path='.:/usr/share/php') in /home/nashady/data/x10premium/public_html/iskarma.com/index.php:59
+Stack trace:
+#0 /home/nashady/data/x10premium/public_html/index.php(67): require_once()
+#1 {main}
+  thrown in /home/nashady/data/x10premium/public_html/iskarma.com/index.php on line 59" while reading response header from upstream, client: 127.0.0.1, server: iskarma.com, request: "GET / HTTP/1.1", upstream: "fastcgi://unix:/run/php/php8.3-fpm.sock:", host: "iskarma.com"
+2024/04/08 13:41:45 [error] 1504#1504: *675 FastCGI sent in stderr: "PHP message: PHP Warning:  require_once(iskarma.com/template/ui/header/handler.php): Failed to open stream: No such file or directory in /home/nashady/data/x10premium/public_html/iskarma.com/index.php on line 59; PHP message: PHP Fatal error:  Uncaught Error: Failed opening required 'iskarma.com/template/ui/header/handler.php' (include_path='.:/usr/share/php') in /home/nashady/data/x10premium/public_html/iskarma.com/index.php:59
+Stack trace:
+#0 /home/nashady/data/x10premium/public_html/index.php(67): require_once()
+#1 {main}
+  thrown in /home/nashady/data/x10premium/public_html/iskarma.com/index.php on line 59" while reading response header from upstream, client: 127.0.0.1, server: iskarma.com, request: "GET / HTTP/1.1", upstream: "fastcgi://unix:/run/php/php8.3-fpm.sock:", host: "iskarma.com"
+2024/04/08 13:45:00 [error] 1504#1504: *679 FastCGI sent in stderr: "PHP message: PHP Warning:  require_once(iskarma.com/template/ui/header/handler.php): Failed to open stream: No such file or directory in /home/nashady/data/x10premium/public_html/iskarma.com/index.php on line 59; PHP message: PHP Fatal error:  Uncaught Error: Failed opening required 'iskarma.com/template/ui/header/handler.php' (include_path='.:/usr/share/php') in /home/nashady/data/x10premium/public_html/iskarma.com/index.php:59
+Stack trace:
+#0 /home/nashady/data/x10premium/public_html/index.php(67): require_once()
+#1 {main}
+  thrown in /home/nashady/data/x10premium/public_html/iskarma.com/index.php on line 59" while reading response header from upstream, client: 127.0.0.1, server: iskarma.com, request: "GET / HTTP/1.1", upstream: "fastcgi://unix:/run/php/php8.3-fpm.sock:", host: "iskarma.com"
+2024/04/08 13:46:49 [error] 1505#1505: *681 FastCGI sent in stderr: "PHP message: PHP Warning:  require_once(/home/nashady/data/x10premium/public_html/iskarma.com/about/home.php): Failed to open stream: No such file or directory in /home/nashady/data/x10premium/public_html/iskarma.com/index.p" while reading upstream, client: 127.0.0.1, server: iskarma.com, request: "GET / HTTP/1.1", upstream: "fastcgi://unix:/run/php/php8.3-fpm.sock:", host: "iskarma.com"
+2024/04/08 13:46:49 [error] 1505#1505: *681 FastCGI sent in stderr: "hp on line 88; PHP message: PHP Fatal error:  Uncaught Error: Failed opening required '/home/nashady/data/x10premium/public_html/iskarma.com/about/home.php' (include_path='.:/usr/share/php') in /home/nashady/data/x10premium/public_html/iskarma.com/index.php:88
+Stack trace:
+#0 /home/nashady/data/x10premium/public_html/index.php(67): require_once()
+#1 {main}
+  thrown in /home/nashady/data/x10premium/public_html/iskarma.com/index.php on line 88" while reading upstream, client: 127.0.0.1, server: iskarma.com, request: "GET / HTTP/1.1", upstream: "fastcgi://unix:/run/php/php8.3-fpm.sock:", host: "iskarma.com"
+2024/04/08 13:47:27 [error] 1505#1505: *681 FastCGI sent in stderr: "PHP message: PHP Warning:  require_once(iskarma.com/about/home.php): Failed to open stream: No such file or directory in /home/nashady/data/x10premium/public_html/iskarma.com/index.php on line 88; PHP message: PHP Fatal error:  Unca" while reading upstream, client: 127.0.0.1, server: iskarma.com, request: "GET / HTTP/1.1", upstream: "fastcgi://unix:/run/php/php8.3-fpm.sock:", host: "iskarma.com"
+2024/04/08 13:47:27 [error] 1505#1505: *681 FastCGI sent in stderr: "ught Error: Failed opening required 'iskarma.com/about/home.php' (include_path='.:/usr/share/php') in /home/nashady/data/x10premium/public_html/iskarma.com/index.php:88
+Stack trace:
+#0 /home/nashady/data/x10premium/public_html/index.php(67): require_once()
+#1 {main}
+  thrown in /home/nashady/data/x10premium/public_html/iskarma.com/index.php on line 88" while reading upstream, client: 127.0.0.1, server: iskarma.com, request: "GET / HTTP/1.1", upstream: "fastcgi://unix:/run/php/php8.3-fpm.sock:", host: "iskarma.com"
+2024/04/08 13:49:03 [error] 1505#1505: *685 FastCGI sent in stderr: "PHP message: PHP Warning:  require_once(iskarma.com/about/home.php): Failed to open stream: No such file or directory in /home/nashady/data/x10premium/public_html/iskarma.com/index.php on line 88; PHP message: PHP Fatal error:  Uncaught Error: Failed opening required 'iskarma.com/about/home.php' (include_path='.:/usr/share/php') in /home/nashady/data/x10premium/public_html/iskarma.com/index.php:88
+Stack trace:
+#0 /home/nashady/data/x10premium/public_html/index.php(67): require_once()
+#1 {main}
+  thrown in /home/nashady/data/x10premium/public_html/iskarma.com/index.php on line 88" while reading upstream, client: 127.0.0.1, server: iskarma.com, request: "GET / HTTP/1.1", upstream: "fastcgi://unix:/run/php/php8.3-fpm.sock:", host: "iskarma.com"
+2024/04/08 13:50:21 [error] 1505#1505: *687 FastCGI sent in stderr: "PHP message: PHP Warning:  require_once(iskarma.com/about/home.php): Failed to open stream: No such file or directory in /home/nashady/data/x10premium/public_html/iskarma.com/index.php on line 88; PHP message: PHP Fatal error:  Uncaught Error: Failed opening required 'iskarma.com/about/home.php' (include_path='.:/usr/share/php') in /home/nashady/data/x10premium/public_html/iskarma.com/index.php:88
+Stack trace:
+#0 /home/nashady/data/x10premium/public_html/index.php(67): require_once()
+#1 {main}
+  thrown in /home/nashady/data/x10premium/public_html/iskarma.com/index.php on line 88" while reading upstream, client: 127.0.0.1, server: iskarma.com, request: "GET / HTTP/1.1", upstream: "fastcgi://unix:/run/php/php8.3-fpm.sock:", host: "iskarma.com"
+2024/04/08 13:50:51 [error] 1505#1505: *687 FastCGI sent in stderr: "PHP message: PHP Warning:  require_once(iskarma.com/about/home.php): Failed to open stream: No such file or directory in /home/nashady/data/x10premium/public_html/iskarma.com/index.php on line 88; PHP message: PHP Fatal error:  Uncaught Error: Failed opening required 'iskarma.com/about/home.php' (include_path='.:/usr/share/php') in /home/nashady/data/x10premium/public_html/iskarma.com/index.php:88
+Stack trace:
+#0 /home/nashady/data/x10premium/public_html/index.php(67): require_once()
+#1 {main}
+  thrown in /home/nashady/data/x10premium/public_html/iskarma.com/index.php on line 88" while reading upstream, client: 127.0.0.1, server: iskarma.com, request: "GET / HTTP/1.1", upstream: "fastcgi://unix:/run/php/php8.3-fpm.sock:", host: "iskarma.com"
+2024/04/08 13:52:02 [error] 1505#1505: *690 FastCGI sent in stderr: "PHP message: PHP Warning:  require_once(iskarma.com/about/home.php): Failed to open stream: No such file or directory in /home/nashady/data/x10premium/public_html/iskarma.com/index.php on line 88; PHP message: PHP Fatal error:  Uncaught Error: Failed opening required 'iskarma.com/about/home.php' (include_path='.:/usr/share/php') in /home/nashady/data/x10premium/public_html/iskarma.com/index.php:88
+Stack trace:
+#0 /home/nashady/data/x10premium/public_html/index.php(67): require_once()
+#1 {main}
+  thrown in /home/nashady/data/x10premium/public_html/iskarma.com/index.php on line 88" while reading upstream, client: 127.0.0.1, server: iskarma.com, request: "GET / HTTP/1.1", upstream: "fastcgi://unix:/run/php/php8.3-fpm.sock:", host: "iskarma.com"
+2024/04/08 13:55:04 [error] 1505#1505: *692 FastCGI sent in stderr: "PHP message: PHP Warning:  require_once(iskarma.com/about/home.php): Failed to open stream: No such file or directory in /home/nashady/data/x10premium/public_html/iskarma.com/index.php on line 88; PHP message: PHP Fatal error:  Uncaught Error: Failed opening required 'iskarma.com/about/home.php' (include_path='.:/usr/share/php') in /home/nashady/data/x10premium/public_html/iskarma.com/index.php:88
+Stack trace:
+#0 /home/nashady/data/x10premium/public_html/index.php(67): require_once()
+#1 {main}
+  thrown in /home/nashady/data/x10premium/public_html/iskarma.com/index.php on line 88" while reading upstream, client: 127.0.0.1, server: iskarma.com, request: "GET / HTTP/1.1", upstream: "fastcgi://unix:/run/php/php8.3-fpm.sock:", host: "iskarma.com"
+2024/04/08 13:55:58 [error] 1505#1505: *695 FastCGI sent in stderr: "PHP message: PHP Warning:  require_once(iskarma.com/about/home.php): Failed to open stream: No such file or directory in /home/nashady/data/x10premium/public_html/iskarma.com/index.php on line 88; PHP message: PHP Fatal error:  Uncaught Error: Failed opening required 'iskarma.com/about/home.php' (include_path='.:/usr/share/php') in /home/nashady/data/x10premium/public_html/iskarma.com/index.php:88
+Stack trace:
+#0 /home/nashady/data/x10premium/public_html/index.php(67): require_once()" while reading upstream, client: 127.0.0.1, server: iskarma.com, request: "GET / HTTP/1.1", upstream: "fastcgi://unix:/run/php/php8.3-fpm.sock:", host: "iskarma.com"
+2024/04/08 13:55:58 [error] 1505#1505: *695 FastCGI sent in stderr: "
+#1 {main}
+  thrown in /home/nashady/data/x10premium/public_html/iskarma.com/index.php on line 88" while reading upstream, client: 127.0.0.1, server: iskarma.com, request: "GET / HTTP/1.1", upstream: "fastcgi://unix:/run/php/php8.3-fpm.sock:", host: "iskarma.com"
+2024/04/08 13:57:42 [error] 1505#1505: *697 FastCGI sent in stderr: "PHP message: PHP Warning:  require_once(account/login.php): Failed to open stream: No such file or directory in /home/nashady/data/x10premium/public_html/iskarma.com/sections/profile/layout.php on line 12; PHP message: PHP Fatal error:  Uncaught Error: Failed opening required 'account/login.php' (include_path='.:/usr/share/php') in /home/nashady/data/x10premium/public_html/iskarma.com/sections/profile/layout.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/nashady/data/x10premium/public_html/iskarma.com/sections/profile/layout.php on line 12" while reading response header from upstream, client: 127.0.0.1, server: iskarma.com, request: "GET /iskarma.com/sections/profile/layout.php HTTP/1.1", upstream: "fastcgi://unix:/run/php/php8.3-fpm.sock:", host: "iskarma.com", referrer: "https://iskarma.com/"
+2024/04/08 13:58:50 [error] 1505#1505: *720 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Uncaught Error: Call to a member function prepare() on null in /home/nashady/data/x10premium/public_html/api/profile/methods/get-dashboard.php:14
+Stack trace:
+#0 /home/nashady/data/x10premium/public_html/api/profile/methods/get-dashboard.php(228): Account->getDashboardFields()
+#1 /home/nashady/data/x10premium/public_html/api/profile/handler.php(53): Account->getFullDashboard()
+#2 /home/nashady/data/x10premium/public_html/api/profile/handler.php(26): Account->dashboard()
+#3 /home/nashady/data/x10premium/public_html/api/profile/handler.php(102): Account->__construct()
+#4 {main}
+  thrown in /home/nashady/data/x10premium/public_html/api/profile/methods/get-dashboard.php on line 14" while reading response header from upstream, client: 127.0.0.1, server: iskarma.com, request: "POST /api/profile/handler.php HTTP/1.1", upstream: "fastcgi://unix:/run/php/php8.3-fpm.sock:", host: "iskarma.com", referrer: "https://iskarma.com/"
+2024/04/08 13:59:03 [error] 1505#1505: *720 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Uncaught Error: Call to a member function prepare() on null in /home/nashady/data/x10premium/public_html/api/profile/methods/get-dashboard.php:14
+Stack trace:
+#0 /home/nashady/data/x10premium/public_html/api/profile/methods/get-dashboard.php(228): Account->getDashboardFields()
+#1 /home/nashady/data/x10premium/public_html/api/profile/handler.php(53): Account->getFullDashboard()
+#2 /home/nashady/data/x10premium/public_html/api/profile/handler.php(26): Account->dashboard()
+#3 /home/nashady/data/x10premium/public_html/api/profile/handler.php(102): Account->__construct()
+#4 {main}
+  thrown in /home/nashady/data/x10premium/public_html/api/profile/methods/get-dashboard.php on line 14" while reading response header from upstream, client: 127.0.0.1, server: iskarma.com, request: "POST /api/profile/handler.php HTTP/1.1", upstream: "fastcgi://unix:/run/php/php8.3-fpm.sock:", host: "iskarma.com", referrer: "https://iskarma.com/"
+2024/04/08 14:03:36 [error] 1505#1505: *739 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Uncaught Error: Call to a member function prepare() on null in /home/nashady/data/x10premium/public_html/api/profile/methods/get-dashboard.php:14
+Stack trace:
+#0 /home/nashady/data/x10premium/public_html/api/profile/methods/get-dashboard.php(228): Account->getDashboardFields()
+#1 /home/nashady/data/x10premium/public_html/api/profile/handler.php(53): Account->getFullDashboard()
+#2 /home/nashady/data/x10premium/public_html/api/profile/handler.php(26): Account->dashboard()
+#3 /home/nashady/data/x10premium/public_html/api/profile/handler.php(102): Account->__construct()
+#4 {main}
+  thrown in /home/nashady/data/x10premium/public_html/api/profile/methods/get-dashboard.php on line 14" while reading response header from upstream, client: 127.0.0.1, server: iskarma.com, request: "POST /api/profile/handler.php HTTP/1.1", upstream: "fastcgi://unix:/run/php/php8.3-fpm.sock:", host: "iskarma.com", referrer: "https://iskarma.com/"
+2024/04/08 14:12:19 [error] 1506#1506: *761 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Uncaught Error: Call to a member function prepare() on null in /home/nashady/data/x10premium/public_html/api/profile/methods/get-dashboard.php:14
+Stack trace:
+#0 /home/nashady/data/x10premium/public_html/api/profile/methods/get-dashboard.php(228): Account->getDashboardFields()
+#1 /home/nashady/data/x10premium/public_html/api/profile/handler.php(53): Account->getFullDashboard()
+#2 /home/nashady/data/x10premium/public_html/api/profile/handler.php(26): Account->dashboard()
+#3 /home/nashady/data/x10premium/public_html/api/profile/handler.php(102): Account->__construct()
+#4 {main}
+  thrown in /home/nashady/data/x10premium/public_html/api/profile/methods/get-dashboard.php on line 14" while reading response header from upstream, client: 127.0.0.1, server: iskarma.com, request: "POST /api/profile/handler.php HTTP/1.1", upstream: "fastcgi://unix:/run/php/php8.3-fpm.sock:", host: "iskarma.com", referrer: "https://iskarma.com/"
+2024/04/08 14:17:20 [error] 1507#1507: *778 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Uncaught Error: Call to a member function prepare() on null in /home/nashady/data/x10premium/public_html/api/profile/methods/get-dashboard.php:73
+Stack trace:
+#0 /home/nashady/data/x10premium/public_html/api/profile/methods/get-dashboard.php(13): Account->getDashboardFields()
+#1 /home/nashady/data/x10premium/public_html/api/profile/handler.php(52): Account->getFullDashboard()
+#2 /home/nashady/data/x10premium/public_html/api/profile/handler.php(26): Account->dashboard()
+#3 /home/nashady/data/x10premium/public_html/api/profile/handler.php(101): Account->__construct()
+#4 {main}
+  thrown in /home/nashady/data/x10premium/public_html/api/profile/methods/get-dashboard.php on line 73" while reading response header from upstream, client: 127.0.0.1, server: iskarma.com, request: "POST /api/profile/handler.php HTTP/1.1", upstream: "fastcgi://unix:/run/php/php8.3-fpm.sock:", host: "iskarma.com", referrer: "https://iskarma.com/"
+2024/04/08 14:21:25 [error] 1507#1507: *784 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Uncaught Error: Call to a member function prepare() on null in /home/nashady/data/x10premium/public_html/api/profile/methods/get-dashboard.php:287
+Stack trace:
+#0 /home/nashady/data/x10premium/public_html/api/profile/handler.php(63): Account->onBoardStep1()
+#1 /home/nashady/data/x10premium/public_html/api/profile/handler.php(26): Account->dashboard()
+#2 /home/nashady/data/x10premium/public_html/api/profile/handler.php(101): Account->__construct()
+#3 {main}
+  thrown in /home/nashady/data/x10premium/public_html/api/profile/methods/get-dashboard.php on line 287" while reading response header from upstream, client: 127.0.0.1, server: iskarma.com, request: "POST /api/profile/handler.php HTTP/1.1", upstream: "fastcgi://unix:/run/php/php8.3-fpm.sock:", host: "iskarma.com", referrer: "https://iskarma.com/"
+2024/04/08 14:21:38 [error] 1507#1507: *784 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Uncaught Error: Call to a member function prepare() on null in /home/nashady/data/x10premium/public_html/api/profile/methods/get-dashboard.php:287
+Stack trace:
+#0 /home/nashady/data/x10premium/public_html/api/profile/handler.php(63): Account->onBoardStep1()
+#1 /home/nashady/data/x10premium/public_html/api/profile/handler.php(26): Account->dashboard()
+#2 /home/nashady/data/x10premium/public_html/api/profile/handler.php(101): Account->__construct()
+#3 {main}
+  thrown in /home/nashady/data/x10premium/public_html/api/profile/methods/get-dashboard.php on line 287" while reading response header from upstream, client: 127.0.0.1, server: iskarma.com, request: "POST /api/profile/handler.php HTTP/1.1", upstream: "fastcgi://unix:/run/php/php8.3-fpm.sock:", host: "iskarma.com", referrer: "https://iskarma.com/"

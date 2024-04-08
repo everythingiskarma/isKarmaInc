@@ -1,0 +1,74 @@
+/* TOGGLE'S FOR VARIOUS FULL MODAL COMPONENTS */
+toggles {
+	position: absolute;
+	right: 0px;
+	top: 0px;
+	z-index: 1;
+}
+
+togglebar {
+	position: relative;
+	display: none;
+	width: 100%;
+	height: 40px !important;
+	margin: 0 !important;
+}
+#togglebar {
+	padding-right:50px;
+	height: 50px;
+	display: block;
+}
+
+#togglebar li, toggles {
+	display:inline-block;
+}
+
+#togglebar li::before, toggles::before {
+	display:block;
+	width: 50px;
+	height: 50px;
+	line-height: 50px;
+	font-size: 25px;
+	text-align: center;
+	cursor: pointer;
+}
+
+#togglebar li:hover, #togglebar li.on {
+	color: #ffff00
+}
+
+#togglebar li.icon-fs::before {
+	font-size: 22px;
+}
+
+#togglebar li.right {
+	float:right;
+}
+
+#togglebar #efs {
+	position: fixed;
+	top: 50px;
+	right:0;
+}
+/* CLOSE TOGGLES */
+
+esc {
+	display: block;
+	position: fixed;
+	top: 0px;
+	right: 0px;
+    transition: all 1s ease-in-out;
+    cursor: pointer;
+    z-index: 1
+}
+esc::before {
+	display: block;
+	width: 50px;
+	height: 50px;
+	text-align: center;
+	font-size: 25px;
+	line-height: 50px;
+}
+esc:hover::before {
+	color: red;
+}
