@@ -2,3 +2,4 @@
 logs/
 phpmyadmin/
 logs/nginx.access.log
+*.log
