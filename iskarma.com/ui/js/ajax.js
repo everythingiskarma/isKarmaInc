@@ -22,23 +22,29 @@ function successCallback(report) {
   if (Array.isArray(report) && report.length > 0) {
     report.forEach((obj, index) => {
       switch (true) {
+        case obj.hasOwnProperty('authOTP'): // indicates otp has been sent shows confirm otp interface
+          // loads confirm otp wrapper. Follows (api-controller-authenticator.js)
+          loadOTP(obj);
+          break;
         case obj.hasOwnProperty('loggedOut'): // indicates logout was successful, shows login page
         case obj.hasOwnProperty('loggedIn'): // indicates login was successful, loads profile overview
           // reloads togglebar and loads login or profile overview. Follows (ajax.js)
           loadAccount(obj);
           break;
+        case obj.hasOwnProperty('got-dashboard-overview'): // indicates dashboard was fetched successfully
+          // load dashboard overview
+          loadDashboardOverview(obj);
+          break;
         case obj.hasOwnProperty('onBoarding'): // indicates onboarding is pending
           // loads onboarding view and respective step based on object property step. Follows (onboarding.js)
           onBoarding(obj);
           break;
-        case obj.hasOwnProperty('profile'): // indicates onboarding is complete shows profile overview
-          // loads profile wrapper. Follows (api-controller-profile.js)
-          profileOverview(obj);
+        case obj.hasOwnProperty('got-profile-overview'): // indicates profile overview was fetched
+          // load profile overview
+          loadProfileOverview(obj);
           break;
-        case obj.hasOwnProperty('authOTP'): // indicates otp has been sent shows confirm otp interface
-        // loads confirm otp wrapper. Follows (api-controller-authenticator.js)
-          loadOTP(obj);
-          break;
+        case obj.hasOwnProperty('uProfile'): // indicates profile was updated successfully
+          $("#processing").fadeOut();
       }
       // displays system messages in the report box
       setTimeout(() => {
@@ -68,6 +74,7 @@ function errorCallback(xhr, status, error) {
 }
 
 function loadAccount() {
-  $("load").load('/iskarma.com/sections/profile/layout.php'); // reloads load html after login/logout
+  $("load").load('/iskarma.com/sections/dashboard/layout.php'); // reloads load html after login/logout
   $("togglebar").load('/iskarma.com/sections/header/views/togglebar.php'); // reloads togglebar after login/logout
+  
 }

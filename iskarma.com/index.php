@@ -33,6 +33,8 @@
       $.getScript('iskarma.com/ui/js/ajax.js');
       // initialize the ajax controller for api - authenticator
       $.getScript('iskarma.com/ui/js/api-controller-authenticator.js');
+      // initialize the ajax controller for api - dashboard
+      $.getScript('iskarma.com/ui/js/api-controller-dashboard.js');
       // initialize the ajax controller for api - profile
       $.getScript('iskarma.com/ui/js/api-controller-profile.js');
 

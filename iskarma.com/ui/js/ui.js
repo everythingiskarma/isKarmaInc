@@ -52,14 +52,14 @@ $(document).on("keyup", ".selection-filter", function () {
 		selection.each(function () {
 			var xt = $(this).text().toLowerCase();
 			if (xt.includes(input)) {
-				$(this).slideDown();
+				$(this).show();
 			} else {
-				$(this).slideUp();
+				$(this).hide();
 			}
 		});
 	} else if (input.length < 1) {
 		selection.each(function () {
-			$(this).slideDown();	
+			$(this).show();	
 		});
 	}
 });
@@ -195,3 +195,86 @@ $('#toTop').on("click", function () {
 		scrollTop: 0
 	}, 400); // Adjust the animation speed as needed
 });
+
+
+// toggle all menu's off
+function toggleMenusOff() {
+	$(".tab-menu > li").each(function () {
+		var togMenuID = $(this).attr("id");
+		localStorage.setItem('toggle-' + togMenuID, 'off');
+	});
+}
+
+// toggle open selected menu item
+$(document).on("click", ".tab-menu h2", function () {
+	// turn off all menu items
+	toggleMenusOff();	
+	if (!$(this).parent().hasClass("active")) {
+		$(".tab-menu li").removeClass("active");
+		$(".tab-menu ul").slideUp();	
+		$(this).next().slideToggle();
+		$(this).parent().toggleClass("active");
+	}
+	toggleActiveMenu();
+});
+
+// change localStorage status to on
+function toggleActiveMenu() {
+	$(".tab-menu li").each(function () {
+		if ($(this).hasClass("active")) {
+			var menuID = $(this).attr("id");
+			localStorage.setItem('toggle-' + menuID, 'on');
+		}
+	});
+}
+
+// change localStorage status to off
+function toggleMenuItemsOff() {
+	$(".tab-menu li li").each(function () {
+		var menuID = $(this).attr("id");
+		localStorage.setItem('toggle-' + menuID, 'off');
+	});
+}
+
+$(document).on("click", ".tab-menu li li", function () {
+	$("#processing").fadeIn();
+	$(".tab-menu li li").removeClass("active");
+	toggleMenuItemsOff();
+	$(this).addClass("active");
+	var section = $(this).parent().parent().attr("id");
+	var view = $(this).attr("id");
+	localStorage.setItem('toggle-' + view, 'on');
+	requestMenuItem(section, view);
+});
+
+function requestMenuItem(section, view) {
+	var requestData = {
+		api: section, // indicates which api / database to send request to 
+		action: view, // indicates which api action to perform
+		uid: uid,
+		domain: domain
+	}
+	var apiURL = 'api/' + section + '/handler.php';
+	// send ajax request
+	processRequest(apiURL, requestData, successCallback, errorCallback);
+}
+
+function reloadActiveMenu() {
+	$(".tab-menu li").each(function () {
+		var menuID = $(this).attr("id");
+		var item = localStorage.getItem('toggle-' + menuID);
+		if (item == 'on') {
+			$(this).children("h2").trigger("click");
+		}
+	});
+	$(".tab-menu li li").each(function () {
+		var menuID = $(this).attr("id");
+		var item = localStorage.getItem('toggle-' + menuID);
+		if (item == 'on') {
+			$(this).trigger("click");
+		}
+	});
+}
+delay(function () {
+	reloadActiveMenu();
+}, 500);

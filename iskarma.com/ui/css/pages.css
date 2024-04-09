@@ -4,7 +4,7 @@
 
 .light h1 {
   background: linear-gradient(50deg, rgba(4, 70, 0, 1) 0%, teal 50%, rgba(4, 70, 0, 1) 100%);
-  box-shadow: 0 0 10px #111;
+  box-shadow: 0 0 100px #111;
 }
 
 .light section {

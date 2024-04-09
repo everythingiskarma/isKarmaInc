@@ -53,7 +53,7 @@ $(document).on("click", "#confirm", function () {
 // # CANCEL LOGIN # -----------------------------------------------------------
 $(document).on("click", "#cancel", function () {
     $("#processing").fadeIn();
-    $("load").load('/iskarma.com/sections/profile/views/login.php', function () {
+    $("load").load('/iskarma.com/sections/dashboard/views/login.php', function () {
         $("#processing").fadeOut();
     });
     $("#resendTimer").html('');
@@ -189,7 +189,7 @@ function loadOTP(obj) {
     var otpType = obj.otpType;
     var uid = obj.uid;
     var email = obj.email;
-    $("load").load('/iskarma.com/sections/profile/views/otp.php', function () {
+    $("load").load('/iskarma.com/sections/dashboard/views/otp.php', function () {
         $("#confirm").attr({
             "otptype": otpType,
             "otpid": otpId,

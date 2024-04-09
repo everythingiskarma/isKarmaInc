@@ -10,25 +10,14 @@ $(document).on("click", "#logout", function () {
         uid: uid,
         domain: domain
     }
+    localStorage.clear();
     // Sending an AJAX request to the server to process and confirm logout
     processRequest(apiAuthenticator, requestData, successCallback, errorCallback);
 });
 
-
-
-function getProfile() {
-    var requestData = {
-        api: 'profile', // indicates which api / database to use
-        action: 'get-profile-overview', // indicates which api action to perform
-        domain: domain // indicates which domain requested the action
-    };
-    // Sending an AJAX request to the server to authenticate the email
-    processRequest(apiProfile, requestData, successCallback, errorCallback);
-}
-
-function profileOverview(obj) {
+function loadProfileOverview(obj) {
     var fields = obj.profileFields;
-    $("load").load('/iskarma.com/sections/profile/views/overview.php', function () {
+    $(".tab-content").load('/iskarma.com/sections/profile/views/profile-overview.php', function () {
         $("#firstname").val(atob(fields.firstname));
         $("#lastname").val(atob(fields.lastname));
         $("#country").attr({ "countrycode": atob(fields.cc), "countryname": atob(fields.cn), "dialcode": atob(fields.dc) });
@@ -63,7 +52,6 @@ function profileOverview(obj) {
 }
 
 $(document).on("click", "#uProfile", function () {
-
     var type = $(".type.selected").attr("type"); // type of address
     var label = btoa($("#label").val()); // nickname for address
     var address = btoa($("#address").val()); // street address
@@ -158,6 +146,9 @@ $(document).on("click", "#uProfile", function () {
         $("#zip").focus();
         return;
     }
+
+    $("#processing").fadeIn();
+
     var requestData = {
         api: 'profile',
         action: 'update-profile',
@@ -181,3 +172,4 @@ $(document).on("click", "#uProfile", function () {
     processRequest(apiProfile, requestData, successCallback, errorCallback);
     
 });
+

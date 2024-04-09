@@ -51,7 +51,8 @@ trait UpdateProfile {
 			'api' => 'Profile',
 			'response' => 'profile-updated-successfully',
 			'result' => true,
-			'message' => '<s><b class="icon-done-all"></b>Your profile has been successfully updated!</s>'
+			'message' => '<s><b class="icon-done-all"></b>Your profile has been successfully updated!</s>',
+			'uProfile' => ''
 		);
 	}
 }

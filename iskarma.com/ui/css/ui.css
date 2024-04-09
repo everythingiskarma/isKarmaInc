@@ -1,50 +1,4 @@
 /* INPUT BOX */
-.ibx::before {
-    position: absolute;
-    left: 15px;
-    font-size: 20px;
-    color: #ddd;
-    line-height: 40px;
-    top: 1px;
-    color: #ff0;
-}
-
-.ibx:hover * {
-    border-color: rgb(255 255 255 / 50%);
-    transition: all 0.4s linear;
-}
-
-
-.ibx:focus-within::before,
-.ibx:focus-within * {
-    color: #ffff00;
-    border-color: #ff0;
-    transition: all 0.4s linear;
-}
-
-.ibxg {
-    position: relative;
-    width: 300px;
-    margin: 30px auto;
-    text-align: center;
-}
-
-.ibxg.grid-b {
-    display: grid;
-    grid-template-columns: 50% 50%;
-}
-
-.ibxg.grid-b .icon-btn {
-    width: 96%;
-    display: grid;
-    grid-template-columns: 40px calc(100% - 40px);
-    margin: 0 auto;
-}
-
-.icon-btn a {
-    text-align: center;
-}
-
 .ibx {
     position: relative;
     width: 300px;
@@ -91,6 +45,56 @@
     font-size: 20px;
 }
 
+.ibx input#otp {
+    letter-spacing: 20px;
+}
+
+.ibx::before {
+    position: absolute;
+    left: 2px;
+    font-size: 20px;
+    color: #ddd;
+    line-height: 40px;
+    top: 2px;
+    text-align: center;
+    color: #ff0;
+}
+
+.ibx:hover * {
+    border-color: rgb(255 255 255 / 50%);
+    transition: all 0.4s linear;
+}
+
+.ibx:focus-within::before,
+.ibx:focus-within * {
+    color: #ffff00;
+    border-color: #ff0;
+    transition: all 0.4s linear;
+}
+
+.ibxg {
+    position: relative;
+    width: 300px;
+    margin: 30px auto;
+    text-align: center;
+}
+
+.ibxg.grid-b {
+    display: grid;
+    grid-template-columns: 50% 50%;
+}
+
+.ibxg.grid-b .icon-btn {
+    width: 96%;
+    display: grid;
+    grid-template-columns: 40px calc(100% - 40px);
+    margin: 0 auto;
+}
+
+.icon-btn a {
+    text-align: center;
+}
+
 input::placeholder,
 textarea::placeholder {
     letter-spacing: 0px;
@@ -102,7 +106,7 @@ textarea::placeholder {
 .ibx input.valid {}
 
 .ibx input:invalid {
-    border-color: red
+    border-color: red;
 }
 
 .ibx input:hover {}
@@ -232,7 +236,6 @@ input.lastname {
     font-size: 15px;
 }
 
-
 .ibx-selection {
     position: fixed;
     display: none;
@@ -269,7 +272,6 @@ input.lastname {
     color: red;
 }
 
-
 ul.selection {
     position: relative;
 }
@@ -301,7 +303,6 @@ ul.selection li.selected {
 .ibx .selector:focus {
     border-color: #ffff00;
 }
-
 
 /* BUTTONS */
 /* button wrapper */
@@ -342,7 +343,6 @@ ul.selection li.selected {
     background: #ffff007a;
     color: #1E6011
 }
-
 
 /* styled icon button */
 .icon-btn {
@@ -389,7 +389,6 @@ ul.selection li.selected {
     line-height: 40px;
     font-size: 20px;
 }
-
 
 /* input validation messages */
 messages {
@@ -543,16 +542,179 @@ blink {
     display: block;
 }
 
-/* general ui features */
-.hide {
+.tabs.sidebar {
+    position: relative;
+    display: block;
+    transition: all 0.5s linear;
+}
+
+.tabs.sidebar ul.tab-menu {
+    display: block;
+    width: 280px;
+    position: fixed;
+    left: 0px;
+    top: 0;
+    height: 100%;
+    z-index: -1;
+    box-shadow: 0 0 300px #1b3e14, 0 0 10px #444;
+    padding-top: 100px;
+    overflow: auto;    
+}
+
+.tabs.sidebar ul li ul {
+    overflow: hidden;
     display: none;
 }
 
-.editable * {
-    border-color:  !important;
-    background:  !important
+.tabs.sidebar ul li.active ul {
+    display: block;    
 }
-.editable *:focus {
-    border-color: inherit !important;
-    background: inherit !important
+
+.tabs.sidebar > ul > li.active {
+    background: #ffffff1a;
+    background: linear-gradient(90deg, transparent 0%, rgb(255 255 255 / 20%) 150%);
+    box-shadow: 0 0 10px #2222225a inset;
+}
+
+.tabs.sidebar ul li h2 {
+    display: block;
+    text-align: right;
+    padding: 10px;
+    position: relative;
+    padding-right:50px;
+    text-transform: uppercase;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.tabs.sidebar ul li.active h2 {
+    color: #ff0;
+}
+
+.tabs.sidebar li h2::after {
+    font-family: icomoon;
+    content: "\f204";
+    display: inline-block;
+    position: absolute;
+    right:0;
+    text-align: center;
+    width: 50px;
+    font-size: 25px;
+}
+
+.tabs.sidebar li.active h2::after {
+    font-family: icomoon;
+    content: "\f205";
+}
+
+.tabs.sidebar ul li li {
+    padding: 5px 15px;
+    cursor: pointer;
+    border-right: 2px solid transparent;
+    margin-right: -2px;
+    text-align: right;
+}
+
+.tabs.sidebar ul li li.active,
+.tabs.sidebar ul li li:hover,
+.tabs.sidebar ul li li:focus {
+    color: #ff0;
+    background: linear-gradient(90deg, transparent 0%, rgb(255 255 255 / 10%) 150%);
+    font-size: 110%;
+    border-right-color: #ff0;
+    transition: all 0.1s linear;
+}
+
+.tabs.sidebar .tab-content {
+    display: block;
+    width: calc(100% - 280px);
+    position: fixed;
+    left: 280px;
+    top: 0px;
+    bottom: 0;
+    overflow-y: auto;
+    scroll-behavior: smooth;
+    z-index: -1;
+}
+
+.tabs.topbar {}
+
+/* general ui features */
+
+.editable {
+    position: relative;
+    display: block;
+    overflow: auto;
+    padding-top: 100px;
+}
+
+.editable .actionbar {
+    position: fixed;
+    top: 0;
+    text-align: right;
+    width: calc(100% - 60px);
+    display: block;
+    padding: 0px 60px 0 0px;
+    height: 50px;
+    right: 0px;
+    z-index: 1;
+    background: linear-gradient(50deg, #ffffff14 0%, #00f0f0 40%, #ffffff14 110%);
+    box-shadow: 0 0 50px #07640d;
+}
+
+.editable .actionbar li {
+    box-shadow: 0 0 1px #fff;
+    display: inline-block;
+    padding: 0px 10px;
+    max-height: 40px;
+    margin: 5px 10px 5px 0;
+    border-radius: 0 10px 10px;
+    cursor: pointer;
+    transition: all 0.4s linear;
+}
+
+.editable .actionbar li:hover,
+.editable .actionbar li:focus {
+    background-color: #ff0;
+    color: #068f0a;
+}
+
+.editable .actionbar li:active {
+    box-shadow: 0 0 1px #ff0;
+    color: #ff0;
+    background-color: #068f0a;
+}
+
+.actionbar li span {
+    font-size: 30px;
+    line-height: 40px;
+    height: 40px;
+    width: 40px;
+}
+
+.actionbar li i {
+    line-height: 40px;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.editable .ibxg,
+.editable .ibx {
+    width: auto;
+    text-align: left;
+    max-width: 800px;
+    margin: 0
+}
+
+.editable .ibx {
+    margin-bottom: 40px;
+    margin-left: 50px;
+}
+
+.editable .ibxg .ibx {
+    margin: 0
+}
+
+.hide {
+    display: none;
 }

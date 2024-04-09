@@ -12,14 +12,14 @@ ini_set('display_startup_errors', 1);
 require_once "../../api-helpers/connect.php";
 // declare class properties used across the api
 require_once "methods/properties.php"; // provides trait Properties
-require_once "methods/get-profile.php"; // provides trait GetProfile
+require_once "methods/get-profile-overview.php"; // provides trait GetProfile
 require_once "methods/update-profile.php"; // provides trait UpdateProfile
 
 class Profile extends Connect
 {
 
 	use Properties; // provides Profile class properties
-	use GetProfile; // provides method getProfile();
+	use GetProfileOverview; // provides method getProfileOverview();
 	use UpdateProfile; // provides method updateProfile();
 
 	public function __construct()
@@ -49,9 +49,9 @@ class Profile extends Connect
 			$this->action = $_POST['action'];
 
 			switch ($this->action) {
-				case 'get-profile-overview':
+				case 'profile-overview':
 					// execute method getProfile and create success/error report based on the result
-					$this->getProfile();
+					$this->getProfileOverview();
 					break;
 				case 'update-profile':
 					$this->firstname = $_POST['firstname'];

@@ -10,10 +10,10 @@
 	<?php
 	if (isset($_SESSION['loggedIn'])) { ?>
 		<li view="write" class="icon-pencil" title="write a new post/article"></li>
-		<li view="profile" class="icon-user-private modal right" title="manage your account"></li>
+		<li view="dashboard" class="icon-user-private modal right" title="manage your account"></li>
 		<li id="logout" class="icon-power right" title="logout from your account"></li>
 	<?php } else { ?>
-		<li view="profile" class="icon-user modal right" title="login to manage your account"></li>
+		<li view="dashboard" class="icon-user modal right" title="login to manage your account"></li>
 	<?php } ?>
 	<li id="efs" class="icon-fs" title="enter/exit full screen mode"></li>
 </ul>
